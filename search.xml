@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>解决跨域</title>
+      <link href="2020/11/06/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/"/>
+      <url>2020/11/06/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/</url>
+      
+        <content type="html"><![CDATA[<h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure><h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>值得纪念的一天</title>
       <link href="2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/"/>
       <url>2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/</url>

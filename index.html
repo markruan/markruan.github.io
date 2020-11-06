@@ -65,6 +65,54 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/11/06/解决跨域/"><span>解决跨域</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/06/解决跨域/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-06T12:21:26.710Z">
+          2020-11-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
+<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/11/06/值得纪念的一天/"><span>值得纪念的一天</span></a></h3>
     
   

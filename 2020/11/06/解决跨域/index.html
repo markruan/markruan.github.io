@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>解决跨域 | 爱·绮梦</title>
+
+  
+  <meta name="author" content="Mark Ruan">
+  
+
+  
+  <meta name="description" content="生产环境和开发环境一次解决跨域问题在config 文件夹里面新建一个 api.config.js 配置文件
+1234const isPro = Object.is(process.env.NODE_ENV, &#39;production&#39;)const baseUrl=isPro ? &#39;https://ap">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="解决跨域"/>
+
+  <meta property="og:site_name" content="爱·绮梦"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">爱·绮梦</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/izihang.com">Photo</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>解决跨域</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/11/06/解决跨域/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-11-06T12:21:26.710Z">
+          2020-11-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
+<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Mark Ruan
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
