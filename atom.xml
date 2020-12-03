@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-29T10:50:17.013Z</updated>
+  <updated>2020-12-03T13:32:41.839Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何创建一个Shopify模版本地开发环境</title>
+    <link href="http://yoursite.com/2020/12/03/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2020/12/03/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2020-12-03T10:30:41.533Z</published>
+    <updated>2020-12-03T13:32:41.839Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装主题套件"><a href="#安装主题套件" class="headerlink" title="安装主题套件"></a>安装主题套件</h3><p>首先，转到<a class="link"   href="https://link.zhihu.com/?target=https%3A//www.shopifyfans.com/wp-content/themes/begin/go.php%3Furl%3DaHR0cHM6Ly9zaG9waWZ5LmdpdGh1Yi5pby90aGVtZWtpdC8%3D" >themekit<i class="fas fa-external-link-alt"></i></a>下载主题套件。</p><h3 id="macOS安装"><a href="#macOS安装" class="headerlink" title="macOS安装"></a>macOS安装</h3><p>使用<a class="link"   href="https://link.zhihu.com/?target=https%3A//www.shopifyfans.com/wp-content/themes/begin/go.php%3Furl%3DaHR0cDovL2JyZXcuc2gv" >homebrew<i class="fas fa-external-link-alt"></i></a>安装themekiit.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap shopify&#x2F;shopify</span><br><span class="line">brew install themekit</span><br></pre></td></tr></table></figure><h3 id="Windows-Chocolatey安装"><a href="#Windows-Chocolatey安装" class="headerlink" title="Windows Chocolatey安装"></a>Windows Chocolatey安装</h3><p>首先安装<a class="link"   href="https://link.zhihu.com/?target=https%3A//www.shopifyfans.com/wp-content/themes/begin/go.php%3Furl%3DaHR0cHM6Ly9jaG9jb2xhdGV5Lm9yZy8%3D" >Chocolatey<i class="fas fa-external-link-alt"></i></a>，然后通过以下命令安装themekit。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install themekit</span><br></pre></td></tr></table></figure><h3 id="Linux安装"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux安装</h3><p>如果是Linux系统，则可以使用以下脚本安装themekit。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s https:&#x2F;&#x2F;shopify.github.io&#x2F;themekit&#x2F;scripts&#x2F;install.py | sudo python</span><br></pre></td></tr></table></figure><p>安装完毕之后运行<strong>theme</strong>，如果显示下图信息则安装成功。</p><p><img src="https://pic3.zhimg.com/80/v2-8cce0690f64d6c6a02ef0c91aedf59a6_720w.jpg" alt="img"></p><h3 id="链接到商店"><a href="#链接到商店" class="headerlink" title="链接到商店"></a>链接到商店</h3><p>要想连接到商店拥有主题的读写权限，首先得建立私人应用将API秘钥添加到我们的配置中。</p><p>请登录Shopify后台，然后创建一个私人应用程序。</p><blockquote><p>Shopify管理员 &gt; Apps &gt; 单击Manage private apps &gt; 单击Create a new private app创建应用</p></blockquote><p>然后填写信息，并将<strong>Theme templates and theme assets</strong>权限设置为读写访问权限并保存，页面刷新之后复制密码，后面步骤用得到。</p><p><img src="https://pic4.zhimg.com/v2-c5672b6847b0eb3768ab31ae2772ecc7_b.jpg" alt="img"></p><h3 id="下载需要修改的模板"><a href="#下载需要修改的模板" class="headerlink" title="下载需要修改的模板"></a>下载需要修改的模板</h3><p>接下来，我们需要将主题下载到本地环境中。要下载模板，首先需要知道模板的ID。获取ID的最简单方法是使用get命令，如下所示：</p><ol><li>theme get –list -p=上一步复制的密码 -s=<a class="link"   href="https://link.zhihu.com/?target=http%3A//you-store.myshopify.com" >http://you-store.myshopify.com<i class="fas fa-external-link-alt"></i></a></li></ol><p><img src="https://pic1.zhimg.com/80/v2-4db25c89310144da8a0178b52516dfe8_720w.png" alt="img"></p><p>然后，记下模板ID，运行以下命令从shopify下载主题：</p><ol><li>theme get -p=上一步复制的密码 -s=<a class="link"   href="https://link.zhihu.com/?target=http%3A//you-store.myshopify.com" >http://you-store.myshopify.com<i class="fas fa-external-link-alt"></i></a> -t=your-theme-id</li></ol><p><img src="https://pic4.zhimg.com/80/v2-f35f2d0497884ca2054caa92d7f3b0b3_720w.png" alt="img"></p><h3 id="编辑模板"><a href="#编辑模板" class="headerlink" title="编辑模板"></a>编辑模板</h3><p>我们可以编辑这些本地文件，然后运行<strong>theme watch</strong>。这将监视模板文件中的更改，当检测到文件被修改时，Theme Kit将自动将新版本上载到Shopify，因此您可以立即查看编辑后的模板样式。</p><p><img src="https://pic1.zhimg.com/80/v2-d05bbd9df19f9ebab7b5f48fd157a790_720w.jpg" alt="img"></p><p>当我们对theme.scss.liquid文件进行了一些更改，您将在终端上看到此输出</p><p><img src="https://pic3.zhimg.com/80/v2-503c4fedd4f708bb2c7472247cc4af1e_720w.jpg" alt="img"></p><blockquote><p>要上传特定文件，请运行theme upload <file>。要删除特定文件，请运行theme remove <file>。您可以通过运行查找所有命令的列表theme help。您可以通过运行获取有关命令的更多信息theme help <command></p></blockquote><h3 id="实时预览"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览</h3><p>没有人喜欢编辑一次然后手动刷新一次页面。下面我们将使用Prepros来达到实时预览的功能。</p><p>首先下载<a class="link"   href="https://link.zhihu.com/?target=https%3A//www.shopifyfans.com/wp-content/themes/begin/go.php%3Furl%3DaHR0cHM6Ly9wcmVwcm9zLmlvLw%3D%3D" >Prepros<i class="fas fa-external-link-alt"></i></a>并安装</p><p><img src="https://pic3.zhimg.com/80/v2-81a904f9da10308140a2387dcd37b74a_720w.jpg" alt="img"></p><h3 id="将主题添加为项目"><a href="#将主题添加为项目" class="headerlink" title="将主题添加为项目"></a>将主题添加为项目</h3><p><img src="https://pic1.zhimg.com/v2-c100f31eacdfb0f033c87de8dc6e9c34_b.jpg" alt="img"></p><p>只需将整个目录拖到Prepros中，即可将主题作为项目添加到Prepros。</p><h3 id="监视-liquid文件"><a href="#监视-liquid文件" class="headerlink" title="监视.liquid文件"></a>监视.liquid文件</h3><p>应将.liquid文件添加到Prepros将要监视的文件类型列表中。默认情况下是不会监视它们的，因为Prepros不会编译Liquid。</p><p>要将.liquid文件添加到监视列表，请右键任意.liquid文件，然后选择“ <strong>Watch .liquid files</strong>”。</p><p><img src="https://pic2.zhimg.com/80/v2-feb48e382f61af3f0709e211727c5cd9_720w.jpg" alt="img"></p><h3 id="将实时预览链接到店铺"><a href="#将实时预览链接到店铺" class="headerlink" title="将实时预览链接到店铺"></a>将实时预览链接到店铺</h3><p>下一步是设置实时预览的URL。也就是将Prepros与Shopify商店链接起来并实现实时重载的功能。</p><p>具体设置如下图：</p><p><img src="https://pic1.zhimg.com/v2-c69eef525d534cd9784f643dbf3017a4_b.jpg" alt="img"></p><h3 id="设置重新加载的延迟"><a href="#设置重新加载的延迟" class="headerlink" title="设置重新加载的延迟"></a>设置重新加载的延迟</h3><p>最后，您需要在Prepros中设置延迟。延迟的原因是让Theme Kit有时间观察到更改，并将更改与Shopify的服务器同步。</p><p>具体设置如下图：</p><p><img src="https://pic2.zhimg.com/v2-8912efba9332fff5ecc0251c1e1f7e1d_b.jpg" alt="img"></p><h3 id="进行修改并实时预览"><a href="#进行修改并实时预览" class="headerlink" title="进行修改并实时预览"></a>进行修改并实时预览</h3><p>现在，您已经设置了实时预览，按<strong>Ctrl+L</strong>在浏览器中打开就能看到。    </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;安装主题套件&quot;&gt;&lt;a href=&quot;#安装主题套件&quot; class=&quot;headerlink&quot; title=&quot;安装主题套件&quot;&gt;&lt;/a&gt;安装主题套件&lt;/h3&gt;&lt;p&gt;首先，转到&lt;a class=&quot;link&quot;   href=&quot;https://link.zhihu.com/?t</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>X3 photo gallery 授权破解</title>
