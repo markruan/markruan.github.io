@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <title>
-        vue中使用H5的audio |
+        Vue/解决跨域 |
         
         爱·绮梦
     </title>
@@ -117,7 +117,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">vue中使用H5的audio</span>
+            <span class="title-hover-animation">Vue/解决跨域</span>
         </div>
 
         
@@ -133,20 +133,20 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-11-06 13:26:47
+        <i class="fas fa-calendar"></i> 2020-11-06 20:21:26
     </span>
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
             <ul>
                 
                     <li>
-                        <a href="/categories/vue/">vue</a>
+                        <a href="/tags/%E9%87%87%E5%9D%91/">采坑</a>
                     </li>
                 
             </ul>
         </span>
-    
     
 
     
@@ -161,11 +161,9 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="vue中使用H5的audio"><a href="#vue中使用H5的audio" class="headerlink" title="vue中使用H5的audio"></a>vue中使用H5的audio</h2><p>H5audio标签有许多事件</p>
-<p><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/20190127152315247-20201106152816056-20201106153001803.png" alt=""></p>
-<p> 在应用到vue中后的使用如下：</p>
-<p>比如在使用onplay时，要去掉on，用@play派发时间，在methods中定义方法执行体</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;audio src&#x3D;&quot;..&#x2F;..&#x2F;static&#x2F;1.mp3&quot; @play&#x3D;&quot;ready&quot; @pause&#x3D;&quot;pause&quot; controls&gt;&lt;&#x2F;audio&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;musci&#39;,</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            ready()&#123;</span><br><span class="line">                console.log(&quot;play click&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">            pause()&#123;</span><br><span class="line">                console.log(&quot;pause click&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+            <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
+<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -173,11 +171,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：vue中使用H5的audio</li>
+        <li>Post title：Vue/解决跨域</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-11-06 13:26:47</li>
+        <li>Create time：2020-11-06 20:21:26</li>
         <li>
-            Post link：https://iqimeng.com/2020/11/06/vue中使用H5的audio/
+            Post link：https://iqimeng.com/2020/11/06/Vue/解决跨域/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
@@ -194,18 +192,33 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/"
+                           href="/2020/11/07/study/typora%E4%BD%BF%E7%94%A8/"
                         >
                             <span class="left arrow-icon flex-center" >
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">值得纪念的一天</span>
+                                <span class="post-nav-title-item">study/typora使用</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
                 
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">值得纪念的一天</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
             </div>
         
@@ -359,7 +372,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue中使用H5的audio"><span class="nav-number">1.</span> <span class="nav-text">vue中使用H5的audio</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产环境和开发环境一次解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><span class="nav-number">1.1.</span> <span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
     </div>
 </div>
         

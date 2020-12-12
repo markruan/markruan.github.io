@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="null">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>
+        shopify/shopify调用配置信息 |
+        
+        爱·绮梦
+    </title>
+     
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
+    KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
+  </script>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="page-container">
+
+    
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+        <a class="logo-title" href="/">
+            爱·绮梦
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/"
+                    >
+                        HOME
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        CATEGORIES
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        ARCHIVES
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">shopify/shopify调用配置信息</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpeg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Mark</span>
+                        <span class="level">Lv1</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2020-12-12 18:18:34
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="调用配置"><a href="#调用配置" class="headerlink" title="调用配置"></a>调用配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">要调用模板中的配置信息，需要使用 liquid 语言。可以使用&#123;%%&#125;逻辑标签和&#123;&#123;&#125;&#125;显示标签。在这两种标签里，都可以使用settings.id，其中id就是配置中定义的属性。比如配置文件里是这样写的：</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span> : <span class="string">"颜色"</span>,</span><br><span class="line">    <span class="string">"settings"</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"color_background"</span>,</span><br><span class="line">        <span class="string">"label"</span>: <span class="string">"背景颜色"</span>,</span><br><span class="line">        <span class="string">"default"</span>: <span class="string">"#e5e5e5"</span>,</span><br><span class="line">        <span class="string">"info"</span> : <span class="string">"这个将调整背景颜色"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"color_body_text"</span>,</span><br><span class="line">        <span class="string">"label"</span>: <span class="string">"内容文字颜色"</span>,</span><br><span class="line">        <span class="string">"default"</span>: <span class="string">"#2980b9"</span>,</span><br><span class="line">        <span class="string">"info"</span> : <span class="string">"这个将调整内容文字颜色"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>你可以这样调用背景颜色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; settings.color_background &#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="常规配置类型"><a href="#常规配置类型" class="headerlink" title="常规配置类型"></a>常规配置类型</h4><p>常规配置类型包括：text, textarea, image, radio, select, checkbox。每种类型都允许用户选择来修改模板。这些配置用一组liquid标签来调用。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;&#125;&#125;  &#x2F;&#x2F;将会把信息显示在页面上</span><br><span class="line">&#123;&#123; settings.your_id &#125;&#125;</span><br><span class="line"></span><br><span class="line">&#123;%%&#125;可以把配置信息用于逻辑处理上。</span><br><span class="line"></span><br><span class="line">    &#123;% if settings.product_order &#x3D;&#x3D; true %&#125;</span><br><span class="line">      &lt;p&gt;可以下单!&lt;&#x2F;p&gt;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">      &lt;p&gt;不能下单 :(&lt;&#x2F;p&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="特殊设置类型"><a href="#特殊设置类型" class="headerlink" title="特殊设置类型"></a>特殊设置类型</h2><p>特殊设置类型包括：<code>color</code>, <code>font</code>, <code>collection</code>, <code>product</code>, <code>blog</code>, <code>page</code>, <code>link_list</code>,  <code>snippet。要调用他们，比常规配置稍微复杂一些。</code></p>
+<h3 id="Color和Font"><a href="#Color和Font" class="headerlink" title="Color和Font"></a><code>Color和Font</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">color和font和上面的调用方式相同，如果你在页面上直接调用，那么它将在页面上显示16进制，然而对于我们来说并没有什么卵用，我们需要在样式表中调用这个才有意义，比如将我们的sass文件保存成application.scss.liquid，就可以使用liquid语法来调用它。</span><br><span class="line">body&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    background-color: #&#123;&#39;&#123;&#123; settings.color_background &#125;&#125;&#39;&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里用#{‘’}包裹。</strong></p>
+<p>同样，字体也可以用这种方式调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  font-family: #&#123;&#39;&#123;&#123; settings.header_font &#125;&#125;&#39;&#125;;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>collections的调用方式会更复杂一些，首先要注意的是，当你将设置的类型为Collections是，选择面板中将显示用户的collections下拉列表，其中包括已经在商店中定义的所有Collections。这意味着必须至少已经定义了2个集合。其次，需要知道shopify都有哪些特殊配置的标签，这里有个表 <a class="link"   href="http://cheat.markdunkley.com/，可以方便查看。"  target="_blank" rel="noopener">http://cheat.markdunkley.com/，可以方便查看。<i class="fas fa-external-link-alt"></i></a></p>
+<p>比如，我们在这里找到了collection.liquid部分，上面有用什么标签全局访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">collections[&#39;the-handle&#39;].variable</span><br></pre></td></tr></table></figure>
+<p>这里，the-handle是集合的名称，或者说是集合的slug。在settings_schema.json配置文件中，id的名称将定于这个属性。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">     <span class="string">"name"</span>: <span class="string">"Collection"</span>,</span><br><span class="line">     <span class="string">"settings"</span> : [</span><br><span class="line">     &#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"collection"</span>,</span><br><span class="line">    <span class="string">"id"</span>: <span class="string">"feature_collection"</span>,</span><br><span class="line">     <span class="string">"label"</span>: <span class="string">"Feature collection"</span></span><br><span class="line">     &#125;</span><br><span class="line">   ]</span><br><span class="line"> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>那么就这样调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; collections[settings.feature_collection] &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>但是，上面的代码只会显示为CollectionDrop。 为了获得有意义的东西，需要选择集合的属性（可在<a class="link"   href="http://cheat.markdunkley.com/上获得），例如标题或产品。"  target="_blank" rel="noopener">http://cheat.markdunkley.com/上获得），例如标题或产品。<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; collections[settings.feature_collection].title &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>您可能还想访问该集合中每个产品的信息。 这可以通过引用集合上的products属性然后循环遍历这些来轻松实现。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for product in collections[settings.feature_collection].products %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; product.title &#125;&#125; | &#123;&#123; product.price &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> &#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>通过liquid循环语句，可以把集合中的每个产品遍历出来，并显示产品的标题和价格。</p>
+<h2 id="Products"><a href="#Products" class="headerlink" title="Products"></a>Products</h2><p>产品和集合的使用方式类似，查一下表，看看如何调用这个products。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_products[&#39;the-handle&#39;].variable</span><br></pre></td></tr></table></figure>
+<p>注意这里是all_products，而不是products。 所以，这样调用产品的标题和价格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; all_products[settings.feature_product].title &#125;&#125; | &#123;&#123; all_products[settings.feature_product].price &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要调用产品的头图，这样来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#123;&#123; all_products[settings.feature_product].featured_image | img_url: &#39;small&#39; &#125;&#125;&quot; alt&#x3D;&quot;&#123;&#123; a</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：shopify/shopify调用配置信息</li>
+        <li>Post author：Mark</li>
+        <li>Create time：2020-12-12 18:18:34</li>
+        <li>
+            Post link：https://iqimeng.com/2020/12/12/shopify/shopify调用配置信息/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/12/12/shopify/shopify%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">shopify/shopify模板开发学习-自定义配置文件</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'GAI5B7iRDpBDuxOUtOyQmWiO-gzGzoHsz',
+                appKey: 'CKOBiAcgB6Q41QtGw9eaw09q',
+                meta: 'nick,mail,link'.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '来吧，互相伤害吧！',
+                lang: 'null'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"博主"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+
+                    let author = 'Mark';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2020 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://iqimeng.com">IQIMENG.COM</a> | Theme <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="tools-ul-1">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+    </ul>
+</div>
+
+    </div>
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用配置"><span class="nav-number">1.</span> <span class="nav-text">调用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常规配置类型"><span class="nav-number">1.1.</span> <span class="nav-text">常规配置类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊设置类型"><span class="nav-number"></span> <span class="nav-text">特殊设置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Color和Font"><span class="nav-number">1.</span> <span class="nav-text">Color和Font</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections"><span class="nav-number"></span> <span class="nav-text">Collections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Products"><span class="nav-number"></span> <span class="nav-text">Products</span></a>
+    </div>
+</div>
+        
+    </aside>
+
+    <!-- image viewer -->
+    <div class="image-viewer-container">
+    <div class="img-box">
+        <img src="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/left-side-toggle.js"></script>
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/code-copy.js"></script>
+    
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/toc.js"></script>
+    
+
+
+</body>
+</html>
