@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="null">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>
+        shopify模板开发学习-自定义配置文件 |
+        
+        爱·绮梦
+    </title>
+     
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
+    KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
+  </script>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="page-container">
+
+    
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+        <a class="logo-title" href="/">
+            爱·绮梦
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/"
+                    >
+                        HOME
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        CATEGORIES
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        ARCHIVES
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">shopify模板开发学习-自定义配置文件</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpeg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Mark</span>
+                        <span class="level">Lv1</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2020-12-12 16:35:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/shopify/">shopify</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>在创建主题时，可以为客户预留一些自定义的配置，是Shopify主题模板常用的做法。Shopify使用settings_schema.json文件提供了这个自定义配置的方式。</p>
+<p>在Shopify主题的config目录中，在此文件中定义一些对象属性，就可以实现自定义的配置选项。当你选择在线商店 》 模板 》自定义按钮，就可以看到控制面板中这些选项。</p>
+<p>配置文件的文件格式<br>settings_schema.json文件，本身是个JSON文件，那么他需要遵守JSON文件规范，这里所有的数据都用[]括起来。在此范围内，你可以将相关选项组合在一起。每个分组都有一个名称，然后是定义这个组的配置。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"name"</span> : <span class="string">"颜色"</span>,</span><br><span class="line">        <span class="string">"settings"</span> : [ ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+<p>然后，每个选项都是设置数组中的一个对象。 像这样的东西：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"Shopify119"</span>,</span><br><span class="line">    <span class="string">"theme_name"</span>: <span class="string">"Shopify119 theme"</span>,</span><br><span class="line">    <span class="string">"theme_version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">    <span class="string">"theme_author"</span>: <span class="string">"Leo"</span>,</span><br><span class="line">    <span class="string">"theme_documentation_url"</span>: <span class="string">"https://shopify119.blog.csdn.net"</span>,</span><br><span class="line">    <span class="string">"theme_support_url"</span>: <span class="string">"https://shopify119.blog.csdn.net"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"name"</span> : <span class="string">"颜色"</span>,</span><br><span class="line">    <span class="string">"settings"</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"color_background"</span>,</span><br><span class="line">        <span class="string">"label"</span>: <span class="string">"背景颜色"</span>,</span><br><span class="line">        <span class="string">"default"</span>: <span class="string">"#e5e5e5"</span>,</span><br><span class="line">        <span class="string">"info"</span> : <span class="string">"这个将调整背景颜色"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"color_body_text"</span>,</span><br><span class="line">        <span class="string">"label"</span>: <span class="string">"内容文字颜色"</span>,</span><br><span class="line">        <span class="string">"default"</span>: <span class="string">"#2980b9"</span>,</span><br><span class="line">        <span class="string">"info"</span> : <span class="string">"这个将调整内容文字颜色"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"Logo"</span>,</span><br><span class="line">    <span class="string">"settings"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"type"</span>: <span class="string">"image"</span>,</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"logo.png"</span>,</span><br><span class="line">        <span class="string">"label"</span>: <span class="string">"Logo"</span>,</span><br><span class="line">        <span class="string">"info"</span>: <span class="string">"这里可以改变店铺的Logo"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"><span class="number">12345678910111213141516171819202122232425262728293031323334353637383940</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中，在自定义设置的侧栏上，你可以看到标签“颜色”，当你单击他时，可以选择设置背景颜色和内容文字颜色；选择Logo可以更改店铺的Logo。<br><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/20200305144403759.gif" alt="在这里插入图片描述"><br>配置文件的属性<br>每个设置都有5个属性：type、id、label、default、info</p>
+<p>类型 是否必填 描述<br>type 必填 定义选项所需的输入类型<br>id 必填 id必须唯一，这将在主题中引用它<br>label 必填 向用户描述了该选项的用途，可以用中文<br>placeholder 可选 输入的占位符文本的值。这仅适用于基于文本的设置类型。<br>default 可选 该选项的默认值<br>info 可选 为用户提供该选项的详细使用信息<br>常规设置类型<br>下表描述了允许的常规输入类型，每个值在type属性中设置。</p>
+<p>值 说明<br>text 允许用户输入单行文本字段<br>textarea 允许用户输入多行文本字段<br>image 允许用户上传图片<br>radio 允许用户使用单选按钮<br>select 允许用户从下拉列表中进行选择<br>checkbox 允许用户选中一个框，返回true或false值<br>image type<br>需要注意的是，用这种方式上传的图片将保存在模板的assets文件夹中。该文件使用id中定义的名称和格式进行保存。所以，即使上传的是.jpg文件，但是id定义的是logo.png，图片也将会保存为.png文件。</p>
+<p>radio和select type<br>由于radio和select有多个值可提供选择，因此还需要设置额外的属性。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">		  <span class="string">"type"</span>:      <span class="string">"radio"</span>,</span><br><span class="line">		  <span class="string">"id"</span>:        <span class="string">"id"</span>,</span><br><span class="line">		  <span class="string">"label"</span>:     <span class="string">"Text"</span>,</span><br><span class="line">		  <span class="string">"options"</span>: [</span><br><span class="line">		    &#123; <span class="string">"value"</span>: <span class="string">"one"</span>, <span class="string">"label"</span>: <span class="string">"Radio One"</span> &#125;,</span><br><span class="line">		    &#123; <span class="string">"value"</span>: <span class="string">"two"</span>, <span class="string">"label"</span>: <span class="string">"Radio Two"</span> &#125;</span><br><span class="line">		  ],</span><br><span class="line">		  <span class="string">"default"</span>:   <span class="string">"one"</span>,</span><br><span class="line">		  <span class="string">"info"</span>:      <span class="string">"Text"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011</span></span><br></pre></td></tr></table></figure>
+<p>特殊设置类型<br>特殊设置类型的定义访问和常规设置类型相似，不同之处在于这些设置，将为用户提供内置或特定的选择信息。比如：产品类型是下拉列表，但只允许用户从已经在商店中定义的产品类型中进行选择。</p>
+<p>值 说明<br>color 允许用户使用颜色选择器窗口小部件选择颜色<br>font 允许用户从可用字体列表中进行选择<br>collection 允许用户选择商店中可用的产品系列<br>product 允许用户选择商店中可用的产品<br>blog 允许用户从商店中设置的博客列表中进行选择<br>link_list 允许用户从可用菜单中进行选择<br>page 允许用户选择商店中定义的特定页面<br>snippets 允许用户选择主题中可用的特定代码段<br>Blog Type<br>Shopify内置了博客，你可以添加博客文章。还可以把这些博客文章添加到不同的博客中。blog type设置下拉列表允许你选择要用于改设置的博客。</p>
+<p>Snippet Type<br>代码片段在模板中的snippets目录里面定义。</p>
+<p>信息设置</p>
+<p>Shopify还允许将创建主题的作者信息放入侧边栏中，它们只有3个属性：type, content, info</p>
+<p>类型 是否必填 描述<br>type 必填 定义选项所需的输入类型。 对于侧边栏设置，这只能是标题或段落<br>content 必填 文本内容<br>info 可选 向用户提供有关该选项的其他信息。<br>在模板中调用配置信息<br>现在已经可以创建设置信息了，但是如何在实际的模板中调用并使用它们？这将是下篇文章的内容。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：shopify模板开发学习-自定义配置文件</li>
+        <li>Post author：Mark</li>
+        <li>Create time：2020-12-12 16:35:47</li>
+        <li>
+            Post link：https://iqimeng.com/2020/12/12/shopify模板开发学习-自定义配置文件/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/12/03/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">如何创建一个Shopify模版本地开发环境</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div class="valine-container">
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'GAI5B7iRDpBDuxOUtOyQmWiO-gzGzoHsz',
+                appKey: 'CKOBiAcgB6Q41QtGw9eaw09q',
+                meta: 'nick,mail,link'.split(','),
+                avatar: 'wavatar',
+                enableQQ: true,
+                placeholder: '来吧，互相伤害吧！',
+                lang: 'null'.toLowerCase()
+            });
+
+
+            // Valine 评论列表增加"博主"标识
+            const getValineDomTimer = setInterval(() => {
+                const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                if (vcards.length > 0) {
+
+                    let author = 'Mark';
+                    if (author) {
+                        author = author.toLocaleLowerCase();
+                    }
+
+                    for (let vcard of vcards) {
+                        const vnick = vcard.querySelector('.vhead .vnick');
+                        if (vnick.innerHTML.toLocaleLowerCase() === author) {
+                            vcard.classList.add('author');
+                        }
+                    }
+                    clearInterval(getValineDomTimer);
+                } else {
+                    clearInterval(getValineDomTimer);
+                }
+            }, 2000);
+        </script>
+    </div>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2020 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://iqimeng.com">IQIMENG.COM</a> | Theme <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="tools-ul-1">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+    </ul>
+</div>
+
+    </div>
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        
+    </aside>
+
+    <!-- image viewer -->
+    <div class="image-viewer-container">
+    <div class="img-box">
+        <img src="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/left-side-toggle.js"></script>
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/code-copy.js"></script>
+    
+
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/toc.js"></script>
+    
+
+
+</body>
+</html>
