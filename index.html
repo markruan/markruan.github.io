@@ -76,7 +76,7 @@
  .background{
     background-color: #fffff;
     width: 100%;
-     
+    height:632px !important:
     position: absolute;
     display: block;
     top: 0;
@@ -90,7 +90,8 @@
         Particles.init({
           selector: '.background',
           color: '#75A5B7',
-          maxParticles: 230,
+          maxParticles: 100,
+          minDistance:80,
           connectParticles: true,
           responsive: [
             {
