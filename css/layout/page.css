@@ -1,9 +1,4 @@
-.page-container {
-  position: relative;
-  padding-top: 3px;
-keep-tablet()
-}
-.page-container .page-header .header-progress {
+.page-header .header-progress {
   visibility: hidden;
   position: fixed;
   width: 0;
@@ -13,6 +8,11 @@ keep-tablet()
   background: var(--primary-color);
   transition: all 0.1s ease;
   z-index: $z-index-7;
+}
+.page-container {
+  position: relative;
+  padding-top: 3px;
+keep-tablet()
 }
 .page-container .page-main .page-main-content {
   padding-top: $header-height;
