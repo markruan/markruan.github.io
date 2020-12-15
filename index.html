@@ -216,6 +216,118 @@
                 
 
                 <h3 class="home-article-title">
+                    <a href="/2020/12/14/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">
+                        study/Hexo 中 Markdown 特殊字符的处理方法
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        问题描述在 Hexo 搭建的博客中对文章进行编写，经常会用到一些特殊字符需要转译，比如 -、.、空格、制表符等等，在正常情况下可以使用 \ 进行转译，但是有一些字符无法转译，使用后在执行 hexo server 命令的时候会报错。
+报错信息：
+
+Un...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 20:24:18 GMT+0800">2020-12-14</span></span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/14/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/">
+                        shopify/shopify产品页面数据获取
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        获取产品数据获取标题1&#123;&#123; product.title &#125;&#125;
+获取最低价和最高价1&#123;&#123; product.price_min | money &#125;&#125; - &#123;&#12...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 20:04:33 GMT+0800">2020-12-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/14/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/">
+                        shopify/shopify 图片CDN 详解
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        对于刚入手shopify 的小白来说，shopify 图片是一个急需了解的点。对于大企业来说资源管理是必须优化到极致的，目前对于资源管理比较有效的方式是 CDN 资源管理。shopify 自然也会为它的资源搭建CDN服务，而对图片则做图片CDN，图片...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 19:49:44 GMT+0800">2020-12-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
                     <a href="/2020/12/13/study/particles.js/">
                         study/particles.js
                     </a>
@@ -500,128 +612,16 @@ Typora作为一款离线Markdown无疑是非常棒的， 如果作为笔记工�
 
             </li>
         
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/11/06/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">
-                        Vue/解决跨域
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        生产环境和开发环境一次解决跨域问题在config 文件夹里面新建一个 api.config.js 配置文件
-1234const isPro = Object.is(process.env.NODE_ENV, 'production')const ba...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Fri Nov 06 2020 20:21:26 GMT+0800">2020-11-06</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Vue/">Vue</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2020/11/06/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">Read more <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">
-                        值得纪念的一天
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        原来信心满满，憧憬各种各样的结果，也做好的面对挑战和无尽的压力，但事实却事与愿违，向前一步可能会很难，但也不想这样就看到尽头，命运真的会给我们开玩笑，好吧，既然这样那我就在这条路上一往无前
-加油！！
-
-
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Fri Nov 06 2020 19:32:09 GMT+0800">2020-11-06</span></span>
-        
-        
-    </div>
-
-    <a href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">Read more <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/11/06/Vue/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/">
-                        Vue/vue中使用H5的audio
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        vue中使用H5的audioH5audio标签有许多事件
-
- 在应用到vue中后的使用如下：
-比如在使用onplay时，要去掉on，用@play派发时间，在methods中定义方法执行体
-1234567891011121314151617181920...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Fri Nov 06 2020 13:26:47 GMT+0800">2020-11-06</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/Vue/">Vue</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2020/11/06/Vue/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/">Read more <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
     </ul>
 
     <div class="home-paginator">
         <div class="paginator">
     
 
+    
+        <a class="next btn"
+           href="/page/2/"
+        >Next</a>
     
 </div>
 
