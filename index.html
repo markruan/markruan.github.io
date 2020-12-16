@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="null">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+    
+    <title>
+        
+        爱·绮梦
+    </title>
+     
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
+    KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
+  </script>
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<header class="page-header">
+        <div class="header-progress"></div>
+        
+        
+<div class="first-screen-container flex-center ">
+    <div class="content flex-center">
+        <div class="description">
+            学而时习之
+        </div>
+        
+            <ul class="s-icon-list">
+                
+                    
+                        
+                            <li class="s-icon-item github">
+                                <a href="https://github.com/markruan" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                        
+                    
+                
+                    
+                
+                    
+                        
+                            <li class="s-icon-item weibo">
+                                <a href="https://weibo.com/iqimeng" target="_blank" rel="noopener">
+                                    <i class="fab fa-weibo"></i>
+                                </a>
+                            </li>
+                        
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        
+    </div>
+</div>
+<canvas class="background" style="width: 100%; " ></canvas>
+<style>
+ .background{
+    background-color: #fffff;
+    width: 100%; 
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+ }
+ .first-screen-container{
+ 
+   z-index:1000
+ }
+</style>
+<script> 
+  
+    
+      window.onload = function() {
+        Particles.init({
+          selector: '.background',
+          color: '#75A5B7',
+          maxParticles: 100,
+          connectParticles: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              options: {
+                maxParticles: 80
+              }
+            }, {
+              breakpoint: 375,
+              options: {
+                maxParticles: 50
+              }
+            }
+          ]
+        });
+      };
+    
+</script>
+    
+</header>
+<div class="page-container">
+
+   <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+        <a class="logo-title" href="/">
+            爱·绮梦
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class="active"
+                       href="/"
+                    >
+                        首页
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/categories"
+                    >
+                        分类
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        归档
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/tag"
+                    >
+                        标签
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item">
+                    <a class="active"
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/tag">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/14/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">
+                        study/Hexo 中 Markdown 特殊字符的处理方法
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        问题描述在 Hexo 搭建的博客中对文章进行编写，经常会用到一些特殊字符需要转译，比如 -、.、空格、制表符等等，在正常情况下可以使用 \ 进行转译，但是有一些字符无法转译，使用后在执行 hexo server 命令的时候会报错。
+报错信息：
+
+Un...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 20:24:18 GMT+0800">2020-12-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/study/">study</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/14/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/">
+                        shopify/shopify产品页面数据获取
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        获取产品数据获取标题1&#123;&#123; product.title &#125;&#125;
+获取最低价和最高价1&#123;&#123; product.price_min | money &#125;&#125; - &#123;&#12...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 20:04:33 GMT+0800">2020-12-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/14/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/">
+                        shopify/shopify 图片CDN 详解
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        对于刚入手shopify 的小白来说，shopify 图片是一个急需了解的点。对于大企业来说资源管理是必须优化到极致的，目前对于资源管理比较有效的方式是 CDN 资源管理。shopify 自然也会为它的资源搭建CDN服务，而对图片则做图片CDN，图片...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Mon Dec 14 2020 19:49:44 GMT+0800">2020-12-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/14/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/13/study/particles.js/">
+                        study/particles.js
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        particles.js学习  今天突发奇想优化下主题，想起了之前看过炫酷的星云效果，就搜索了下… 
+效果见主页
+InstallationTo install particles.js you can download the latest vers...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sun Dec 13 2020 20:49:50 GMT+0800">2020-12-13</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/study/">study</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/13/study/particles.js/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/12/shopify/shopify%E8%B0%83%E7%94%A8%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/">
+                        shopify/shopify调用配置信息
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        调用配置1234567891011121314151617181920212223要调用模板中的配置信息，需要使用 liquid 语言。可以使用&#123;%%&#125;逻辑标签和&#123;&#123;&#125;&#125;显示标签。在这两种标...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sat Dec 12 2020 18:18:34 GMT+0800">2020-12-12</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/12/shopify/shopify%E8%B0%83%E7%94%A8%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/12/shopify/shopify%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                        shopify/shopify模板开发学习-自定义配置文件
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        在创建主题时，可以为客户预留一些自定义的配置，是Shopify主题模板常用的做法。Shopify使用settings_schema.json文件提供了这个自定义配置的方式。
+在Shopify主题的config目录中，在此文件中定义一些对象属性，就可以...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sat Dec 12 2020 16:35:47 GMT+0800">2020-12-12</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/12/shopify/shopify%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/03/shopify/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+                        shopify/如何创建一个Shopify模版本地开发环境
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        安装主题套件首先，转到themekit下载主题套件。
+macOS安装使用homebrew安装themekiit.
+12brew tap shopify&#x2F;shopifybrew install themekit
+Windows Chocola...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Thu Dec 03 2020 18:30:41 GMT+0800">2020-12-03</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/03/shopify/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/11/29/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/">
+                        study/X3 photo gallery 授权破解
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        X3 photo gallery 另类破解这个软件用了很久，之前也用过破解版，但升级后接失效了，今天闲来无事，试着破解，搜索关键字，查看源码，自以为很简单，直接注销代码，看了下，底部链接是消失了，但是后来，点击上面的目录时才发现，会跳出授权经过….
+...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sun Nov 29 2020 18:39:33 GMT+0800">2020-11-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/study/">study</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/11/29/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/11/07/shopify/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84Shopify%E5%BA%97%E9%93%BA%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F/">
+                        shopify/为什么你的Shopify店铺没有成功
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+为什么你的Shopify店铺没有成功？关于Shopify的各种讨论真是非常热烈！ 现实是99%的Shopify店铺创建者都未能实现一夜暴富的美梦，这与很多Shopify大师所宣传的情况不符。那么如何避免重蹈99%的失败者的覆辙而加入1%的成功者行列...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sat Nov 07 2020 19:20:39 GMT+0800">2020-11-07</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/shopify/">shopify</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/11/07/shopify/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84Shopify%E5%BA%97%E9%93%BA%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/11/07/study/typora%E4%BD%BF%E7%94%A8/">
+                        study/typora使用
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Typora介绍Typora是一款免费的轻量级Markdown编辑器，它没有Mou，Haroopad等Markdown编辑器那么大名鼎鼎，但算是较为小众的一款产品。
+Typora作为一款离线Markdown无疑是非常棒的， 如果作为笔记工具的话，推荐...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sat Nov 07 2020 10:02:05 GMT+0800">2020-11-07</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/study/">study</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/11/07/study/typora%E4%BD%BF%E7%94%A8/">阅读全文 <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+
+    
+        <a class="next btn"
+           href="/page/2/"
+        >下一页</a>
+    
+</div>
+
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2020 <i class="fas fa-heart icon-animate" style="color:red"></i> <a href="/">Mark</a>
+        </div>
+        
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数 <span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量 <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://x.iqimeng.com">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer> 
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+
+        
+
+        <!-- TOC aside toggle -->
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="tools-ul-1">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+    </ul>
+</div>
+
+    </div>
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+    </aside>
+
+    <!-- image viewer -->
+    <div class="image-viewer-container">
+    <div class="img-box">
+        <img src="">
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+<style>
+  .header-progress {
+      visibility: hidden;
+      position: fixed;
+      width: 0;
+      height: 3px;
+      top: 0;
+      left: 0;
+      background: var(--primary-color);
+      transition: all 0.1s ease;
+      z-index: 1000;
+    }
+</style>
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/particles.min.js"></script>
+
+
+
+
+
+</body>
+</html>
