@@ -301,17 +301,6 @@ button {
     padding-left: 0 !important;
   }
 }
-.page-container .page-header .header-progress {
-  visibility: hidden;
-  position: fixed;
-  width: 0;
-  height: 3px;
-  top: 0;
-  left: 0;
-  background: var(--primary-color);
-  transition: all 0.3s ease;
-  z-index: 1007;
-}
 .page-container .page-main .page-main-content {
   padding-top: 72px;
   position: relative;
@@ -1148,6 +1137,7 @@ input.search-input::-webkit-search-cancel-button {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
+  z-index: 1000;
   background: url("/images/bg.svg") center center/cover no-repeat;
 }
 .first-screen-container .content {
