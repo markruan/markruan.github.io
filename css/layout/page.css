@@ -17,7 +17,7 @@ keep-mobile()
   height: $header-height;
 keep-tablet()
 keep-mobile()
-  z-index: 999;
+  z-index: $z-index-5;
   box-sizing: border-box;
 }
 .page-container .page-main .page-main-content .page-main-content-middle {
