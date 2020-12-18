@@ -39,7 +39,16 @@
 <div id="aplayer"></div>
 <script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.9.1/APlayer.min.js"></script>
 <script>
-   KEEP.utils.aplayer();
+	const ap = new APlayer({
+	    container: document.getElementById('player'),
+	    fixed: true,
+	    audio: [{
+	        name: 'Crazy (Acoustic Version)',
+	        artist: 'David Benjamin / Lost Frequencies / Zonderling',
+	        url: 'https://music.163.com/song/media/outer/url?id=535048794.mp3',
+	        cover: 'http://p1.music.126.net/9bbvAGe_WkS81-UvVZei2w==/109951163129104748.jpg?param=130y130',
+	    }]
+	});
 
 </script>
         <div class="page-main-content">
@@ -59,7 +68,7 @@
                     <a class="active"
                        href="/"
                     >
-                        首页
+                        HOME
                     </a>
                 </li>
             
@@ -67,7 +76,7 @@
                     <a class=""
                        href="/categories"
                     >
-                        分类
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -75,7 +84,7 @@
                     <a class=""
                        href="/archives"
                     >
-                        归档
+                        ARCHIVES
                     </a>
                 </li>
             
@@ -83,7 +92,7 @@
                     <a class=""
                        href="/tag"
                     >
-                        标签
+                        TAGS
                     </a>
                 </li>
             
@@ -99,22 +108,22 @@
             
                 <li class="drawer-menu-item">
                     <a class="active"
-                       href="/">首页</a>
+                       href="/">HOME</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">分类</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">归档</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/tag">标签</a>
+                       href="/tag">TAGS</a>
                 </li>
             
         </ul>
@@ -171,7 +180,7 @@
         
     </div>
 
-    <a href="/2020/11/06/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">阅读全文 <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/11/06/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/">Read more <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -202,7 +211,7 @@
         
     </div>
 
-    <a href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">阅读全文 <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">Read more <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -246,7 +255,7 @@
         
     </div>
 
-    <a href="/2020/11/06/Vue/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/">阅读全文 <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/11/06/Vue/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/">Read more <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -258,7 +267,7 @@
     
         <a class="prev btn"
            href="/"
-        >上一页</a>
+        >Prev</a>
     
 
     
@@ -285,7 +294,7 @@
         </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://x.iqimeng.com">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
+            Powered by <a target="_blank" href="https://x.iqimeng.com">Hexo</a> | Theme <a class="theme-version" target="_blank"></a>
         </div>
     </div>
 </footer> 

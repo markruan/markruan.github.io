@@ -223,18 +223,6 @@ KEEP.utils = {
     post && post.forEach(v => {
       v.innerHTML = this.getHowLongAgo(Date.now() - new Date(v.dataset.date).getTime())
     })
-  },
-  aplayer(){
-    console.log(123)
-    // const ap = new APlayer({
-    // container: document.getElementById('player'),
-    // fixed: true,
-    // audio: [{
-    //     name: 'name',
-    //     artist: 'artist',
-    //     url: 'url.mp3',
-    //     cover: 'cover.jpg',
-    // }]
-// });
   }
+ 
 }
