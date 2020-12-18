@@ -225,7 +225,7 @@ KEEP.utils = {
     })
   },
   aplayer(){
-     alert(123)
+    console.log(123)
     // const ap = new APlayer({
     // container: document.getElementById('player'),
     // fixed: true,
@@ -235,6 +235,6 @@ KEEP.utils = {
     //     url: 'url.mp3',
     //     cover: 'cover.jpg',
     // }]
-});
+// });
   }
 }
