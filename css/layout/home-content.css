@@ -5,7 +5,7 @@
   position: absolute;
   top: 10px;
   right: 12px;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   transform: rotate(45deg);
   color: var(--third-text-color);
 keep-tablet()
@@ -14,8 +14,8 @@ keep-tablet()
   position: relative;
   font-weight: 600;
   color: var(--second-text-color);
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 1.5em;
+  line-height: 1.5em;
 keep-tablet()
 keep-mobile()
   margin: 0;
@@ -23,14 +23,14 @@ keep-mobile()
 .home-content-container .home-article-list .home-article-item .home-article-content {
   text-align: justify;
   margin: 20px 0;
-  line-height: 2rem;
+  line-height: 2em;
 }
 .home-content-container .home-article-list .home-article-item .home-article-meta-info-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--third-text-color);
-  font-size: 1rem;
+  font-size: 1em;
 }
 .home-content-container .home-article-list .home-article-item .home-article-meta-info-container .home-article-meta-info {
   letter-spacing: 0.5px;
