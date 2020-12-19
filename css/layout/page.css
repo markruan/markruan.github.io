@@ -70,5 +70,4 @@ keep-mobile()
   position: fixed;
   bottom: $component-interspace;
   right: 0;
-  z-index: 1020;
 }
