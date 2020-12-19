@@ -1,7 +1,7 @@
 .article-content-container .article-title {
   color: var(--second-text-color);
   font-weight: 600;
-  font-size: 1.8em;
+  font-size: 1.6rem;
 keep-tablet()
 keep-mobile()
 }
@@ -40,14 +40,14 @@ keep-mobile()
 }
 .article-content-container .article-header .info .author {
   font-weight: 600;
-  font-size: 1.18em;
+  font-size: 1.18rem;
   display: flex;
   align-items: center;
 }
 .article-content-container .article-header .info .author .level {
   margin-left: 10px;
   color: #fff;
-  font-size: 0.7em;
+  font-size: 0.8rem;
   font-weight: 500;
   background: var(--selection-color);
   padding: 0 4px;

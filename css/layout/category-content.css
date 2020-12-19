@@ -1,6 +1,6 @@
 .category-container .category-name {
   color: var(--second-text-color);
-  font-size: 1.6em;
+  font-size: 1.6rem;
 keep-tablet()
 keep-mobile()
   font-weight: 600;

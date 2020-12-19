@@ -1,3 +1,6 @@
+.markdown-body {
+  font-size: 1rem;
+}
 .markdown-body blockquote {
   box-sizing: border-box;
   border-left: 5px solid var(--default-text-color);
@@ -9,7 +12,7 @@
   padding: 5px 5px 5px 10px;
 }
 .markdown-body p {
-  line-height: 2em;
+  line-height: 2rem;
 }
 .markdown-body a {
   position: relative;
@@ -42,7 +45,7 @@
 .markdown-body ul > li,
 .markdown-body ol > li {
   margin-left: 16px;
-  line-height: 2em;
+  line-height: 2rem;
 }
 .markdown-body ul li {
   list-style: disc;
@@ -71,39 +74,39 @@
   color: var(--second-text-color);
 }
 .markdown-body h1 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   font-weight: 600;
-  line-height: 1.2em;
+  line-height: 1.2rem;
 keep-tablet()
 }
 .markdown-body h2 {
-  font-size: 1.7em;
+  font-size: 1.7rem;
   font-weight: 600;
-  line-height: 1.2em;
+  line-height: 1.2rem;
 keep-tablet()
 }
 .markdown-body h3 {
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: 550;
-  line-height: 1.16em;
+  line-height: 1.16rem;
 keep-tablet()
 }
 .markdown-body h4 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 550;
-  line-height: 1.16em;
+  line-height: 1.16rem;
 keep-tablet()
 }
 .markdown-body h5 {
-  font-size: 1.28em;
+  font-size: 1.28rem;
   font-weight: 500;
-  line-height: 1.12em;
+  line-height: 1.12rem;
 keep-tablet()
 }
 .markdown-body h6 {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 500;
-  line-height: 1.12em;
+  line-height: 1.12rem;
 keep-tablet()
 }
 .markdown-body img {

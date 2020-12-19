@@ -35,6 +35,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // set how long age in home article block
   KEEP.utils.setHowLongAgoInHome();
-
- 
 });
