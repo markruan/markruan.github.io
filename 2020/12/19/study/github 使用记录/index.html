@@ -6,7 +6,7 @@
     
     
     <title>
-        study/Hexo 中 Markdown 特殊字符的处理方法 |
+        study/github 使用记录 |
         
         爱·绮梦|学而时习之
     </title>
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/Hexo 中 Markdown 特殊字符的处理方法</span>
+            <span class="title-hover-animation">study/github 使用记录</span>
         </div>
 
         
@@ -146,20 +146,20 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-14 20:24:18
+        <i class="fas fa-calendar"></i> 2020-12-19 21:11:29
     </span>
     
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
             <ul>
                 
                     <li>
-                        <a href="/categories/study/">study</a>
+                        <a href="/tags/%E9%87%87%E5%9D%91/">采坑</a>
                     </li>
                 
             </ul>
         </span>
-    
     
 
     
@@ -174,305 +174,39 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Hexo 搭建的博客中对文章进行编写，经常会用到一些特殊字符需要转译，比如 <code>-</code>、<code>.</code>、空格、制表符等等，在正常情况下可以使用 <code>\</code> 进行转译，但是有一些字符无法转译，使用后在执行 <code>hexo server</code> 命令的时候会报错。</p>
-<p><strong>报错信息：</strong></p>
-<blockquote>
-<p>Unhandled rejection Template render error: (unknown path) [Line 7, Column 23]<br> Error: Unable to call <code>worldcount</code>, which is undefined or falsey……</p>
-</blockquote>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>报错的原因是，Hexo 编译时发生错误，可能是文章中存在特殊字符，如：{ [ ( ) ] } 等等。如下面这段代码：</p>
-<p><strong>在页面中：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; worldcount(post.content) &#125;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>在 Markdown 中：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#123;&amp;#123; worldcount&amp;#40;post.content&amp;#41; &amp;#125;&amp;#125;</span><br></pre></td></tr></table></figure>
-<p>在 Markdown 中使用 <code>\</code> 无法转译的字符需要使用字符的命名实体或十进制编码，如上面代码中。</p>
-<p><strong><em>注意：需要转义的字符只是文本中的特殊字符，代码块中的特殊字符无需转译或使用转译字符。</em></strong></p>
-<h2 id="常见特殊字符"><a href="#常见特殊字符" class="headerlink" title="常见特殊字符"></a>常见特殊字符</h2><p> (所有编码使用时;前的空额取消)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特殊符号</th>
-<th style="text-align:center">命名实体</th>
-<th style="text-align:center">十进制编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">空格</td>
-<td style="text-align:center">&amp;nbsp ;</td>
-<td style="text-align:center">&amp;#160 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">全角空格</td>
-<td style="text-align:center">&emsp;</td>
-<td style="text-align:center">&#12288;</td>
-</tr>
-<tr>
-<td style="text-align:center">‘</td>
-<td style="text-align:center">&amp;apos ;</td>
-<td style="text-align:center">&amp;#39 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">“</td>
-<td style="text-align:center">&amp;quot ;</td>
-<td style="text-align:center">&amp;#34 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">(</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#40 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">)</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#41 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;</td>
-<td style="text-align:center">&amp;lt ;</td>
-<td style="text-align:center">&amp;#60 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;</td>
-<td style="text-align:center">&amp;gt ;</td>
-<td style="text-align:center">&amp;#62 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">[</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#91 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">]</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#93 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">{</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#123 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">}</td>
-<td style="text-align:center">—</td>
-<td style="text-align:center">&amp;#125 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">´</td>
-<td style="text-align:center">&amp;acute ;</td>
-<td style="text-align:center">&amp;#180 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">°</td>
-<td style="text-align:center">&amp;deg ;</td>
-<td style="text-align:center">&amp;#176 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">®</td>
-<td style="text-align:center">&amp;reg ;</td>
-<td style="text-align:center">&amp;#174 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">©</td>
-<td style="text-align:center">&amp;copy ;</td>
-<td style="text-align:center">&amp;#169 ;</td>
-</tr>
-</tbody>
-</table>
-<p>常用数学转译字符对照表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特殊符号</th>
-<th style="text-align:center">命名实体</th>
-<th style="text-align:center">十进制编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">≤</td>
-<td style="text-align:center">&amp;le ;</td>
-<td style="text-align:center">&amp;#8804 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">≥</td>
-<td style="text-align:center">&amp;ge ;</td>
-<td style="text-align:center">&amp;#8805 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">≈</td>
-<td style="text-align:center">&amp;asymp ;</td>
-<td style="text-align:center">&amp;#8773 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">≠</td>
-<td style="text-align:center">&amp;ne ;</td>
-<td style="text-align:center">&amp;#8800 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∩</td>
-<td style="text-align:center">&amp;cap ;</td>
-<td style="text-align:center">&amp;#8745 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∪</td>
-<td style="text-align:center">&amp;cup ;</td>
-<td style="text-align:center">&amp;#8746 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∠</td>
-<td style="text-align:center">&amp;ang ;</td>
-<td style="text-align:center">&amp;#8736 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∞</td>
-<td style="text-align:center">&amp;infin ;</td>
-<td style="text-align:center">&amp;#8734 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">±</td>
-<td style="text-align:center">&amp;plusmn ;</td>
-<td style="text-align:center">&amp;#177 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">√</td>
-<td style="text-align:center">&amp;radic ;</td>
-<td style="text-align:center">&amp;#8730 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∑</td>
-<td style="text-align:center">&amp;sum ;</td>
-<td style="text-align:center">&amp;#8722 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∫</td>
-<td style="text-align:center">&amp;int ;</td>
-<td style="text-align:center">&amp;#8747 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">Δ</td>
-<td style="text-align:center">&amp;Delta ;</td>
-<td style="text-align:center">&amp;#916 ;</td>
-</tr>
-</tbody>
-</table>
-<p>常用希腊字母转译字符对照表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特殊符号</th>
-<th style="text-align:center">命名实体</th>
-<th style="text-align:center">十进制编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Φ</td>
-<td style="text-align:center">&amp;Phi ;</td>
-<td style="text-align:center">&#934;</td>
-</tr>
-<tr>
-<td style="text-align:center">Ω</td>
-<td style="text-align:center">&amp;Omega ;</td>
-<td style="text-align:center">&#937;</td>
-</tr>
-<tr>
-<td style="text-align:center">α</td>
-<td style="text-align:center">&amp;alpha ;</td>
-<td style="text-align:center">&#945;</td>
-</tr>
-<tr>
-<td style="text-align:center">β</td>
-<td style="text-align:center">&amp;beta ;</td>
-<td style="text-align:center">&#946;</td>
-</tr>
-<tr>
-<td style="text-align:center">γ</td>
-<td style="text-align:center">&amp;gamma ;</td>
-<td style="text-align:center">&#947;</td>
-</tr>
-<tr>
-<td style="text-align:center">δ</td>
-<td style="text-align:center">&amp;delta ;</td>
-<td style="text-align:center">&amp;#948 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ε</td>
-<td style="text-align:center">&amp;epsilon ;</td>
-<td style="text-align:center">&amp;#949 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ζ</td>
-<td style="text-align:center">&amp;zeta ;</td>
-<td style="text-align:center">&amp;#950 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">η</td>
-<td style="text-align:center">&amp;eta ;</td>
-<td style="text-align:center">&amp;#951 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">θ</td>
-<td style="text-align:center">&amp;theta ;</td>
-<td style="text-align:center">&amp;#952 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">λ</td>
-<td style="text-align:center">&amp;lambda ;</td>
-<td style="text-align:center">&amp;#955 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">μ</td>
-<td style="text-align:center">&amp;mu ;</td>
-<td style="text-align:center">&amp;#956 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ξ</td>
-<td style="text-align:center">&amp;xi ;</td>
-<td style="text-align:center">&amp;#958 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">π</td>
-<td style="text-align:center">&amp;pi ;</td>
-<td style="text-align:center">&amp;#960 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ρ</td>
-<td style="text-align:center">&amp;rho ;</td>
-<td style="text-align:center">&amp;#961 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">σ</td>
-<td style="text-align:center">&amp;sigma ;</td>
-<td style="text-align:center">&amp;#963 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">φ</td>
-<td style="text-align:center">&amp;phi ;</td>
-<td style="text-align:center">&amp;#966 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ψ</td>
-<td style="text-align:center">&amp;psi ;</td>
-<td style="text-align:center">&amp;#968 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">ω</td>
-<td style="text-align:center">&amp;omega ;</td>
-<td style="text-align:center">&amp;#969 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∂</td>
-<td style="text-align:center">&amp;part ;</td>
-<td style="text-align:center">&amp;#8706 ;</td>
-</tr>
-<tr>
-<td style="text-align:center">∅</td>
-<td style="text-align:center">&amp;empty ;</td>
-<td style="text-align:center">&amp;#8709 ;</td>
-</tr>
-</tbody>
-</table>
-<p>原文出自：<a class="link"   href="https://www.pandashen.com"  target="_blank" rel="noopener">https://www.pandashen.com<i class="fas fa-external-link-alt"></i></a> </p>
+            <p>使用github不是很久，把一些遇到的问题记录下来。</p>
+<p><strong>很简单的几个命令；</strong><br>1：找到你要上传的文件夹，右键点击-&gt;选择git-bash-here;<br>2：在弹出的命令窗口输入以下命令<br><strong>git add .</strong><br>我们知道git add命令是用来添加文件到缓存区的，这里使用 . 表示所有。所有这样就把所有的内容添加进去了<br><strong>git commit -m “注释”</strong><br>这表示提交到分支<br><strong>git push origin master</strong><br>把当前分支推送到远程仓库<br>这样就可以了。<br>下面再附上git的相关命令：<br><strong>Git基本常用命令如下：</strong></p>
+<p>mkdir： XX (创建一个空目录 XX指目录名)</p>
+<p>pwd： 显示当前目录的路径。</p>
+<p>git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</p>
+<p>git add XX 把xx文件添加到暂存区去。</p>
+<p>git commit –m “XX” 提交文件 –m 后面的是注释。</p>
+<p>git status 查看仓库状态</p>
+<p>git diff XX 查看XX文件修改了那些内容</p>
+<p>git log 查看历史记录</p>
+<p>git reset –hard HEAD^ 或者 git reset –hard HEAD~ 回退到上一个版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">                    (如果想回退到100个版本，使用git reset –hard HEAD~100 )</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>cat XX 查看XX文件内容</p>
+<p>git reflog 查看历史记录的版本号id</p>
+<p>git checkout — XX 把XX文件在工作区的修改全部撤销。</p>
+<p>git rm XX 删除XX文件</p>
+<p>git remote add origin <a class="link"   href="https://github.com/zongyunqingfeng/testgit"  target="_blank" rel="noopener">https://github.com/zongyunqingfeng/testgit<i class="fas fa-external-link-alt"></i></a> 关联一个远程库</p>
+<p>git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</p>
+<p>git clone <a class="link"   href="https://github.com/zongyunqingfeng/testgit"  target="_blank" rel="noopener">https://github.com/zongyunqingfeng/testgit<i class="fas fa-external-link-alt"></i></a> 从远程库中克隆</p>
+<p>git checkout –b dev 创建dev分支 并切换到dev分支上</p>
+<p>git branch 查看当前所有的分支</p>
+<p>git checkout master 切换回master分支</p>
+<p>git merge dev 在当前的分支上合并dev分支</p>
+<p>git branch –d dev 删除dev分支</p>
+<p>git branch name 创建分支</p>
+<p>git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</p>
+<p>git stash list 查看所有被隐藏的文件列表</p>
+<p>git stash apply 恢复被隐藏的文件，但是内容不删除</p>
+<p>git stash drop 删除文件</p>
+<p>git stash pop 恢复文件的同时 也删除文件</p>
+<p>git remote 查看远程库的信息</p>
+<p>git remote –v 查看远程库的详细信息</p>
+<p>git push origin master Git会把master分支推送到远程库对应的远程分支上</p>
 
         </div>
 
@@ -480,11 +214,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/Hexo 中 Markdown 特殊字符的处理方法</li>
+        <li>Post title：study/github 使用记录</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-12-14 20:24:18</li>
+        <li>Create time：2020-12-19 21:11:29</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/14/study/Hexo 中 Markdown 特殊字符的处理方法/
+            Post link：https://x.iqimeng.com/2020/12/19/study/github 使用记录/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
@@ -498,29 +232,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">study/github 使用记录</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/12/14/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/"
+                           href="/2020/12/14/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify/shopify产品页面数据获取</span>
+                                <span class="post-nav-title-item">study/Hexo 中 Markdown 特殊字符的处理方法</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -682,7 +401,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见特殊字符"><span class="nav-number">3.</span> <span class="nav-text">常见特殊字符</span></a></li></ol>
+        
     </div>
 </div>
         
