@@ -6,7 +6,7 @@
     
     
     <title>
-        Vue/解决跨域 |
+        study/利用css媒体查询media |
         
         爱·绮梦|学而时习之
     </title>
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Vue/解决跨域</span>
+            <span class="title-hover-animation">study/利用css媒体查询media</span>
         </div>
 
         
@@ -146,7 +146,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-11-06 20:21:26
+        <i class="fas fa-calendar"></i> 2020-12-24 21:06:34
     </span>
     
         <span class="article-categories article-meta-item">
@@ -154,7 +154,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/Vue/">Vue</a>
+                        <a href="/categories/study/">study</a>
                     </li>
                 
             </ul>
@@ -166,7 +166,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E9%87%87%E5%9D%91/">采坑</a>
+                        <a href="/tags/html-css/">html,css</a>
                     </li>
                 
             </ul>
@@ -185,9 +185,11 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
-<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
+            <p>有时候，对平台要求比较低，利用bootstrap等响应式做兼容总觉得大材小用，而且导致加载缓慢，就没有必要再引入一个完整的插件库，对于这样的情况，就可以选择用原始的css兼容的方式，只针对pc和手机2个平台进行兼容处理，分别写两套css即可。</p>
+<p>核心代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>wap是手机端的的css最外的盒子；wrap是pc端对外的盒子；@media screen and (max-width:768px)的意思是当屏幕的分辨率低于768px的时候css生效，这个媒体外部的全部css不生效；</p>
+<p>因此，当设备分辨率为手机，媒体里面的手机端的css自动生效，当分辨率大于768px时，css就自动渲染外部的css。</p>
 
         </div>
 
@@ -195,11 +197,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Vue/解决跨域</li>
+        <li>本文标题：study/利用css媒体查询media</li>
         <li>本文作者：Mark</li>
-        <li>创建时间：2020-11-06 20:21:26</li>
+        <li>创建时间：2020-12-24 21:06:34</li>
         <li>
-            本文链接：https://x.iqimeng.com/2020/11/06/Vue/解决跨域/
+            本文链接：https://x.iqimeng.com/2020/12/24/study/利用css媒体查询media/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -213,29 +215,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/11/07/study/typora%E4%BD%BF%E7%94%A8/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">study/typora使用</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/11/06/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/"
+                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">值得纪念的一天</span>
+                                <span class="post-nav-title-item">study/github 使用记录</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -397,7 +384,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产环境和开发环境一次解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><span class="nav-number">1.1.</span> <span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
+        
     </div>
 </div>
         
