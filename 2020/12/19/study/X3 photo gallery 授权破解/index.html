@@ -6,7 +6,7 @@
     
     
     <title>
-        study/利用css媒体查询media |
+        study/X3 photo gallery 授权破解 |
         
         爱·绮梦|学而时习之
     </title>
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/利用css媒体查询media</span>
+            <span class="title-hover-animation">study/X3 photo gallery 授权破解</span>
         </div>
 
         
@@ -146,7 +146,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-24 21:06:34
+        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -166,7 +166,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/html-css/">html,css</a>
+                        <a href="/tags/%E9%87%87%E5%9D%91/">采坑</a>
                     </li>
                 
             </ul>
@@ -185,11 +185,14 @@
         
 
         <div class="article-content markdown-body">
-            <p>有时候，对平台要求比较低，利用bootstrap等响应式做兼容总觉得大材小用，而且导致加载缓慢，就没有必要再引入一个完整的插件库，对于这样的情况，就可以选择用原始的css兼容的方式，只针对pc和手机2个平台进行兼容处理，分别写两套css即可。</p>
-<p>核心代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>wap是手机端的的css最外的盒子；wrap是pc端对外的盒子；@media screen and (max-width:768px)的意思是当屏幕的分辨率低于768px的时候css生效，这个媒体外部的全部css不生效；</p>
-<p>因此，当设备分辨率为手机，媒体里面的手机端的css自动生效，当分辨率大于768px时，css就自动渲染外部的css。</p>
+            <h2 id="X3-photo-gallery-另类破解"><a href="#X3-photo-gallery-另类破解" class="headerlink" title="X3 photo gallery 另类破解"></a>X3 photo gallery 另类破解</h2><p>这个软件用了很久，之前也用过破解版，但升级后接失效了，今天闲来无事，试着破解，搜索关键字，查看源码，自以为很简单，直接注销代码，看了下，底部链接是消失了，但是后来，点击上面的目录时才发现，会跳出授权经过….</p>
+<p>后来又试了另外的方法，终于成功了。就是把授权的文字直接把字体颜色改成背景色。具体方法如下：</p>
+<p>1.zai 源文件 templates 下76文件夹（因为通过搜索发现授权这行代码的class”x3-footer-link”在这个文件）</p>
+<p><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/image-20201129184535600.png" alt="image-20201129184535600"></p>
+<p>2.随便找一行代码，我是在131行 加入如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"&lt;style&gt;.footer .x3-footer-link,.footer .x3-footer-link a &#123;color:#e2d6d2;pointer-events: none;&#125; &lt;/style&gt;"</span>;</span><br></pre></td></tr></table></figure>
+<p> 完成。</p>
+<p>方法很笨，但效果达到 </p>
 
         </div>
 
@@ -197,11 +200,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/利用css媒体查询media</li>
+        <li>Post title：study/X3 photo gallery 授权破解</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-12-24 21:06:34</li>
+        <li>Create time：2020-12-19 20:03:49</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/24/study/利用css媒体查询media/
+            Post link：https://x.iqimeng.com/2020/12/19/study/X3 photo gallery 授权破解/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
@@ -215,14 +218,29 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/19/study/particles.js/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">study/particles.js</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
+                           href="/2020/12/19/study/Hexo%20%E4%B8%AD%20Markdown%20%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">study/github 使用记录</span>
+                                <span class="post-nav-title-item">study/Hexo 中 Markdown 特殊字符的处理方法</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -384,7 +402,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#X3-photo-gallery-另类破解"><span class="nav-number">1.</span> <span class="nav-text">X3 photo gallery 另类破解</span></a></li></ol>
     </div>
 </div>
         

@@ -6,7 +6,7 @@
     
     
     <title>
-        study/利用css媒体查询media |
+        study/Hexo 中 Markdown 特殊字符的处理方法 |
         
         爱·绮梦|学而时习之
     </title>
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/利用css媒体查询media</span>
+            <span class="title-hover-animation">study/Hexo 中 Markdown 特殊字符的处理方法</span>
         </div>
 
         
@@ -146,7 +146,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-24 21:06:34
+        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -161,17 +161,6 @@
         </span>
     
     
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/html-css/">html,css</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
 
     
     
@@ -185,11 +174,305 @@
         
 
         <div class="article-content markdown-body">
-            <p>有时候，对平台要求比较低，利用bootstrap等响应式做兼容总觉得大材小用，而且导致加载缓慢，就没有必要再引入一个完整的插件库，对于这样的情况，就可以选择用原始的css兼容的方式，只针对pc和手机2个平台进行兼容处理，分别写两套css即可。</p>
-<p>核心代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>wap是手机端的的css最外的盒子；wrap是pc端对外的盒子；@media screen and (max-width:768px)的意思是当屏幕的分辨率低于768px的时候css生效，这个媒体外部的全部css不生效；</p>
-<p>因此，当设备分辨率为手机，媒体里面的手机端的css自动生效，当分辨率大于768px时，css就自动渲染外部的css。</p>
+            <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 Hexo 搭建的博客中对文章进行编写，经常会用到一些特殊字符需要转译，比如 <code>-</code>、<code>.</code>、空格、制表符等等，在正常情况下可以使用 <code>\</code> 进行转译，但是有一些字符无法转译，使用后在执行 <code>hexo server</code> 命令的时候会报错。</p>
+<p><strong>报错信息：</strong></p>
+<blockquote>
+<p>Unhandled rejection Template render error: (unknown path) [Line 7, Column 23]<br> Error: Unable to call <code>worldcount</code>, which is undefined or falsey……</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>报错的原因是，Hexo 编译时发生错误，可能是文章中存在特殊字符，如：{ [ ( ) ] } 等等。如下面这段代码：</p>
+<p><strong>在页面中：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; worldcount(post.content) &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在 Markdown 中：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;#123;&amp;#123; worldcount&amp;#40;post.content&amp;#41; &amp;#125;&amp;#125;</span><br></pre></td></tr></table></figure>
+<p>在 Markdown 中使用 <code>\</code> 无法转译的字符需要使用字符的命名实体或十进制编码，如上面代码中。</p>
+<p><strong><em>注意：需要转义的字符只是文本中的特殊字符，代码块中的特殊字符无需转译或使用转译字符。</em></strong></p>
+<h2 id="常见特殊字符"><a href="#常见特殊字符" class="headerlink" title="常见特殊字符"></a>常见特殊字符</h2><p> (所有编码使用时;前的空额取消)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特殊符号</th>
+<th style="text-align:center">命名实体</th>
+<th style="text-align:center">十进制编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">空格</td>
+<td style="text-align:center">&amp;nbsp ;</td>
+<td style="text-align:center">&amp;#160 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">全角空格</td>
+<td style="text-align:center">&emsp;</td>
+<td style="text-align:center">&#12288;</td>
+</tr>
+<tr>
+<td style="text-align:center">‘</td>
+<td style="text-align:center">&amp;apos ;</td>
+<td style="text-align:center">&amp;#39 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">“</td>
+<td style="text-align:center">&amp;quot ;</td>
+<td style="text-align:center">&amp;#34 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">(</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#40 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">)</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#41 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">&amp;lt ;</td>
+<td style="text-align:center">&amp;#60 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">&amp;gt ;</td>
+<td style="text-align:center">&amp;#62 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">[</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#91 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">]</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#93 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">{</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#123 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">}</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">&amp;#125 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">´</td>
+<td style="text-align:center">&amp;acute ;</td>
+<td style="text-align:center">&amp;#180 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">°</td>
+<td style="text-align:center">&amp;deg ;</td>
+<td style="text-align:center">&amp;#176 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">®</td>
+<td style="text-align:center">&amp;reg ;</td>
+<td style="text-align:center">&amp;#174 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">©</td>
+<td style="text-align:center">&amp;copy ;</td>
+<td style="text-align:center">&amp;#169 ;</td>
+</tr>
+</tbody>
+</table>
+<p>常用数学转译字符对照表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特殊符号</th>
+<th style="text-align:center">命名实体</th>
+<th style="text-align:center">十进制编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">≤</td>
+<td style="text-align:center">&amp;le ;</td>
+<td style="text-align:center">&amp;#8804 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">≥</td>
+<td style="text-align:center">&amp;ge ;</td>
+<td style="text-align:center">&amp;#8805 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">≈</td>
+<td style="text-align:center">&amp;asymp ;</td>
+<td style="text-align:center">&amp;#8773 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">≠</td>
+<td style="text-align:center">&amp;ne ;</td>
+<td style="text-align:center">&amp;#8800 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∩</td>
+<td style="text-align:center">&amp;cap ;</td>
+<td style="text-align:center">&amp;#8745 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∪</td>
+<td style="text-align:center">&amp;cup ;</td>
+<td style="text-align:center">&amp;#8746 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∠</td>
+<td style="text-align:center">&amp;ang ;</td>
+<td style="text-align:center">&amp;#8736 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∞</td>
+<td style="text-align:center">&amp;infin ;</td>
+<td style="text-align:center">&amp;#8734 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">±</td>
+<td style="text-align:center">&amp;plusmn ;</td>
+<td style="text-align:center">&amp;#177 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">√</td>
+<td style="text-align:center">&amp;radic ;</td>
+<td style="text-align:center">&amp;#8730 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∑</td>
+<td style="text-align:center">&amp;sum ;</td>
+<td style="text-align:center">&amp;#8722 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∫</td>
+<td style="text-align:center">&amp;int ;</td>
+<td style="text-align:center">&amp;#8747 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">Δ</td>
+<td style="text-align:center">&amp;Delta ;</td>
+<td style="text-align:center">&amp;#916 ;</td>
+</tr>
+</tbody>
+</table>
+<p>常用希腊字母转译字符对照表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特殊符号</th>
+<th style="text-align:center">命名实体</th>
+<th style="text-align:center">十进制编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Φ</td>
+<td style="text-align:center">&amp;Phi ;</td>
+<td style="text-align:center">&#934;</td>
+</tr>
+<tr>
+<td style="text-align:center">Ω</td>
+<td style="text-align:center">&amp;Omega ;</td>
+<td style="text-align:center">&#937;</td>
+</tr>
+<tr>
+<td style="text-align:center">α</td>
+<td style="text-align:center">&amp;alpha ;</td>
+<td style="text-align:center">&#945;</td>
+</tr>
+<tr>
+<td style="text-align:center">β</td>
+<td style="text-align:center">&amp;beta ;</td>
+<td style="text-align:center">&#946;</td>
+</tr>
+<tr>
+<td style="text-align:center">γ</td>
+<td style="text-align:center">&amp;gamma ;</td>
+<td style="text-align:center">&#947;</td>
+</tr>
+<tr>
+<td style="text-align:center">δ</td>
+<td style="text-align:center">&amp;delta ;</td>
+<td style="text-align:center">&amp;#948 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ε</td>
+<td style="text-align:center">&amp;epsilon ;</td>
+<td style="text-align:center">&amp;#949 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ζ</td>
+<td style="text-align:center">&amp;zeta ;</td>
+<td style="text-align:center">&amp;#950 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">η</td>
+<td style="text-align:center">&amp;eta ;</td>
+<td style="text-align:center">&amp;#951 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">θ</td>
+<td style="text-align:center">&amp;theta ;</td>
+<td style="text-align:center">&amp;#952 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">λ</td>
+<td style="text-align:center">&amp;lambda ;</td>
+<td style="text-align:center">&amp;#955 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">μ</td>
+<td style="text-align:center">&amp;mu ;</td>
+<td style="text-align:center">&amp;#956 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ξ</td>
+<td style="text-align:center">&amp;xi ;</td>
+<td style="text-align:center">&amp;#958 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">π</td>
+<td style="text-align:center">&amp;pi ;</td>
+<td style="text-align:center">&amp;#960 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ρ</td>
+<td style="text-align:center">&amp;rho ;</td>
+<td style="text-align:center">&amp;#961 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">σ</td>
+<td style="text-align:center">&amp;sigma ;</td>
+<td style="text-align:center">&amp;#963 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">φ</td>
+<td style="text-align:center">&amp;phi ;</td>
+<td style="text-align:center">&amp;#966 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ψ</td>
+<td style="text-align:center">&amp;psi ;</td>
+<td style="text-align:center">&amp;#968 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">ω</td>
+<td style="text-align:center">&amp;omega ;</td>
+<td style="text-align:center">&amp;#969 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∂</td>
+<td style="text-align:center">&amp;part ;</td>
+<td style="text-align:center">&amp;#8706 ;</td>
+</tr>
+<tr>
+<td style="text-align:center">∅</td>
+<td style="text-align:center">&amp;empty ;</td>
+<td style="text-align:center">&amp;#8709 ;</td>
+</tr>
+</tbody>
+</table>
+<p>原文出自：<a class="link"   href="https://www.pandashen.com"  target="_blank" rel="noopener">https://www.pandashen.com<i class="fas fa-external-link-alt"></i></a> </p>
 
         </div>
 
@@ -197,11 +480,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/利用css媒体查询media</li>
+        <li>Post title：study/Hexo 中 Markdown 特殊字符的处理方法</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-12-24 21:06:34</li>
+        <li>Create time：2020-12-19 20:03:49</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/24/study/利用css媒体查询media/
+            Post link：https://x.iqimeng.com/2020/12/19/study/Hexo 中 Markdown 特殊字符的处理方法/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
@@ -215,14 +498,29 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/19/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">study/X3 photo gallery 授权破解</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
+                           href="/2020/12/19/shopify/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">study/github 使用记录</span>
+                                <span class="post-nav-title-item">shopify/如何创建一个Shopify模版本地开发环境</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -384,7 +682,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见特殊字符"><span class="nav-number">3.</span> <span class="nav-text">常见特殊字符</span></a></li></ol>
     </div>
 </div>
         

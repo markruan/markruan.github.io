@@ -6,7 +6,7 @@
     
     
     <title>
-        study/利用css媒体查询media |
+        Vue/vue中使用H5的audio |
         
         爱·绮梦|学而时习之
     </title>
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/利用css媒体查询media</span>
+            <span class="title-hover-animation">Vue/vue中使用H5的audio</span>
         </div>
 
         
@@ -146,7 +146,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-24 21:06:34
+        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -154,23 +154,12 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/study/">study</a>
+                        <a href="/categories/Vue/">Vue</a>
                     </li>
                 
             </ul>
         </span>
     
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/html-css/">html,css</a>
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
@@ -185,11 +174,11 @@
         
 
         <div class="article-content markdown-body">
-            <p>有时候，对平台要求比较低，利用bootstrap等响应式做兼容总觉得大材小用，而且导致加载缓慢，就没有必要再引入一个完整的插件库，对于这样的情况，就可以选择用原始的css兼容的方式，只针对pc和手机2个平台进行兼容处理，分别写两套css即可。</p>
-<p>核心代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>wap是手机端的的css最外的盒子；wrap是pc端对外的盒子；@media screen and (max-width:768px)的意思是当屏幕的分辨率低于768px的时候css生效，这个媒体外部的全部css不生效；</p>
-<p>因此，当设备分辨率为手机，媒体里面的手机端的css自动生效，当分辨率大于768px时，css就自动渲染外部的css。</p>
+            <h2 id="vue中使用H5的audio"><a href="#vue中使用H5的audio" class="headerlink" title="vue中使用H5的audio"></a>vue中使用H5的audio</h2><p>H5audio标签有许多事件</p>
+<p><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/20190127152315247-20201106152816056-20201106153001803.png" alt=""></p>
+<p> 在应用到vue中后的使用如下：</p>
+<p>比如在使用onplay时，要去掉on，用@play派发时间，在methods中定义方法执行体</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;audio src&#x3D;&quot;..&#x2F;..&#x2F;static&#x2F;1.mp3&quot; @play&#x3D;&quot;ready&quot; @pause&#x3D;&quot;pause&quot; controls&gt;&lt;&#x2F;audio&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;musci&#39;,</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            ready()&#123;</span><br><span class="line">                console.log(&quot;play click&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">            pause()&#123;</span><br><span class="line">                console.log(&quot;pause click&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -197,11 +186,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/利用css媒体查询media</li>
+        <li>Post title：Vue/vue中使用H5的audio</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-12-24 21:06:34</li>
+        <li>Create time：2020-12-19 20:03:49</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/24/study/利用css媒体查询media/
+            Post link：https://x.iqimeng.com/2020/12/19/Vue/vue中使用H5的audio/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
@@ -215,21 +204,21 @@
         
             <div class="article-nav">
                 
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/19/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/"
                         >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">study/github 使用记录</span>
-                                <span class="post-nav-item">Next posts</span>
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
                             </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Vue/解决跨域</span>
+                                <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
+                
                 
             </div>
         
@@ -384,7 +373,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue中使用H5的audio"><span class="nav-number">1.</span> <span class="nav-text">vue中使用H5的audio</span></a></li></ol>
     </div>
 </div>
         
