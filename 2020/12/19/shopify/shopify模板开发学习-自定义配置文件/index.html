@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="null">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <title>
-        shopify/shopify模板开发学习-自定义配置文件 |
+        shopify模板开发学习-自定义配置文件 |
         
         爱·绮梦|学而时习之
     </title>
@@ -23,7 +23,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
@@ -59,17 +59,17 @@
             
                 <li class="menu-item">
                     <a class=""
-                       href="/categories"
+                       href="/archives"
                     >
-                        CATEGORIES
+                        ARCHIVES
                     </a>
                 </li>
             
                 <li class="menu-item">
                     <a class=""
-                       href="/archives"
+                       href="/categories"
                     >
-                        ARCHIVES
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">shopify/shopify模板开发学习-自定义配置文件</span>
+            <span class="title-hover-animation">shopify模板开发学习-自定义配置文件</span>
         </div>
 
         
@@ -177,9 +177,9 @@
             <p>在创建主题时，可以为客户预留一些自定义的配置，是Shopify主题模板常用的做法。Shopify使用settings_schema.json文件提供了这个自定义配置的方式。</p>
 <p>在Shopify主题的config目录中，在此文件中定义一些对象属性，就可以实现自定义的配置选项。当你选择在线商店 》 模板 》自定义按钮，就可以看到控制面板中这些选项。</p>
 <h2 id="配置文件的文件格式"><a href="#配置文件的文件格式" class="headerlink" title="配置文件的文件格式"></a>配置文件的文件格式</h2><p>settings_schema.json文件，本身是个JSON文件，那么他需要遵守JSON文件规范，这里所有的数据都用[]括起来。在此范围内，你可以将相关选项组合在一起。每个分组都有一个名称，然后是定义这个组的配置。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"name"</span> : <span class="string">"颜色"</span>,</span><br><span class="line">        <span class="string">"settings"</span> : [ ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span> : <span class="string">&quot;颜色&quot;</span>,</span><br><span class="line">        <span class="string">&quot;settings&quot;</span> : [ ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
 <p>然后，每个选项都是设置数组中的一个对象。 像这样的东西：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Shopify119"</span>,</span><br><span class="line">    <span class="attr">"theme_name"</span>: <span class="string">"Shopify119 theme"</span>,</span><br><span class="line">    <span class="attr">"theme_version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">    <span class="attr">"theme_author"</span>: <span class="string">"Leo"</span>,</span><br><span class="line">    <span class="attr">"theme_documentation_url"</span>: <span class="string">"https://shopify119.blog.csdn.net"</span>,</span><br><span class="line">    <span class="attr">"theme_support_url"</span>: <span class="string">"https://shopify119.blog.csdn.net"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"name"</span> : <span class="string">"颜色"</span>,</span><br><span class="line">    <span class="attr">"settings"</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="string">"color_background"</span>,</span><br><span class="line">        <span class="attr">"label"</span>: <span class="string">"背景颜色"</span>,</span><br><span class="line">        <span class="attr">"default"</span>: <span class="string">"#e5e5e5"</span>,</span><br><span class="line">        <span class="attr">"info"</span> : <span class="string">"这个将调整背景颜色"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"color"</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="string">"color_body_text"</span>,</span><br><span class="line">        <span class="attr">"label"</span>: <span class="string">"内容文字颜色"</span>,</span><br><span class="line">        <span class="attr">"default"</span>: <span class="string">"#2980b9"</span>,</span><br><span class="line">        <span class="attr">"info"</span> : <span class="string">"这个将调整内容文字颜色"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Logo"</span>,</span><br><span class="line">    <span class="attr">"settings"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"image"</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="string">"logo.png"</span>,</span><br><span class="line">        <span class="attr">"label"</span>: <span class="string">"Logo"</span>,</span><br><span class="line">        <span class="attr">"info"</span>: <span class="string">"这里可以改变店铺的Logo"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Shopify119&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;theme_name&quot;</span>: <span class="string">&quot;Shopify119 theme&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;theme_version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;theme_author&quot;</span>: <span class="string">&quot;Leo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;theme_documentation_url&quot;</span>: <span class="string">&quot;https://shopify119.blog.csdn.net&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;theme_support_url&quot;</span>: <span class="string">&quot;https://shopify119.blog.csdn.net&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span> : <span class="string">&quot;颜色&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;settings&quot;</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;color&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;color_background&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;背景颜色&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;default&quot;</span>: <span class="string">&quot;#e5e5e5&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;info&quot;</span> : <span class="string">&quot;这个将调整背景颜色&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;color&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;color_body_text&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;内容文字颜色&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;default&quot;</span>: <span class="string">&quot;#2980b9&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;info&quot;</span> : <span class="string">&quot;这个将调整内容文字颜色&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Logo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;settings&quot;</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;image&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;logo.png&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;Logo&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;info&quot;</span>: <span class="string">&quot;这里可以改变店铺的Logo&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
 <p>上面的例子中，在自定义设置的侧栏上，你可以看到标签“颜色”，当你单击他时，可以选择设置背景颜色和内容文字颜色；选择Logo可以更改店铺的Logo。<br><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/20200305144403759.gif" alt="在这里插入图片描述"></p>
 <h2 id="配置文件的属性"><a href="#配置文件的属性" class="headerlink" title="配置文件的属性"></a>配置文件的属性</h2><p>每个设置都有5个属性：type、id、label、default、info</p>
 <table>
@@ -190,8 +190,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>type</td>
 <td>必填</td>
 <td>定义选项所需的输入类型</td>
@@ -221,8 +220,7 @@
 <td>可选</td>
 <td>为用户提供该选项的详细使用信息</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="常规设置类型"><a href="#常规设置类型" class="headerlink" title="常规设置类型"></a>常规设置类型</h2><p>下表描述了允许的常规输入类型，每个值在type属性中设置。</p>
 <table>
 <thead>
@@ -231,8 +229,7 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>text</td>
 <td>允许用户输入单行文本字段</td>
 </tr>
@@ -256,11 +253,10 @@
 <td>checkbox</td>
 <td>允许用户选中一个框，返回true或false值</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>image type<br>需要注意的是，用这种方式上传的图片将保存在模板的assets文件夹中。该文件使用id中定义的名称和格式进行保存。所以，即使上传的是.jpg文件，但是id定义的是logo.png，图片也将会保存为.png文件。</p>
 <p>radio和select type<br>由于radio和select有多个值可提供选择，因此还需要设置额外的属性。比如：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">		  <span class="attr">"type"</span>:      <span class="string">"radio"</span>,</span><br><span class="line">		  <span class="attr">"id"</span>:        <span class="string">"id"</span>,</span><br><span class="line">		  <span class="attr">"label"</span>:     <span class="string">"Text"</span>,</span><br><span class="line">		  <span class="attr">"options"</span>: [</span><br><span class="line">		    &#123; <span class="attr">"value"</span>: <span class="string">"one"</span>, <span class="attr">"label"</span>: <span class="string">"Radio One"</span> &#125;,</span><br><span class="line">		    &#123; <span class="attr">"value"</span>: <span class="string">"two"</span>, <span class="attr">"label"</span>: <span class="string">"Radio Two"</span> &#125;</span><br><span class="line">		  ],</span><br><span class="line">		  <span class="attr">"default"</span>:   <span class="string">"one"</span>,</span><br><span class="line">		  <span class="attr">"info"</span>:      <span class="string">"Text"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">		  <span class="attr">&quot;type&quot;</span>:      <span class="string">&quot;radio&quot;</span>,</span><br><span class="line">		  <span class="attr">&quot;id&quot;</span>:        <span class="string">&quot;id&quot;</span>,</span><br><span class="line">		  <span class="attr">&quot;label&quot;</span>:     <span class="string">&quot;Text&quot;</span>,</span><br><span class="line">		  <span class="attr">&quot;options&quot;</span>: [</span><br><span class="line">		    &#123; <span class="attr">&quot;value&quot;</span>: <span class="string">&quot;one&quot;</span>, <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;Radio One&quot;</span> &#125;,</span><br><span class="line">		    &#123; <span class="attr">&quot;value&quot;</span>: <span class="string">&quot;two&quot;</span>, <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;Radio Two&quot;</span> &#125;</span><br><span class="line">		  ],</span><br><span class="line">		  <span class="attr">&quot;default&quot;</span>:   <span class="string">&quot;one&quot;</span>,</span><br><span class="line">		  <span class="attr">&quot;info&quot;</span>:      <span class="string">&quot;Text&quot;</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 <h2 id="特殊设置类型"><a href="#特殊设置类型" class="headerlink" title="特殊设置类型"></a>特殊设置类型</h2><p>特殊设置类型的定义访问和常规设置类型相似，不同之处在于这些设置，将为用户提供内置或特定的选择信息。比如：产品类型是下拉列表，但只允许用户从已经在商店中定义的产品类型中进行选择。</p>
 <table>
 <thead>
@@ -269,8 +265,7 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>允许用户使用颜色选择器窗口小部件选择颜色</td>
 </tr>
@@ -302,8 +297,7 @@
 <td>snippets</td>
 <td>允许用户选择主题中可用的特定代码段</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Blog-Type"><a href="#Blog-Type" class="headerlink" title="Blog Type"></a>Blog Type</h2><p>Shopify内置了博客，你可以添加博客文章。还可以把这些博客文章添加到不同的博客中。blog type设置下拉列表允许你选择要用于改设置的博客。</p>
 <h2 id="Snippet-Type"><a href="#Snippet-Type" class="headerlink" title="Snippet Type"></a>Snippet Type</h2><p>代码片段在模板中的snippets目录里面定义。</p>
 <h3 id="信息设置"><a href="#信息设置" class="headerlink" title="信息设置"></a>信息设置</h3><p>Shopify还允许将创建主题的作者信息放入侧边栏中，它们只有3个属性：type, content, info</p>
@@ -315,8 +309,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>type</td>
 <td>必填</td>
 <td>定义选项所需的输入类型。 对于侧边栏设置，这只能是标题或段落</td>
@@ -331,8 +324,7 @@
 <td>可选</td>
 <td>向用户提供有关该选项的其他信息。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>在模板中调用配置信息<br>现在已经可以创建设置信息了，但是如何在实际的模板中调用并使用它们？这将是下篇文章的内容。</p>
 
         </div>
@@ -341,14 +333,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：shopify/shopify模板开发学习-自定义配置文件</li>
+        <li>Post title：shopify模板开发学习-自定义配置文件</li>
         <li>Post author：Mark</li>
         <li>Create time：2020-12-19 20:03:49</li>
         <li>
             Post link：https://x.iqimeng.com/2020/12/19/shopify/shopify模板开发学习-自定义配置文件/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
         </li>
     </ul>
 </div>
@@ -368,7 +360,7 @@
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify/shopify调用配置信息</span>
+                                <span class="post-nav-title-item">shopify调用配置信息</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -381,7 +373,7 @@
                            href="/2020/12/19/shopify/shopify%E4%BA%A7%E5%93%81%E9%A1%B5%E9%9D%A2%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify/shopify产品页面数据获取</span>
+                                <span class="post-nav-title-item">shopify产品页面数据获取</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -415,7 +407,7 @@
             owner: 'markruan',
             admin: ['markruan'],
             id: __gitalk__pathname,
-            language: 'null'
+            language: ''
         })
         gitalk.render('gitalk-container')
     </script>
@@ -524,7 +516,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件的文件格式"><span class="nav-number">1.</span> <span class="nav-text">配置文件的文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件的属性"><span class="nav-number">2.</span> <span class="nav-text">配置文件的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规设置类型"><span class="nav-number">3.</span> <span class="nav-text">常规设置类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊设置类型"><span class="nav-number">4.</span> <span class="nav-text">特殊设置类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog-Type"><span class="nav-number">5.</span> <span class="nav-text">Blog Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snippet-Type"><span class="nav-number">6.</span> <span class="nav-text">Snippet Type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息设置"><span class="nav-number">6.1.</span> <span class="nav-text">信息设置</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">配置文件的文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">配置文件的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E8%AE%BE%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">常规设置类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E8%AE%BE%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">特殊设置类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog-Type"><span class="nav-number">5.</span> <span class="nav-text">Blog Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Snippet-Type"><span class="nav-number">6.</span> <span class="nav-text">Snippet Type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE"><span class="nav-number">6.1.</span> <span class="nav-text">信息设置</span></a></li></ol></li></ol>
     </div>
 </div>
         

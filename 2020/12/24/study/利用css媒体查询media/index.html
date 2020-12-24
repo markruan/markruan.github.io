@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="null">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <title>
-        study/利用css媒体查询media |
+        利用css媒体查询media |
         
         爱·绮梦|学而时习之
     </title>
@@ -23,7 +23,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
@@ -59,17 +59,17 @@
             
                 <li class="menu-item">
                     <a class=""
-                       href="/categories"
+                       href="/archives"
                     >
-                        CATEGORIES
+                        ARCHIVES
                     </a>
                 </li>
             
                 <li class="menu-item">
                     <a class=""
-                       href="/archives"
+                       href="/categories"
                     >
-                        ARCHIVES
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/利用css媒体查询media</span>
+            <span class="title-hover-animation">利用css媒体查询media</span>
         </div>
 
         
@@ -191,13 +191,15 @@
         <div class="article-content markdown-body">
             <p>为了实现手机与电脑网页宽度自适应，在css3中新增了 media query属性用于增强media type属性。因此当css3问世后，使media type可以进行条件判断输出对应的css。</p>
 <p>核心代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">768px</span>)&#123;</span><br><span class="line">   <span class="selector-class">.wrap</span>&#123;<span class="attribute">display</span>: none;&#125;</span><br><span class="line">   <span class="selector-class">.wap</span>&#123;<span class="attribute">display</span>: block;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/<span class="selector-tag">style</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>wap是手机端的的css最外的盒子；wrap是pc端对外的盒子；@media screen and (max-width:768px)的意思是当屏幕的分辨率低于768px的时候css生效，这个媒体外部的全部css不生效；</p>
 <p>因此，当设备分辨率为手机，媒体里面的手机端的css自动生效，当分辨率大于768px时，css就自动渲染外部的css。</p>
 <p><strong>@media具体语法：</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">769px</span>) &#123;</span><br><span class="line">    <span class="comment">/* CSS样式定义部分 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-device-width:</span> <span class="number">481px</span>) <span class="keyword">and</span> (<span class="attribute">max-device-width:</span> <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="comment">/* CSS样式定义部分 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-device-width:</span> <span class="number">480px</span>) &#123;</span><br><span class="line">    <span class="comment">/* CSS样式定义部分 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>一、判断不同的显示设备，跳转到不同的网页。</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel="alternate" media="only screen and (max-width: 640px)" href="https://x.iqimeng.com/"&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;alternate&quot; media=&quot;only screen and (max-width: 640px)&quot; href=&quot;https://x.iqimeng.com/&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>二、判断媒体类型，引用不同的样式表</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=”stylesheet” media=”screen and (判断条件)” herf=”需要调用的样式表文件” /&gt;</span><br></pre></td></tr></table></figure>
 <p>通过设定屏幕的判断条件，调用对应的css文件。该实例多用于整页面不同风格的css调用与选取，使用该方法可能需要为一个页面制作多份个css文件。</p>
@@ -210,6 +212,8 @@
 <p>注意下顺序，如果你把@media (min-width: 768px)写在了下面那么就会出错，因为如果是1440,由于1440&gt;768那么你的1200就会失效。</p>
 <p>所以我们用min-width时，小的放上面大的在下面，同理如果是用max-width那么就是大的在上面，小的在下面</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media (max-width: 1199px)&#123;//&lt;=1199的设备&#125;</span><br><span class="line">@media (max-width: 991px)&#123; //&lt;=991的设备 &#125;</span><br><span class="line">@media (max-width: 767px)&#123; //&lt;=768的设备 &#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>重要的内容重复3次：顺序是min-width从小到大，max-width从大到小。</p>
 
         </div>
@@ -218,14 +222,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/利用css媒体查询media</li>
+        <li>Post title：利用css媒体查询media</li>
         <li>Post author：Mark</li>
         <li>Create time：2020-12-24 21:06:34</li>
         <li>
             Post link：https://x.iqimeng.com/2020/12/24/study/利用css媒体查询media/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
         </li>
     </ul>
 </div>
@@ -236,6 +240,21 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/12/24/study/MAC%E5%8D%87%E7%BA%A7Nodejs%E5%92%8CNpm%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">MAC升级Nodejs和Npm到最新版</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
@@ -243,7 +262,7 @@
                            href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">study/github 使用记录</span>
+                                <span class="post-nav-title-item">github 使用记录</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -277,7 +296,7 @@
             owner: 'markruan',
             admin: ['markruan'],
             id: __gitalk__pathname,
-            language: 'null'
+            language: ''
         })
         gitalk.render('gitalk-container')
     </script>

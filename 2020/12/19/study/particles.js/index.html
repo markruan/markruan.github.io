@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="null">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <title>
-        study/particles.js |
+        particles.js |
         
         爱·绮梦|学而时习之
     </title>
@@ -23,7 +23,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
@@ -59,17 +59,17 @@
             
                 <li class="menu-item">
                     <a class=""
-                       href="/categories"
+                       href="/archives"
                     >
-                        CATEGORIES
+                        ARCHIVES
                     </a>
                 </li>
             
                 <li class="menu-item">
                     <a class=""
-                       href="/archives"
+                       href="/categories"
                     >
-                        ARCHIVES
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">study/particles.js</span>
+            <span class="title-hover-animation">particles.js</span>
         </div>
 
         
@@ -176,77 +176,81 @@
         <div class="article-content markdown-body">
             <h2 id="particles-js学习"><a href="#particles-js学习" class="headerlink" title="particles.js学习"></a>particles.js学习</h2><p>  今天突发奇想优化下主题，想起了之前看过炫酷的星云效果，就搜索了下… </p>
 <p>效果见主页</p>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>To install particles.js you can <a class="link"   href="https://github.com/marcbruederlin/particles.js/archive/master.zip"  target="_blank" rel="noopener">download<i class="fas fa-external-link-alt"></i></a> the latest version, install it via npm:</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>To install particles.js you can <a class="link"   target="_blank" rel="noopener" href="https://github.com/marcbruederlin/particles.js/archive/master.zip" >download<i class="fas fa-external-link-alt"></i></a> the latest version, install it via npm:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install particlesjs —-save</span><br></pre></td></tr></table></figure>
 <p>or use the CDN:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;particlesjs&#x2F;2.2.2&#x2F;particles.min.js</span><br></pre></td></tr></table></figure>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  …   </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=</span></span><br><span class="line"><span class="tag">"<span class="attr">path</span>/<span class="attr">to</span>/<span class="attr">particles.min.js</span>"</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  …   </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=</span></span><br><span class="line"><span class="tag">&quot;<span class="attr">path</span>/<span class="attr">to</span>/<span class="attr">particles.min.js</span>&quot;</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Add a canvas element to your markup (it should be the last element):</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  …</span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=</span></span><br><span class="line"><span class="tag">"<span class="attr">background</span>"</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=</span></span><br><span class="line"><span class="tag">"<span class="attr">path</span>/<span class="attr">to</span>/<span class="attr">particles.min.js</span>"</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  …</span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">class</span>=</span></span><br><span class="line"><span class="tag">&quot;<span class="attr">background</span>&quot;</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=</span></span><br><span class="line"><span class="tag">&quot;<span class="attr">path</span>/<span class="attr">to</span>/<span class="attr">particles.min.js</span>&quot;</span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 <p>And Initialize the plugin on DOM ready:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    Particles. init</span><br><span class="line">        (&#123;</span><br><span class="line">            selector: </span><br><span class="line">        <span class="string">'.background'</span></span><br><span class="line">          &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    Particles. init</span><br><span class="line">        (&#123;</span><br><span class="line">            selector: </span><br><span class="line">        <span class="string">&#x27;.background&#x27;</span></span><br><span class="line">          &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><table>
 <thead>
 <tr>
 <th>Option</th>
 <th>Type</th>
-<th style="text-align:center">Default</th>
+<th align="center">Default</th>
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>selector</td>
 <td>string</td>
-<td style="text-align:center">-</td>
+<td align="center">-</td>
 <td><em>Required:</em> CSS selector of your canvas element</td>
 </tr>
 <tr>
 <td>maxParticles</td>
 <td>integer</td>
-<td style="text-align:center">100</td>
+<td align="center">100</td>
 <td><em>Optional:</em> Maximum amount of particles</td>
 </tr>
 <tr>
 <td>sizeVariations</td>
 <td>integer</td>
-<td style="text-align:center">3</td>
+<td align="center">3</td>
 <td><em>Optional:</em> Amount of size variations</td>
 </tr>
 <tr>
 <td>speed</td>
 <td>integer</td>
-<td style="text-align:center">0.5</td>
+<td align="center">0.5</td>
 <td><em>Optional:</em> Movement speed of the particles</td>
 </tr>
 <tr>
 <td>color</td>
 <td>string or string[]</td>
-<td style="text-align:center">#000000</td>
+<td align="center">#000000</td>
 <td><em>Optional:</em> Color(s) of the particles and connecting lines</td>
 </tr>
 <tr>
 <td>minDistance</td>
 <td>integer</td>
-<td style="text-align:center">120</td>
+<td align="center">120</td>
 <td><em>Optional:</em> Distance in px for connecting lines</td>
 </tr>
 <tr>
 <td>connectParticles</td>
 <td>boolean</td>
-<td style="text-align:center">false</td>
+<td align="center">false</td>
 <td><em>Optional:</em> true/false if connecting lines should be drawn</td>
 </tr>
 <tr>
 <td>responsive</td>
 <td>array</td>
-<td style="text-align:center">null</td>
+<td align="center">null</td>
 <td><em>Optional:</em> Array of objects containing breakpoints and options</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="Responsive-option"><a href="#Responsive-option" class="headerlink" title="Responsive option"></a>Responsive option</h3><p>With the responsive option, you can add or override options for different screen sizes:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Particles. init (&#123; </span><br><span class="line">  <span class="comment">// normal options</span></span><br><span class="line">  selector: '.background',</span><br><span class="line">  maxParticles:450,</span><br><span class="line">  </span><br><span class="line"><span class="comment">// options for breakpoints</span></span><br><span class="line">  responsive: [</span><br><span class="line">    &#123;</span><br><span class="line">      breakpoint: 768,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles: 200,</span><br><span class="line">        color: '#48F2E3',</span><br><span class="line">        connectParticles:false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      breakpoint:425,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles: 100,</span><br><span class="line">        connectParticles: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      breakpoint: 320,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles:  0 // disables particles.js</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Particles. init (&#123; </span><br><span class="line">  <span class="comment">// normal options</span></span><br><span class="line">  selector: &#x27;.background&#x27;,</span><br><span class="line">  maxParticles:450,</span><br><span class="line">  </span><br><span class="line"><span class="comment">// options for breakpoints</span></span><br><span class="line">  responsive: [</span><br><span class="line">    &#123;</span><br><span class="line">      breakpoint: 768,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles: 200,</span><br><span class="line">        color: &#x27;#48F2E3&#x27;,</span><br><span class="line">        connectParticles:false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      breakpoint:425,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles: 100,</span><br><span class="line">        connectParticles: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      breakpoint: 320,</span><br><span class="line">      options: &#123;</span><br><span class="line">        maxParticles:  0 // disables particles.js</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><table>
 <thead>
 <tr>
@@ -254,8 +258,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>pauseAnimation</td>
 <td>Pauses/stops the particle animation</td>
 </tr>
@@ -263,8 +266,7 @@
 <td>resumeAnimation</td>
 <td>Continues the particle animation</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="Use-the-public-methods"><a href="#Use-the-public-methods" class="headerlink" title="Use the public methods"></a>Use the public methods</h3> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var particles = Particles.init(&#123;</span><br><span class="line"><span class="comment">// options</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// E.g. gets called on a button click</span></span><br><span class="line">function pause () &#123;</span><br><span class="line">  particles. pauseAnimation ();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// E.g. gets called on a button click</span></span><br><span class="line">function resume () &#123;</span><br><span class="line">  particles. resumeAnimation ();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -273,14 +275,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：study/particles.js</li>
+        <li>Post title：particles.js</li>
         <li>Post author：Mark</li>
         <li>Create time：2020-12-19 20:03:49</li>
         <li>
             Post link：https://x.iqimeng.com/2020/12/19/study/particles.js/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
         </li>
     </ul>
 </div>
@@ -300,7 +302,7 @@
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">study/typora使用</span>
+                                <span class="post-nav-title-item">typora使用</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -313,7 +315,7 @@
                            href="/2020/12/19/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">study/X3 photo gallery 授权破解</span>
+                                <span class="post-nav-title-item">X3 photo gallery 授权破解</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -347,7 +349,7 @@
             owner: 'markruan',
             admin: ['markruan'],
             id: __gitalk__pathname,
-            language: 'null'
+            language: ''
         })
         gitalk.render('gitalk-container')
     </script>
@@ -456,7 +458,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#particles-js学习"><span class="nav-number">1.</span> <span class="nav-text">particles.js学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Options"><span class="nav-number">4.</span> <span class="nav-text">Options</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Responsive-option"><span class="nav-number">4.1.</span> <span class="nav-text">Responsive option</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">5.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-the-public-methods"><span class="nav-number">5.1.</span> <span class="nav-text">Use the public methods</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#particles-js%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">particles.js学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Options"><span class="nav-number">4.</span> <span class="nav-text">Options</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Responsive-option"><span class="nav-number">4.1.</span> <span class="nav-text">Responsive option</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">5.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-the-public-methods"><span class="nav-number">5.1.</span> <span class="nav-text">Use the public methods</span></a></li></ol></li></ol>
     </div>
 </div>
         

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="null">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <title>
-        shopify/shopify 图片CDN 详解 |
+        shopify 图片CDN 详解 |
         
         爱·绮梦|学而时习之
     </title>
@@ -23,7 +23,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
@@ -59,17 +59,17 @@
             
                 <li class="menu-item">
                     <a class=""
-                       href="/categories"
+                       href="/archives"
                     >
-                        CATEGORIES
+                        ARCHIVES
                     </a>
                 </li>
             
                 <li class="menu-item">
                     <a class=""
-                       href="/archives"
+                       href="/categories"
                     >
-                        ARCHIVES
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">shopify/shopify 图片CDN 详解</span>
+            <span class="title-hover-animation">shopify 图片CDN 详解</span>
         </div>
 
         
@@ -176,13 +176,13 @@
         <div class="article-content markdown-body">
             <p>对于刚入手shopify 的小白来说，shopify 图片是一个急需了解的点。<br>对于大企业来说资源管理是必须优化到极致的，目前对于资源管理比较有效的方式是 CDN 资源管理。shopify 自然也会为它的资源搭建CDN服务，而对图片则做图片CDN，图片CDN与传统CDN的区别在于，它是专门为图片做优化的，通常包含缩放、格式转换等。你可以把它看成是一个API，通过传入尺寸、质量、格式等参数，获取到对应的图片内容。这也使得我们在使用上非常方便，适用于多种不同的场景。</p>
 <p>下面我们则针对 shopify 图片CDN的使用做讲解</p>
-<h2 id="Shopify-图片的参数使用"><a href="#Shopify-图片的参数使用" class="headerlink" title="Shopify 图片的参数使用"></a>Shopify 图片的参数使用</h2><p>下面花括号里面使用的 [image 是指 shopify 的图片对象](<a class="link"   href="https://shopify.dev/docs/themes/liquid/reference/objects/image）"  target="_blank" rel="noopener">https://shopify.dev/docs/themes/liquid/reference/objects/image）<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="图片尺寸参数"><a href="#图片尺寸参数" class="headerlink" title="图片尺寸参数"></a>图片尺寸参数</h3><p>您可以为图像的宽度和高度指定精确的像素尺寸，最大5760 x 5760 px。除非<a class="link"   href="https://shopify.dev/docs/themes/liquid/reference/filters/url-filters/#crop"  target="_blank" rel="noopener">裁剪<i class="fas fa-external-link-alt"></i></a>图像，否则图像的原始长宽比将保留。（无论您指定什么尺寸，都不能将图像的大小调整为大于其原始尺寸。如果大于原始尺寸则返回原始尺寸大下的图片）</p>
+<h2 id="Shopify-图片的参数使用"><a href="#Shopify-图片的参数使用" class="headerlink" title="Shopify 图片的参数使用"></a>Shopify 图片的参数使用</h2><p>下面花括号里面使用的 [image 是指 shopify 的图片对象](<a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/liquid/reference/objects/image%EF%BC%89" >https://shopify.dev/docs/themes/liquid/reference/objects/image）<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="图片尺寸参数"><a href="#图片尺寸参数" class="headerlink" title="图片尺寸参数"></a>图片尺寸参数</h3><p>您可以为图像的宽度和高度指定精确的像素尺寸，最大5760 x 5760 px。除非<a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/liquid/reference/filters/url-filters/#crop" >裁剪<i class="fas fa-external-link-alt"></i></a>图像，否则图像的原始长宽比将保留。（无论您指定什么尺寸，都不能将图像的大小调整为大于其原始尺寸。如果大于原始尺寸则返回原始尺寸大下的图片）</p>
 <h4 id="固定尺寸"><a href="#固定尺寸" class="headerlink" title="固定尺寸"></a>固定尺寸</h4><p>根据设置的 宽高 返回对应尺寸的图片</p>
 <p><strong>格式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#39;&lt;宽&gt;x&lt;高&gt;&#39; &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#39;&lt;宽&gt;x&lt;高&gt;&#39; &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '720x720' &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;720x720&#x27; &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.shopify.com/s/files/1/1183/1048/products/boat-shoes_720x720.jpeg</span><br></pre></td></tr></table></figure>
 <h4 id="英文名称尺寸"><a href="#英文名称尺寸" class="headerlink" title="英文名称尺寸"></a>英文名称尺寸</h4><p>与固定尺寸一样的意义，只不过，值使用英文名称替代</p>
@@ -194,58 +194,51 @@
 <th>返回尺寸</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>&lt;空&gt;</td>
-<td>&#123;&#123; image \</td>
-<td>img_url &#125;&#125;</td>
+<td>&#123;&#123; image | img_url &#125;&#125;</td>
 <td>100x100</td>
 </tr>
 <tr>
 <td>small</td>
-<td>&#123;&#123;image \</td>
-<td>img_url : ‘small’ &#125;&#125;</td>
+<td>&#123;&#123;image | img_url : ‘small’ &#125;&#125;</td>
 <td>100x100</td>
 </tr>
 <tr>
 <td>medium</td>
-<td>&#123;&#123; image \</td>
-<td>img_url: ‘medium’ &#125;&#125;</td>
+<td>&#123;&#123; image | img_url: ‘medium’ &#125;&#125;</td>
 <td>240x240</td>
 </tr>
 <tr>
 <td>large</td>
-<td>&#123;&#123; image \</td>
-<td>img_url: ‘large’ &#125;&#125;</td>
+<td>&#123;&#123; image | img_url: ‘large’ &#125;&#125;</td>
 <td>480x480</td>
 </tr>
 <tr>
 <td>master</td>
-<td>&#123;&#123; image \</td>
-<td>img_url: ‘master’ &#125;&#125;</td>
+<td>&#123;&#123; image | img_url: ‘master’ &#125;&#125;</td>
 <td>原始尺寸</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="仅宽或高尺寸"><a href="#仅宽或高尺寸" class="headerlink" title="仅宽或高尺寸"></a>仅宽或高尺寸</h4><p>您只能指定宽度或高度，Shopify会根据原始图像的尺寸计算其他尺寸，并<strong>保持原始图像的长宽比</strong>：</p>
 <p>例子 图片尺寸为 400x300</p>
 <p><strong>仅宽度</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '200x' &#125;&#125; //返回 图片尺寸为 200x150</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;200x&#x27; &#125;&#125; //返回 图片尺寸为 200x150</span><br></pre></td></tr></table></figure>
 <p><strong>仅高度</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: 'x150' &#125;&#125; //返回 图片尺寸为 200x150</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;x150&#x27; &#125;&#125; //返回 图片尺寸为 200x150</span><br></pre></td></tr></table></figure>
 <h3 id="图片剪切参数-crop"><a href="#图片剪切参数-crop" class="headerlink" title="图片剪切参数 crop"></a>图片剪切参数 crop</h3><p>您可以指定<code>crop</code>参数以确保生成的图像的尺寸与请求的尺寸匹配。如果整个图像都不适合您要求的尺寸，则该<code>crop</code>参数指定要显示图像的哪一部分。有效选项包括：<code>top</code>、<code>centent</code>、<code>bottom</code>、<code>left</code>、<code>right</code></p>
 <p>列子 图片 宽高 为 100x300，（按竖直方式平分为三个，分别为 上中下）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '100x100', crop: 'bottom' &#125;&#125; // 显示部分 为 下</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;100x100&#x27;, crop: &#x27;bottom&#x27; &#125;&#125; // 显示部分 为 下</span><br></pre></td></tr></table></figure>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="原图-九宫格"><a href="#原图-九宫格" class="headerlink" title="原图 - 九宫格"></a><strong>原图</strong> - 九宫格</h5><p>尺寸：900x900</p>
 <p><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x300.jpg" alt="img"></p>
 <h5 id="1、不带-crop，则根据固定尺寸原则，返回原始尺寸"><a href="#1、不带-crop，则根据固定尺寸原则，返回原始尺寸" class="headerlink" title="1、不带 crop，则根据固定尺寸原则，返回原始尺寸"></a><strong>1、不带 crop，则根据固定尺寸原则，返回原始尺寸</strong></h5><p><strong>输入</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '900x300' &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;900x300&#x27; &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_900x300.jpg</span><br></pre></td></tr></table></figure>
 <p><strong>效果图</strong></p>
 <p><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_900x300.jpg" alt="img"></p>
 <h5 id="2、带-crop，-图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分"><a href="#2、带-crop，-图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分" class="headerlink" title="2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分"></a>2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分</h5><p><strong>输入</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '300x100', crop: 'top' &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: '300x100', crop: 'center'&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: '300x100', crop: 'bottom'&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: '100x300', crop: 'left' &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: '100x300', crop: 'center'&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: '100x300', crop: 'right'&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;top&#x27; &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;center&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;bottom&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;left&#x27; &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;center&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;right&#x27;&#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_300x100_crop_top.jpg</span><br><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_300x100_crop_center.jpg</span><br><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_300x100_crop_bottom.jpg</span><br><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_100x300_crop_left.jpg</span><br><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_100x300_crop_cen300x150</span><br><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_100x300_crop_right.jpg</span><br></pre></td></tr></table></figure>
 <p><strong>图片</strong></p>
@@ -257,14 +250,12 @@
 <th>300x100 right</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_top.jpg" alt="img"></td>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_center.jpg" alt="img"></td>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_bottom.jpg" alt="img"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -273,32 +264,27 @@
 <th>100x300 right</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_left.jpg" alt="img"></td>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_center.jpg" alt="img"></td>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_right.jpg" alt="img"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="图片比例（倍数）参数-scale"><a href="#图片比例（倍数）参数-scale" class="headerlink" title="图片比例（倍数）参数 scale"></a>图片比例（倍数）参数 scale</h3><p><em>谷歌翻译 为 亲密度，但是从效果来看我觉得翻译为比例或者倍数更加恰当</em></p>
 <p>该<code>scale</code>参数使您可以指定图像的像素密度。（返回img_url设置的尺寸的scale倍数的图片尺寸，这里我可能解释的不是很清楚，我们还是直接看示例）</p>
 <h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><p><strong>输入</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: '150x150' &#125;&#125;</span><br><span class="line">&#123;&#123; image | img_url: '150x150', scale: 2 &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;150x150&#x27; &#125;&#125;</span><br><span class="line">&#123;&#123; image | img_url: &#x27;150x150&#x27;, scale: 2 &#125;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150.jpg</span><br><span class="line">//cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150@2x.jpg</span><br></pre></td></tr></table></figure>
 <p><strong>效果图</strong></p>
 <table>
 <thead>
 <tr>
-<th>&#123;&#123; image \</th>
-<th>img_url: ‘150x150’ &#125;&#125;</th>
-<th>&#123;&#123; image \</th>
-<th>img_url: ‘150x150’, scale: 2 &#125;&#125;</th>
+<th>&#123;&#123; image | img_url: ‘150x150’ &#125;&#125;</th>
+<th>&#123;&#123; image | img_url: ‘150x150’, scale: 2 &#125;&#125;</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150.jpg" alt="img"></td>
 <td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150@2x.jpg" alt="img"></td>
 </tr>
@@ -306,13 +292,12 @@
 <td>图片尺寸：150x150</td>
 <td>图片尺寸：300x300</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>根据上述例子，相信你应该能明白 <strong>scale</strong> 的作用了</p>
-<h3 id="图片格式参数-format"><a href="#图片格式参数-format" class="headerlink" title="图片格式参数 format"></a>图片格式参数 format</h3><p>该<code>format</code>参数使您可以指定要用于显示图像的文件格式。有效选项包括：<code>jpg</code>、<code>pjpg</code>(<a class="link"   href="https://en.wikipedia.org/wiki/JPEG#JPEG_compression"  target="_blank" rel="noopener">渐进式JPEG<i class="fas fa-external-link-alt"></i></a>。浏览器以逐渐提高的质量加载全尺寸的渐进式JPEG，而不是像传统JPEG那样从上到下加载完整质量的图像。)</p>
+<h3 id="图片格式参数-format"><a href="#图片格式参数-format" class="headerlink" title="图片格式参数 format"></a>图片格式参数 format</h3><p>该<code>format</code>参数使您可以指定要用于显示图像的文件格式。有效选项包括：<code>jpg</code>、<code>pjpg</code>(<a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/JPEG#JPEG_compression" >渐进式JPEG<i class="fas fa-external-link-alt"></i></a>。浏览器以逐渐提高的质量加载全尺寸的渐进式JPEG，而不是像传统JPEG那样从上到下加载完整质量的图像。)</p>
 <p>Shopify可以为您执行以下格式转换：PNG 转 JPG、PNG 转 PJPG、JPG 转 PJPG</p>
 <h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><p><strong>输入</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url, format: 'jpg'  &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url, format: 'pjpg' &#125;&#125;</span><br><span class="line">&#123;&#123; image | img_url, format: 'pjpg'  &#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url, format: &#x27;jpg&#x27;  &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url, format: &#x27;pjpg&#x27; &#125;&#125;</span><br><span class="line">&#123;&#123; image | img_url, format: &#x27;pjpg&#x27;  &#125;&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* PNG 转 JPG */</span></span><br><span class="line">https://cdn.shopify.com/s/files/1/0449/5491/0874/files/baymax_100x100.png.jpg </span><br><span class="line"><span class="comment">/* PNG 转 PJPG */</span></span><br><span class="line">https://cdn.shopify.com/s/files/1/0449/5491/0874/files/baymax_100x100.progressive.png.jpg</span><br><span class="line"><span class="comment">/* JPG 转 PJPG */</span></span><br><span class="line">https://cdn.shopify.com/s/files/1/0449/5491/0874/files/baymax_100x100.progressive.jpg</span><br></pre></td></tr></table></figure>
 <p><strong>效果图</strong></p>
@@ -324,14 +309,10 @@
 <th>JPG 转 PJPG</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>&#123;&#123; image \</td>
-<td>img_url, format: ‘jpg’ &#125;&#125;&#125;</td>
-<td>&#123;&#123;image \</td>
-<td>img_url, format: ‘pjpg’ &#125;&#125;</td>
-<td>&#123;&#123;image \</td>
-<td>img_url, format: ‘pjpg’ &#125;&#125;</td>
+<tbody><tr>
+<td>&#123;&#123; image | img_url, format: ‘jpg’ &#125;&#125;&#125;</td>
+<td>&#123;&#123;image | img_url, format: ‘pjpg’ &#125;&#125;</td>
+<td>&#123;&#123;image | img_url, format: ‘pjpg’ &#125;&#125;</td>
 </tr>
 <tr>
 <td><img src="https://img-blog.csdnimg.cn/img_convert/9e71f5c9dfdc27044f53d3600b702398.png" alt="img"></td>
@@ -343,8 +324,7 @@
 <td><img src="https://img-blog.csdnimg.cn/img_convert/0369ae7f97d6b7011609e8d4ec8ec295.png" alt="img"></td>
 <td><img src="https://img-blog.csdnimg.cn/img_convert/6c9061c123da783eeabd183d1db2ba45.png" alt="img"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
         </div>
 
@@ -352,14 +332,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：shopify/shopify 图片CDN 详解</li>
+        <li>Post title：shopify 图片CDN 详解</li>
         <li>Post author：Mark</li>
         <li>Create time：2020-12-19 20:03:49</li>
         <li>
             Post link：https://x.iqimeng.com/2020/12/19/shopify/shopify 图片CDN 详解/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
         </li>
     </ul>
 </div>
@@ -379,7 +359,7 @@
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify/shopify产品页面数据获取</span>
+                                <span class="post-nav-title-item">shopify产品页面数据获取</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -392,7 +372,7 @@
                            href="/2020/12/19/Vue/%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Vue/解决跨域</span>
+                                <span class="post-nav-title-item">解决跨域</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -426,7 +406,7 @@
             owner: 'markruan',
             admin: ['markruan'],
             id: __gitalk__pathname,
-            language: 'null'
+            language: ''
         })
         gitalk.render('gitalk-container')
     </script>
@@ -535,7 +515,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shopify-图片的参数使用"><span class="nav-number">1.</span> <span class="nav-text">Shopify 图片的参数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片尺寸参数"><span class="nav-number">1.1.</span> <span class="nav-text">图片尺寸参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#固定尺寸"><span class="nav-number">1.1.1.</span> <span class="nav-text">固定尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#英文名称尺寸"><span class="nav-number">1.1.2.</span> <span class="nav-text">英文名称尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仅宽或高尺寸"><span class="nav-number">1.1.3.</span> <span class="nav-text">仅宽或高尺寸</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片剪切参数-crop"><span class="nav-number">1.2.</span> <span class="nav-text">图片剪切参数 crop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原图-九宫格"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">原图 - 九宫格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1、不带-crop，则根据固定尺寸原则，返回原始尺寸"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">1、不带 crop，则根据固定尺寸原则，返回原始尺寸</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、带-crop，-图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片比例（倍数）参数-scale"><span class="nav-number">1.3.</span> <span class="nav-text">图片比例（倍数）参数 scale</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示例-1"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片格式参数-format"><span class="nav-number">1.4.</span> <span class="nav-text">图片格式参数 format</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shopify-%E5%9B%BE%E7%89%87%E7%9A%84%E5%8F%82%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">Shopify 图片的参数使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">图片尺寸参数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.1.1.</span> <span class="nav-text">固定尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8B%B1%E6%96%87%E5%90%8D%E7%A7%B0%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.1.2.</span> <span class="nav-text">英文名称尺寸</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%85%E5%AE%BD%E6%88%96%E9%AB%98%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.1.3.</span> <span class="nav-text">仅宽或高尺寸</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%89%AA%E5%88%87%E5%8F%82%E6%95%B0-crop"><span class="nav-number">1.2.</span> <span class="nav-text">图片剪切参数 crop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%9F%E5%9B%BE-%E4%B9%9D%E5%AE%AB%E6%A0%BC"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">原图 - 九宫格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1%E3%80%81%E4%B8%8D%E5%B8%A6-crop%EF%BC%8C%E5%88%99%E6%A0%B9%E6%8D%AE%E5%9B%BA%E5%AE%9A%E5%B0%BA%E5%AF%B8%E5%8E%9F%E5%88%99%EF%BC%8C%E8%BF%94%E5%9B%9E%E5%8E%9F%E5%A7%8B%E5%B0%BA%E5%AF%B8"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">1、不带 crop，则根据固定尺寸原则，返回原始尺寸</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%E3%80%81%E5%B8%A6-crop%EF%BC%8C-%E5%9B%BE%E7%89%87%E4%B8%8D%E7%AC%A6%E5%90%88%E5%B0%BA%E5%AF%B8%E6%97%B6%EF%BC%8C%E5%88%99%E6%A0%B9%E6%8D%AEcrop%E6%8C%87%E5%AE%9A%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%88%AA%E5%8F%96%E8%A6%81%E6%98%BE%E7%A4%BA%E7%9A%84%E9%83%A8%E5%88%86"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%AF%94%E4%BE%8B%EF%BC%88%E5%80%8D%E6%95%B0%EF%BC%89%E5%8F%82%E6%95%B0-scale"><span class="nav-number">1.3.</span> <span class="nav-text">图片比例（倍数）参数 scale</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E5%8F%82%E6%95%B0-format"><span class="nav-number">1.4.</span> <span class="nav-text">图片格式参数 format</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         

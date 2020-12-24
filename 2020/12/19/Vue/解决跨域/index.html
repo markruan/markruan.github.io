@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="null">
+<html lang="">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <title>
-        Vue/解决跨域 |
+        解决跨域 |
         
         爱·绮梦|学而时习之
     </title>
@@ -23,7 +23,7 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpeg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
@@ -59,17 +59,17 @@
             
                 <li class="menu-item">
                     <a class=""
-                       href="/categories"
+                       href="/archives"
                     >
-                        CATEGORIES
+                        ARCHIVES
                     </a>
                 </li>
             
                 <li class="menu-item">
                     <a class=""
-                       href="/archives"
+                       href="/categories"
                     >
-                        ARCHIVES
+                        CATEGORIES
                     </a>
                 </li>
             
@@ -98,12 +98,12 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/archives">ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories">CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item">
@@ -130,7 +130,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Vue/解决跨域</span>
+            <span class="title-hover-animation">解决跨域</span>
         </div>
 
         
@@ -186,8 +186,8 @@
 
         <div class="article-content markdown-body">
             <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">'https://api.iqimeng.com'</span> : <span class="string">'api/'</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
-<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">'../config/api.config'</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">'axios'</span></span><br><span class="line">import VueAxios from <span class="string">'vue-axios'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, <span class="string">&#x27;production&#x27;</span>)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? <span class="string">&#x27;https://api.iqimeng.com&#x27;</span> : <span class="string">&#x27;api/&#x27;</span></span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
+<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from <span class="string">&#x27;../config/api.config&#x27;</span></span><br><span class="line"></span><br><span class="line">import Axios from <span class="string">&#x27;axios&#x27;</span></span><br><span class="line">import VueAxios from <span class="string">&#x27;vue-axios&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -195,14 +195,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Vue/解决跨域</li>
+        <li>Post title：解决跨域</li>
         <li>Post author：Mark</li>
         <li>Create time：2020-12-19 20:03:49</li>
         <li>
             Post link：https://x.iqimeng.com/2020/12/19/Vue/解决跨域/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">BY-NC-SA</a> unless stating additionally.
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
         </li>
     </ul>
 </div>
@@ -222,7 +222,7 @@
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify/shopify 图片CDN 详解</span>
+                                <span class="post-nav-title-item">shopify 图片CDN 详解</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -235,7 +235,7 @@
                            href="/2020/12/19/Vue/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Vue/vue中使用H5的audio</span>
+                                <span class="post-nav-title-item">vue中使用H5的audio</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -269,7 +269,7 @@
             owner: 'markruan',
             admin: ['markruan'],
             id: __gitalk__pathname,
-            language: 'null'
+            language: ''
         })
         gitalk.render('gitalk-container')
     </script>
@@ -378,7 +378,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产环境和开发环境一次解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><span class="nav-number">1.1.</span> <span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%92%8C%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%80%E6%AC%A1%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%9C%A8main-js-%E9%87%8C%E9%9D%A2%E5%BC%95%E5%85%A5-%E8%BF%99%E6%A0%B7%E5%8F%AF%E4%BB%A5%E4%BF%9D%E8%AF%81%E5%8A%A8%E6%80%81%E7%9A%84%E5%8C%B9%E9%85%8D%E7%94%9F%E4%BA%A7%E5%92%8C%E5%BC%80%E5%8F%91%E7%9A%84%E5%AE%9A%E4%B9%89%E5%89%8D%E7%BC%80"><span class="nav-number">1.1.</span> <span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
     </div>
 </div>
         
