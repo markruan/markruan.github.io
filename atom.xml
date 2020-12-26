@@ -37,11 +37,11 @@
     <category term="study" scheme="http://yoursite.com/categories/study/"/>
     
     
-    <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
     <category term="css" scheme="http://yoursite.com/tags/css/"/>
     
     <category term="特效" scheme="http://yoursite.com/tags/%E7%89%B9%E6%95%88/"/>
+    
+    <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
   </entry>
   
@@ -91,9 +91,9 @@
     <category term="study" scheme="http://yoursite.com/categories/study/"/>
     
     
-    <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
     <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+    <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
   </entry>
   
