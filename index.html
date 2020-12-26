@@ -79,9 +79,72 @@
 
 <div class="first-screen-container flex-center ">
     <div class="content flex-center">
-        <div class="description">
-            学而时习之
-        </div>
+       <h1 class="description" id="box"></h1>
+
+<style>
+@keyframes typing9{
+  from {
+    width: 0;
+  }
+  50% {
+    width: 9ch;
+  }
+  100% {
+    width: 0
+  }
+}
+ 
+@keyframes typing11 {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 11ch;
+  }
+  100% {
+    width: 0
+  }
+}
+@keyframes caret { 50% { border-color: transparent; } }
+h1 {
+  width: 0;
+  animation: typing 6s steps(15) infinite,caret 1s steps(1) infinite;
+  white-space: nowrap;
+  overflow:hidden;
+  border-right: .05em solid;
+  font-family: Consolas, Monaco, monospace;//注意这儿，要设置字体为等宽字体,ch才会充分发挥效果
+}
+     
+
+</style>
+<script>
+const arr = ['学而时习之 ','不亦说乎 '];//显示的文本
+const dom = document.getElementById('box')
+let j = 0; //从数组第一个开始展示
+// 递归函数
+const func =(j) => {
+  if(j < arr.length){ // 当达到数组长度时，就从头开始继续
+    const item = arr[j]
+    const itemLen = item === '学而时习之 ' ? 11 : 9; // 汉字是占两个ch
+    dom.innerHTML = item; // 显示文字
+    for (var i = 0, len = itemLen; i < len; i++) { // 添加文本效果
+      var textLen = dom.textContent.length, s = dom.style;
+      s.animationTimingFunction = "steps(" + textLen + "),steps(1)";; //动态设置steps
+      s.animationName = `typing${itemLen}`; //文本长度不同，展示的宽度就不同，所以需要动态设置
+      s.animationDuration = `${itemLen/2}s,0.5s`; //这儿设置速度
+    }
+    setTimeout(() => {
+      func(j + 1)
+    },itemLen*500) //这儿和上面的animationDuration速度一致，只不过这儿是毫秒，所以要乘以1000
+    
+  }else{
+    func(0); //就从头开始继续
+  }
+}
+func(j);  
+
+</script>  
+
         
             <ul class="s-icon-list">
                 
@@ -260,6 +323,51 @@
                     
                         <div class="home-content-container fade-in-down-animation">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2020/12/25/study/Css%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C%EF%BC%8C%E6%96%87%E5%AD%97%E5%BE%AA%E7%8E%AF%20%E9%80%90%E4%B8%AA%E5%87%BA%E7%8E%B0%EF%BC%8C%E9%80%90%E4%B8%AA%E5%88%A0%E9%99%A4/">
+                        
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        12345title: Css 打字机效果，文字循环 逐个出现，逐个删除tag:   - css  - 特效  - html
+
+
+看见一个不错的特效：
+效果如下：html 文本
+12&lt;h1 id=&quot;box&quot;&gt;&lt;/...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Fri Dec 25 2020 08:08:33 GMT+0800">2020-12-25</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/study/">study</a>
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2020/12/25/study/Css%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C%EF%BC%8C%E6%96%87%E5%AD%97%E5%BE%AA%E7%8E%AF%20%E9%80%90%E4%B8%AA%E5%87%BA%E7%8E%B0%EF%BC%8C%E9%80%90%E4%B8%AA%E5%88%A0%E9%99%A4/">Read more <i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
         
             <li class="home-article-item">
 
@@ -626,47 +734,6 @@ Windows Chocolatey安装...
     </div>
 
     <a href="/2020/12/19/shopify/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAShopify%E6%A8%A1%E7%89%88%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Read more <i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2020/12/19/shopify/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84Shopify%E5%BA%97%E9%93%BA%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F/">
-                        为什么你的Shopify店铺没有成功
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-为什么你的Shopify店铺没有成功？关于Shopify的各种讨论真是非常热烈！ 现实是99%的Shopify店铺创建者都未能实现一夜暴富的美梦，这与很多Shopify大师所宣传的情况不符。那么如何避免重蹈99%的失败者的覆辙而加入1%的成功者行列...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-edit"></i> <span class="home-article-date" data-date="Sat Dec 19 2020 20:03:49 GMT+0800">2020-12-19</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/shopify/">shopify</a>
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2020/12/19/shopify/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9A%84Shopify%E5%BA%97%E9%93%BA%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F/">Read more <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
