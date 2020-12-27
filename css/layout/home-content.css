@@ -21,6 +21,8 @@ keep-mobile()
   margin: 0;
 }
 .home-content-container .home-article-list .home-article-item .home-article-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: justify;
   margin: 20px 0;
   line-height: 2em;
