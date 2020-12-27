@@ -139,159 +139,191 @@
                 <main class="main-content normal-code-theme">
 
                     
-                        <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                        $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
 
-        <div class="article-title">
-            <span class="title-hover-animation">shopify产品页面数据获取</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span>Mark</span>
-                        <span class="level">Lv2</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/categories/shopify/">shopify</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+  keep-container(1.008, 1.002, 30px, 30px);
 
-    
-    
-    
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: 1.8em;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: 1.5em;
+    }
 
-        <div class="article-content markdown-body">
-            <h3 id="获取产品数据"><a href="#获取产品数据" class="headerlink" title="获取产品数据"></a>获取产品数据</h3><h4 id="获取标题"><a href="#获取标题" class="headerlink" title="获取标题"></a>获取标题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; product.title &#125;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取最低价和最高价"><a href="#获取最低价和最高价" class="headerlink" title="获取最低价和最高价"></a>获取最低价和最高价</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; product.price_min | money &#125;&#125; - &#123;&#123; product.price_max | money &#125;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取-variant-（后面我将叫它为变体），并获取关联数据"><a href="#获取-variant-（后面我将叫它为变体），并获取关联数据" class="headerlink" title="获取 variant （后面我将叫它为变体），并获取关联数据"></a>获取 variant （后面我将叫它为变体），并获取关联数据</h4><p>这里我先讲一下 我的选购逻辑，因为这里的代码数据应该如何获取与我的选购逻辑有关系。我的选购逻辑与速卖通的有点像，速卖通是有个选项可以绑定图片，这样用户可以更直观的知道他的选择。而为我的逻辑是通过选择图片进行选购，不一样的是我的图片可以通过选择属性进行筛选，而不是不同属性的图片是一样的，下面是速卖通的截图</p>
-<p><img src="https://img-blog.csdnimg.cn/20200330124554589.gif" alt="速卖通图片选项"></p>
-<h4 id="获取-variant-和关联数据，图片，标题，ID"><a href="#获取-variant-和关联数据，图片，标题，ID" class="headerlink" title="获取 variant 和关联数据，图片，标题，ID"></a><strong>获取 variant 和关联数据，图片，标题，ID</strong></h4><p>这里我规定 多重属性 的 第一个option 是 image 第二个是 size，因为我的项目选项是固定的，可以这样做，当然你也可以写成灵活的，只是这样你需要做的工作量比较多而已</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for variant in product.variants %&#125;</span><br><span class="line">  &#123;% assign id &#x3D; variant.id %&#125;</span><br><span class="line">  &#123;% assign title &#x3D; variant.title %&#125;</span><br><span class="line">  &#123;% assign image &#x3D; variant.image %&#125;</span><br><span class="line">  &#123;% assign size &#x3D; variant.option2 %&#125;</span><br><span class="line">&#123;% endfor%&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取选项数据"><a href="#获取选项数据" class="headerlink" title="获取选项数据"></a>获取选项数据</h4><p>这里可以根据我根据我的项目需求进行获取，我的项目需求可以简单的认为只有 图片 和 尺寸<br>图片上面已经有了，所以这里我只需要得到 size。这里是有条件，要求你在上传产品的时候设置多重属性的时候就要对应名称，我这里是 image 和 color。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取 size</span><br><span class="line">&#123;% for value in product.options_by_name[&#39;size&#39;].values %&#125;</span><br><span class="line">  &lt;li&gt;&#123;&#123; value &#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h4><p>数据绑定还是比较简单的，讲获取到的数据通过 data- 绑定在dom上就好了，后面我们通过js来读取即可，可根据自己需要进行绑定</p>
-<p>对于大部分人来说可能更加喜欢通过 js 渲染数据。这里给大家提供以下如何在js中获取产品数据的代码，如果你需要考虑SEO,那你就的主意一下，因为爬虫是无法读取js渲染的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 记得必须是在产品页面下才有效 需要访问得到 &#123;&#123; product &#125;&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  &#x2F;&#x2F; 获取 product 的json数据</span><br><span class="line">  let product &#x3D; &#123;&#125;;</span><br><span class="line">  product.data &#x3D; &#123;&#123; product | json &#125;&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+    +keep-mobile() {
+      font-size: 1.2em;
+    }
+  }
 
-        </div>
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：shopify产品页面数据获取</li>
-        <li>Post author：Mark</li>
-        <li>Create time：2020-12-19 20:03:49</li>
-        <li>
-            Post link：https://x.iqimeng.com/2020/12/19/shopify/shopify产品页面数据获取/
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
-    </ul>
-</div>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-            </div>
-        
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/12/19/shopify/shopify%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify模板开发学习-自定义配置文件</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2020/12/19/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify 图片CDN 详解</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
 
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    
-        
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <div id="gitalk-container"></div>
-    <script>
-        let __gitalk__pathname = decodeURI(location.pathname);
-        const __gitalk__pathnameLength = __gitalk__pathname.length;
-        const __gitalk__pathnameMaxLength = 50;
-        if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
-            __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18em;
+        display: flex;
+        align-items: center;
+
+        .level {
+          margin-left: 10px;
+          color: #fff;
+          font-size: 0.7em;
+          font-weight: 500;
+          background: var(--selection-color);
+          padding: 0 4px;
+          border-radius: 5px;
         }
-        const gitalk = new Gitalk({
-            clientID: 'f7b8dc841cf44c61bb2a',
-            clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
-            repo: 'hexo-comment',
-            owner: 'markruan',
-            admin: ['markruan'],
-            id: __gitalk__pathname,
-            language: ''
-        })
-        gitalk.render('gitalk-container')
-    </script>
+      }
+    }
+
+  }
 
 
-    
-</div>
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.88);
+      transform-origin: left top;
+    }
+  }
 
-            </div>
-        
-    </div>
-</div>
+
+  .article-content {
+    margin-top: $component-interspace;
+    text-align: justify;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-interspace;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-interspace;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(1.08, 1.08, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                     

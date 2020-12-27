@@ -139,151 +139,191 @@
                 <main class="main-content normal-code-theme">
 
                     
-                        <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                        $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
 
-        <div class="article-title">
-            <span class="title-hover-animation">值得纪念的一条</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span>Mark</span>
-                        <span class="level">Lv2</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/tags/%E5%BF%83%E6%83%85/">心情</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(1.008, 1.002, 30px, 30px);
 
-    
-    
-    
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: 1.8em;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: 1.5em;
+    }
 
-        <div class="article-content markdown-body">
-            <p>原来信心满满，憧憬各种各样的结果，也做好的面对挑战和无尽的压力，但事实却事与愿违，向前一步可能会很难，但也不想这样就看到尽头，命运真的会给我们开玩笑，好吧，既然这样那我就在这条路上一往无前</p>
-<p>加油！！</p>
-<p><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/ice-from-diamond-beach-iceland-picjumbo-com.jpg" alt="ice-from-diamond-beach-iceland-picjumbo-com"></p>
+    +keep-mobile() {
+      font-size: 1.2em;
+    }
+  }
 
-        </div>
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：值得纪念的一条</li>
-        <li>Post author：Mark</li>
-        <li>Create time：2020-12-19 20:03:49</li>
-        <li>
-            Post link：https://x.iqimeng.com/2020/12/19/值得纪念的一天/
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
-    </ul>
-</div>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-            </div>
-        
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">github 使用记录</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2020/12/19/study/typora%E4%BD%BF%E7%94%A8/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">typora使用</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center" >
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
 
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    
-        
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <div id="gitalk-container"></div>
-    <script>
-        let __gitalk__pathname = decodeURI(location.pathname);
-        const __gitalk__pathnameLength = __gitalk__pathname.length;
-        const __gitalk__pathnameMaxLength = 50;
-        if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
-            __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18em;
+        display: flex;
+        align-items: center;
+
+        .level {
+          margin-left: 10px;
+          color: #fff;
+          font-size: 0.7em;
+          font-weight: 500;
+          background: var(--selection-color);
+          padding: 0 4px;
+          border-radius: 5px;
         }
-        const gitalk = new Gitalk({
-            clientID: 'f7b8dc841cf44c61bb2a',
-            clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
-            repo: 'hexo-comment',
-            owner: 'markruan',
-            admin: ['markruan'],
-            id: __gitalk__pathname,
-            language: ''
-        })
-        gitalk.render('gitalk-container')
-    </script>
+      }
+    }
+
+  }
 
 
-    
-</div>
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.88);
+      transform-origin: left top;
+    }
+  }
 
-            </div>
-        
-    </div>
-</div>
+
+  .article-content {
+    margin-top: $component-interspace;
+    text-align: justify;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-interspace;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-interspace;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(1.08, 1.08, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                     
