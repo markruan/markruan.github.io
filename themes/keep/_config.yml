@@ -1,0 +1,220 @@
+# ---------------------------------------------------------------------------------------
+#  Your basic info
+# ---------------------------------------------------------------------------------------
+base_info:
+  title: 爱·绮梦
+  subtitle: 学而时习之
+  author: Mark  
+  url: https://x.iqimeng.com
+
+
+# ---------------------------------------------------------------------------------------
+# Theme style settings
+# ---------------------------------------------------------------------------------------
+style:
+  # Theme primary color
+  primary_color: '#0066CC'
+
+  # Image align position, value: left | center
+  img_position: left
+
+  # Left side width
+  left_side_width: 260px
+
+  # Content area max width
+  content_max_width: 900px
+
+  # favicon
+  # 网站图标，把 "/source/images/" 目录下的 "favicon.png"，换成自己的图片即可。
+  favicon: images/favicon.ico
+
+  # avatar
+  # 头像图片，把 "/source/images/" 目录下的 "avatar.png"，换成自己的图片即可。
+  avatar: images/avatar.jpg
+
+  # Mouse hover
+  hover:
+    shadow: true   # shadow effect when the mouse hover
+    scale: false   # scale effect when the mouse hover
+
+  # First screen
+  first_screen:
+    enable: true
+    description: 学而时习之
+
+
+# ---------------------------------------------------------------------------------------
+# Social contact link
+# ---------------------------------------------------------------------------------------
+social_contact:
+  enable: true
+  links:
+    github:   https://github.com/markruan       # your GitHub URL
+    sitemap: https://www.izihang.com
+    weixin:          # your WeChat QR-Code URL
+    weibo:  https://weibo.com/iqimeng         # your WeiBo URL
+    twitter:         # your twitter URL
+    facebook:        # your facebook URL
+    email:           # your email
+
+
+
+# ---------------------------------------------------------------------------------------
+# Navigation menu
+# ---------------------------------------------------------------------------------------
+menu:
+  Home: /
+  Archives: /archives
+  Categories: /categories
+  Tags: /tag
+  Links: /links
+  # About: /about
+  # ...
+
+
+# ---------------------------------------------------------------------------------------
+# RSS
+# Dependencies: hexo-generator-feed
+# See: https://github.com/hexojs/hexo-generator-feed
+# ---------------------------------------------------------------------------------------
+rss:
+  enable: false
+
+
+# ---------------------------------------------------------------------------------------
+# Comment plugin
+# ---------------------------------------------------------------------------------------
+comment:
+  # Valine
+  # See: https://github.com/xCss/Valine
+  valine:
+    enable: false
+    appid:  GAI5B7iRDpBDuxOUtOyQmWiO-gzGzoHsz              # your leancloud application appid
+    appkey: CKOBiAcgB6Q41QtGw9eaw09q              # your leancloud application appkey
+    meta:   ['NickName', 'Mail', 'Link']             # comment input meta, type: Array, values: ['nick', 'mail', 'link']
+    placeholder:  来吧，互相伤害吧！        # your placeholder
+
+  # Gitalk
+  # See: https://github.com/gitalk/gitalk
+  gitalk:
+    enable: true
+    github_id:   markruan          # GitHub repo owner
+    repository:  hexo-comment          # Repository name to store issues
+    client_id: f7b8dc841cf44c61bb2a            # GitHub Application Client ID
+    client_secret:  c2be5d9c351419dc7718bc27898e806707c23874       # GitHub Application Client Secret
+
+
+# ---------------------------------------------------------------------------------------
+# Website count
+# ---------------------------------------------------------------------------------------
+website_count:
+  # busuanzi
+  # See: http://ibruce.info/2015/04/04/busuanzi/
+  busuanzi_count:
+    enable: false
+    site_uv: true
+    site_pv: true
+    page_pv: true
+
+
+# ---------------------------------------------------------------------------------------
+# Local Search
+# Dependencies: hexo-generator-searchdb
+# See: https://github.com/theme-next/hexo-generator-searchdb
+# ---------------------------------------------------------------------------------------
+local_search:
+  enable: false
+
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto  # values: auto | manual
+
+  # Unescape html strings to the readable one.
+  unescape: false
+
+  # Preload the search data when the page loads.
+  preload: false
+
+
+# ---------------------------------------------------------------------------------------
+# Post word count
+# Dependencies: hexo-wordcount
+# See: https://github.com/willin/hexo-wordcount
+# ---------------------------------------------------------------------------------------
+post_wordcount:
+  enable: true
+  wordcount: false  # word count, one article
+  min2read: false   # time to read, one article
+
+
+# ---------------------------------------------------------------------------------------
+# Home page article block display settings
+# ---------------------------------------------------------------------------------------
+home_article:
+  category:
+    enable: true     # show category in home page article block
+    limit: 3          # max number of categories shown in home page article block
+  tag:
+    enable: true     # show tags in home page article block
+    limit: 5          # max number of tags shown in home page article block
+
+
+# ---------------------------------------------------------------------------------------
+# Code copy
+# ---------------------------------------------------------------------------------------
+code_copy:
+  enable: true
+  style: default        # values: default | mac
+
+
+# ---------------------------------------------------------------------------------------
+# Table of Contents in the Sidebar
+# ---------------------------------------------------------------------------------------
+toc:
+  enable: true
+
+  # Automatically add list number to toc.
+  number: true
+
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true
+
+
+# ---------------------------------------------------------------------------------------
+# Post copyright info
+# ---------------------------------------------------------------------------------------
+copyright_info:
+  enable: true
+
+
+# ---------------------------------------------------------------------------------------
+# Footer settings
+# ---------------------------------------------------------------------------------------
+footer:
+  since: 2012
+
+
+# ---------------------------------------------------------------------------------------
+# CDN
+# ---------------------------------------------------------------------------------------
+cdn:
+  enable: true
+
+
+# ---------------------------------------------------------------------------------------
+# Aplayer 播放器(仅限首页使用)
+# ---------------------------------------------------------------------------------------
+aplayer: 
+  enable: true
+
+# ---------------------------------------------------------------------------------------
+# particles 首页粒子动画背景
+# ---------------------------------------------------------------------------------------
+particles: 
+  enable: true 
+
+
+# ---------------------------------------------------------------------------------------
+# Keep version (Please don't modify)
+# ---------------------------------------------------------------------------------------
+version: 3.0.2

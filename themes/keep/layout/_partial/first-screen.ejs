@@ -1,0 +1,32 @@
+
+<% if (theme.particles.enable && is_home() && !page.prev) { %>
+    <%- partial('_partial/particles/particles.ejs') %>  
+<% } %>
+<div class="first-screen-container flex-center ">
+    <div class="content flex-center">
+       <%- partial('_partial/text/text.ejs') %>  
+
+        <% if (theme.social_contact.enable) { %>
+            <ul class="s-icon-list">
+                <% for (const key in theme.social_contact.links) { %>
+                    <% if(theme.social_contact.links[key]) { %>
+                        <% if(key === 'sitemap') { %>
+                            <li class="s-icon-item <%= key %>">
+                                <a href="<%- url_for(theme.social_contact.links[key]) %>">
+                                    <i class="fa fa-<%= key %>"></i>
+                                </a>
+                            </li>
+                        <% } else { %>
+                            <li class="s-icon-item <%= key %>">
+                                <a href="<%- url_for(theme.social_contact.links[key]) %>">
+                                    <i class="fab fa-<%= key %>"></i>
+                                </a>
+                            </li>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </ul>
+        <% } %>
+    </div>
+</div>
+

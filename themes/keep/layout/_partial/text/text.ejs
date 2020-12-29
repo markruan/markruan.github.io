@@ -1,0 +1,65 @@
+<h1 class="description" id="box"></h1>
+
+<style>
+@keyframes typing9{
+  from {
+    width: 0;
+  }
+  50% {
+    width: 9ch;
+  }
+  100% {
+    width: 0
+  }
+}
+ 
+@keyframes typing11 {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 11ch;
+  }
+  100% {
+    width: 0
+  }
+}
+@keyframes caret { 50% { border-color: transparent; } }
+h1 {
+  width: 0;
+  animation: typing 6s steps(15) infinite,caret 1s steps(1) infinite;
+  white-space: nowrap;
+  overflow:hidden;
+  border-right: .05em solid;
+  font-family: Consolas, Monaco, monospace;//注意这儿，要设置字体为等宽字体,ch才会充分发挥效果
+}
+     
+
+</style>
+<script>
+const arr = ['学而时习之 ','不亦说乎 '];//显示的文本
+const dom = document.getElementById('box')
+let j = 0; //从数组第一个开始展示
+// 递归函数
+const func =(j) => {
+  if(j < arr.length){ // 当达到数组长度时，就从头开始继续
+    const item = arr[j]
+    const itemLen = item === '学而时习之 ' ? 11 : 9; // 汉字是占两个ch
+    dom.innerHTML = item; // 显示文字
+    for (var i = 0, len = itemLen; i < len; i++) { // 添加文本效果
+      var textLen = dom.textContent.length, s = dom.style;
+      s.animationTimingFunction = "steps(" + textLen + "),steps(1)";; //动态设置steps
+      s.animationName = `typing${itemLen}`; //文本长度不同，展示的宽度就不同，所以需要动态设置
+      s.animationDuration = `${itemLen/2}s,0.5s`; //这儿设置速度
+    }
+    setTimeout(() => {
+      func(j + 1)
+    },itemLen*500) //这儿和上面的animationDuration速度一致，只不过这儿是毫秒，所以要乘以1000
+    
+  }else{
+    func(0); //就从头开始继续
+  }
+}
+func(j);  
+
+</script>
