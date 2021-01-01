@@ -53,7 +53,7 @@
                     <a class=""
                        href="/"
                     >
-                        HOME
+                        首页
                     </a>
                 </li>
             
@@ -61,7 +61,7 @@
                     <a class=""
                        href="/archives"
                     >
-                        ARCHIVES
+                        归档
                     </a>
                 </li>
             
@@ -69,7 +69,7 @@
                     <a class=""
                        href="/categories"
                     >
-                        CATEGORIES
+                        分类
                     </a>
                 </li>
             
@@ -77,7 +77,7 @@
                     <a class=""
                        href="/tag"
                     >
-                        TAGS
+                        标签
                     </a>
                 </li>
             
@@ -85,7 +85,7 @@
                     <a class=""
                        href="/links"
                     >
-                        LINKS
+                        友链
                     </a>
                 </li>
             
@@ -101,27 +101,27 @@
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/">HOME</a>
+                       href="/">首页</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/archives">归档</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/categories">分类</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/tag">TAGS</a>
+                       href="/tag">标签</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/links">LINKS</a>
+                       href="/links">友链</a>
                 </li>
             
         </ul>
@@ -157,29 +157,51 @@
                         <span class="level">Lv2</span>
                     </div>
                     <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>
-            <ul>
-                
-                    <li>
-                        <a href="/categories/Vue/">Vue</a>
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+                        .article-meta-info {
 
-    
-    
-    
-    
-</div>
+  color: var(--third-text-color);
+  font-size: 0.8em;
+
+  .article-meta-item {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+  .article-tags, .article-categories {
+    display: inline;
+
+    ul, li {
+      display: inline;
+    }
+
+    a {
+      color: var(--third-text-color);
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+
+  .article-wordcount, .article-tags {
+    +keep-mobile() {
+      display: none;
+    }
+  }
+
+  .article-min2read, .article-categories {
+
+    +keep-tablet() {
+      display: none;
+    }
+
+  }
+}
 
                     </div>
                 </div>
@@ -187,8 +209,7 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>H5audio标签有许多事件</p>
-<p><img src="https://raw.githubusercontent.com/markruan/cloudimg/master/img/20190127152315247-20201106152816056-20201106153001803.png"></p>
+            <h2 id="H5audio标签有许多事件"><a href="#H5audio标签有许多事件" class="headerlink" title="H5audio标签有许多事件"></a>H5audio标签有许多事件</h2><p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg@master/img/20190127152315247.png" alt="20190127152315247"></p>
 <p> 在应用到vue中后的使用如下：</p>
 <p>比如在使用onplay时，要去掉on，用@play派发时间，在methods中定义方法执行体</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;audio src&#x3D;&quot;..&#x2F;..&#x2F;static&#x2F;1.mp3&quot; @play&#x3D;&quot;ready&quot; @pause&#x3D;&quot;pause&quot; controls&gt;&lt;&#x2F;audio&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;musci&#39;,</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            ready()&#123;</span><br><span class="line">                console.log(&quot;play click&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">            pause()&#123;</span><br><span class="line">                console.log(&quot;pause click&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -199,14 +220,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：vue中使用H5的audio</li>
-        <li>Post author：Mark</li>
-        <li>Create time：2020-12-19 20:03:49</li>
+        <li>本文标题：vue中使用H5的audio</li>
+        <li>本文作者：Mark</li>
+        <li>创建时间：2020-12-19 20:03:49</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/19/Vue/vue中使用H5的audio/
+            本文链接：https://x.iqimeng.com/2020/12/19/Vue/vue中使用H5的audio/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -227,7 +248,7 @@
                             </span>
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">解决跨域</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
@@ -287,11 +308,11 @@
             
               <span>2012</span> -
             
-            2020 <i class="fas fa-heart icon-animate" style="color:red"></i> <a href="/">Mark</a>
+            2021 <i class="fas fa-heart icon-animate" style="color:red"></i> <a href="/">Mark</a>
         </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://x.iqimeng.com">Hexo</a> | Theme <a class="theme-version" target="_blank"></a>
+            由 <a target="_blank" href="https://x.iqimeng.com">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
         </div>
     </div>
 </footer> 
@@ -367,7 +388,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#H5audio%E6%A0%87%E7%AD%BE%E6%9C%89%E8%AE%B8%E5%A4%9A%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">H5audio标签有许多事件</span></a></li></ol>
     </div>
 </div>
         
