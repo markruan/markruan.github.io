@@ -66,11 +66,11 @@
     <category term="study" scheme="http://yoursite.com/categories/study/"/>
     
     
+    <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
     <category term="study" scheme="http://yoursite.com/tags/study/"/>
     
     <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
   </entry>
   
