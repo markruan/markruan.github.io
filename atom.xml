@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-30T05:02:40.354Z</updated>
+  <updated>2021-01-03T04:53:34.664Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ejs 模板在&lt;script&gt;标签中获取JSON数据</title>
+    <link href="http://yoursite.com/2021/01/03/study/Ejs%E6%A8%A1%E6%9D%BF%E5%9C%A8%3Cscript%3E%E6%A0%87%E7%AD%BE%E4%B8%AD%E8%8E%B7%E5%8F%96json%E6%95%B0%E6%8D%AE/"/>
+    <id>http://yoursite.com/2021/01/03/study/Ejs%E6%A8%A1%E6%9D%BF%E5%9C%A8%3Cscript%3E%E6%A0%87%E7%AD%BE%E4%B8%AD%E8%8E%B7%E5%8F%96json%E6%95%B0%E6%8D%AE/</id>
+    <published>2021-01-03T04:49:14.903Z</published>
+    <updated>2021-01-03T04:53:34.664Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天先给首页的播放器在设置页面添加歌曲列表，遇到了好几个问题，第一如何设置数组数据，第二就是这个了，在模板中如何获取json 数据，</p><p>如下，在前台JS中获取EJS中数组类型，以及json类型数据，可用JSON.stringify方法将其转为字符串。</p><p>再用ejs的 &lt;%- %&gt; 将其转化输出，会默认生成json类型。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> data =&lt;%- <span class="built_in">JSON</span>.stringify(DATA) %&gt;</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天先给首页的播放器在设置页面添加歌曲列表，遇到了好几个问题，第一如何设置数组数据，第二就是这个了，在模板中如何获取json 数据，&lt;/p&gt;
+&lt;p&gt;如下，在前台JS中获取EJS中数组类型，以及json类型数据，可用JSON.stringify方法将其转为字符串。&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="study" scheme="http://yoursite.com/categories/study/"/>
+    
+    
+    <category term="采坑" scheme="http://yoursite.com/tags/%E9%87%87%E5%9D%91/"/>
+    
+    <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+    <category term="HEXO" scheme="http://yoursite.com/tags/HEXO/"/>
+    
+  </entry>
   
   <entry>
     <title>typed.js 打字机效果</title>

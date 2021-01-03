@@ -6,7 +6,7 @@
     
     
     <title>
-        shopify产品页面数据获取 |
+        Ejs 模板在&lt;script&gt;标签中获取JSON数据 |
         
         爱·绮梦|学而时习之
     </title>
@@ -143,7 +143,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">shopify产品页面数据获取</span>
+            <span class="title-hover-animation">Ejs 模板在&lt;script&gt;标签中获取JSON数据</span>
         </div>
 
         
@@ -159,7 +159,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-calendar"></i> 2020-12-19 20:03:49
+        <i class="fas fa-calendar"></i> 2021-01-03 12:49:14
     </span>
     
         <span class="article-categories article-meta-item">
@@ -167,23 +167,42 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/shopify/">shopify</a>
+                        <a href="/categories/study/">study</a>
                     </li>
                 
             </ul>
         </span>
     
     
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E9%87%87%E5%9D%91/">采坑</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/js/">js</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/HEXO/">HEXO</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i> <span>645 Words</span>
+            <i class="fas fa-file-word"></i> <span>125 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i> <span>2 Mins</span>
+            <i class="fas fa-clock"></i> <span>1 Mins</span>
         </span>
     
     
@@ -199,17 +218,10 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="获取产品数据"><a href="#获取产品数据" class="headerlink" title="获取产品数据"></a>获取产品数据</h3><h4 id="获取标题"><a href="#获取标题" class="headerlink" title="获取标题"></a>获取标题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; product.title &#125;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取最低价和最高价"><a href="#获取最低价和最高价" class="headerlink" title="获取最低价和最高价"></a>获取最低价和最高价</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; product.price_min | money &#125;&#125; - &#123;&#123; product.price_max | money &#125;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取-variant-（后面我将叫它为变体），并获取关联数据"><a href="#获取-variant-（后面我将叫它为变体），并获取关联数据" class="headerlink" title="获取 variant （后面我将叫它为变体），并获取关联数据"></a>获取 variant （后面我将叫它为变体），并获取关联数据</h4><p>这里我先讲一下 我的选购逻辑，因为这里的代码数据应该如何获取与我的选购逻辑有关系。我的选购逻辑与速卖通的有点像，速卖通是有个选项可以绑定图片，这样用户可以更直观的知道他的选择。而为我的逻辑是通过选择图片进行选购，不一样的是我的图片可以通过选择属性进行筛选，而不是不同属性的图片是一样的，下面是速卖通的截图</p>
-<p><img src="https://img-blog.csdnimg.cn/20200330124554589.gif" alt="速卖通图片选项"></p>
-<h4 id="获取-variant-和关联数据，图片，标题，ID"><a href="#获取-variant-和关联数据，图片，标题，ID" class="headerlink" title="获取 variant 和关联数据，图片，标题，ID"></a><strong>获取 variant 和关联数据，图片，标题，ID</strong></h4><p>这里我规定 多重属性 的 第一个option 是 image 第二个是 size，因为我的项目选项是固定的，可以这样做，当然你也可以写成灵活的，只是这样你需要做的工作量比较多而已</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for variant in product.variants %&#125;</span><br><span class="line">  &#123;% assign id &#x3D; variant.id %&#125;</span><br><span class="line">  &#123;% assign title &#x3D; variant.title %&#125;</span><br><span class="line">  &#123;% assign image &#x3D; variant.image %&#125;</span><br><span class="line">  &#123;% assign size &#x3D; variant.option2 %&#125;</span><br><span class="line">&#123;% endfor%&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="获取选项数据"><a href="#获取选项数据" class="headerlink" title="获取选项数据"></a>获取选项数据</h4><p>这里可以根据我根据我的项目需求进行获取，我的项目需求可以简单的认为只有 图片 和 尺寸<br>图片上面已经有了，所以这里我只需要得到 size。这里是有条件，要求你在上传产品的时候设置多重属性的时候就要对应名称，我这里是 image 和 color。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取 size</span><br><span class="line">&#123;% for value in product.options_by_name[&#39;size&#39;].values %&#125;</span><br><span class="line">  &lt;li&gt;&#123;&#123; value &#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h4><p>数据绑定还是比较简单的，讲获取到的数据通过 data- 绑定在dom上就好了，后面我们通过js来读取即可，可根据自己需要进行绑定</p>
-<p>对于大部分人来说可能更加喜欢通过 js 渲染数据。这里给大家提供以下如何在js中获取产品数据的代码，如果你需要考虑SEO,那你就的主意一下，因为爬虫是无法读取js渲染的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 记得必须是在产品页面下才有效 需要访问得到 &#123;&#123; product &#125;&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  &#x2F;&#x2F; 获取 product 的json数据</span><br><span class="line">  let product &#x3D; &#123;&#125;;</span><br><span class="line">  product.data &#x3D; &#123;&#123; product | json &#125;&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+            <p>今天先给首页的播放器在设置页面添加歌曲列表，遇到了好几个问题，第一如何设置数组数据，第二就是这个了，在模板中如何获取json 数据，</p>
+<p>如下，在前台JS中获取EJS中数组类型，以及json类型数据，可用JSON.stringify方法将其转为字符串。</p>
+<p>再用ejs的 &lt;%- %&gt; 将其转化输出，会默认生成json类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> data =&lt;%- <span class="built_in">JSON</span>.stringify(DATA) %&gt;</span><br><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -217,11 +229,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：shopify产品页面数据获取</li>
+        <li>Post title：Ejs 模板在&lt;script&gt;标签中获取JSON数据</li>
         <li>Post author：Mark</li>
-        <li>Create time：2020-12-19 20:03:49</li>
+        <li>Create time：2021-01-03 12:49:14</li>
         <li>
-            Post link：https://x.iqimeng.com/2020/12/19/shopify/shopify产品页面数据获取/
+            Post link：https://x.iqimeng.com/2021/01/03/study/Ejs模板在&lt;script&gt;标签中获取json数据/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -235,29 +247,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/12/19/shopify/shopify%E6%A8%A1%E6%9D%BF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
-                        >
-                            <span class="left arrow-icon flex-center" >
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify模板开发学习-自定义配置文件</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/12/19/shopify/shopify%20%E5%9B%BE%E7%89%87CDN%20%E8%AF%A6%E8%A7%A3/"
+                           href="/2020/12/30/study/typed.js%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">shopify 图片CDN 详解</span>
+                                <span class="post-nav-title-item">typed.js 打字机效果</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center" >
@@ -418,7 +415,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E4%BA%A7%E5%93%81%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">获取产品数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">获取标题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%80%E4%BD%8E%E4%BB%B7%E5%92%8C%E6%9C%80%E9%AB%98%E4%BB%B7"><span class="nav-number">1.2.</span> <span class="nav-text">获取最低价和最高价</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-variant-%EF%BC%88%E5%90%8E%E9%9D%A2%E6%88%91%E5%B0%86%E5%8F%AB%E5%AE%83%E4%B8%BA%E5%8F%98%E4%BD%93%EF%BC%89%EF%BC%8C%E5%B9%B6%E8%8E%B7%E5%8F%96%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.</span> <span class="nav-text">获取 variant （后面我将叫它为变体），并获取关联数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-variant-%E5%92%8C%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%9B%BE%E7%89%87%EF%BC%8C%E6%A0%87%E9%A2%98%EF%BC%8CID"><span class="nav-number">1.4.</span> <span class="nav-text">获取 variant 和关联数据，图片，标题，ID</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E9%80%89%E9%A1%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">1.5.</span> <span class="nav-text">获取选项数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="nav-number">1.6.</span> <span class="nav-text">数据绑定</span></a></li></ol></li></ol>
+        
     </div>
 </div>
         
