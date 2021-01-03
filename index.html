@@ -19,7 +19,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
     KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
   </script>
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
@@ -71,7 +71,7 @@
  .first-screen-container{
    z-index:1000
  }
- .right-bottom-side-tools {
+ .right-bottom-side-tools,.sidebar-tools {
     
     z-index: 1020;
   }
@@ -231,7 +231,7 @@
                     <a class="active"
                        href="/"
                     >
-                        HOME
+                        首页
                     </a>
                 </li>
             
@@ -239,7 +239,7 @@
                     <a class=""
                        href="/archives"
                     >
-                        ARCHIVES
+                        归档
                     </a>
                 </li>
             
@@ -247,7 +247,7 @@
                     <a class=""
                        href="/categories"
                     >
-                        CATEGORIES
+                        分类
                     </a>
                 </li>
             
@@ -255,7 +255,7 @@
                     <a class=""
                        href="/tag"
                     >
-                        TAGS
+                        标签
                     </a>
                 </li>
             
@@ -263,7 +263,7 @@
                     <a class=""
                        href="/links"
                     >
-                        LINKS
+                        友链
                     </a>
                 </li>
             
@@ -279,27 +279,27 @@
             
                 <li class="drawer-menu-item">
                     <a class="active"
-                       href="/">HOME</a>
+                       href="/">首页</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/archives">归档</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/categories">分类</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/tag">TAGS</a>
+                       href="/tag">标签</a>
                 </li>
             
                 <li class="drawer-menu-item">
                     <a class=""
-                       href="/links">LINKS</a>
+                       href="/links">友链</a>
                 </li>
             
         </ul>
@@ -381,7 +381,7 @@
         
     </div>
 
-    <a href="/2020/12/30/study/typed.js%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/30/study/typed.js%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -434,7 +434,7 @@
         
     </div>
 
-    <a href="/2020/12/29/study/%E4%BD%BF%E7%94%A8%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%20Hexo%20%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/29/study/%E4%BD%BF%E7%94%A8%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%20Hexo%20%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -500,7 +500,7 @@ css 样式
         
     </div>
 
-    <a href="/2020/12/25/study/Css%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C%EF%BC%8C%E6%96%87%E5%AD%97%E5%BE%AA%E7%8E%AF%20%E9%80%90%E4%B8%AA%E5%87%BA%E7%8E%B0%EF%BC%8C%E9%80%90%E4%B8%AA%E5%88%A0%E9%99%A4/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/25/study/Css%20%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C%EF%BC%8C%E6%96%87%E5%AD%97%E5%BE%AA%E7%8E%AF%20%E9%80%90%E4%B8%AA%E5%87%BA%E7%8E%B0%EF%BC%8C%E9%80%90%E4%B8%AA%E5%88%A0%E9%99%A4/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -545,7 +545,7 @@ css 样式
         
     </div>
 
-    <a href="/2020/12/24/study/MAC%E5%8D%87%E7%BA%A7Nodejs%E5%92%8CNpm%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/24/study/MAC%E5%8D%87%E7%BA%A7Nodejs%E5%92%8CNpm%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -604,7 +604,7 @@ css 样式
         
     </div>
 
-    <a href="/2020/12/24/study/%E5%88%A9%E7%94%A8css%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2media/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/24/study/%E5%88%A9%E7%94%A8css%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2media/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -662,7 +662,7 @@ I...
         
     </div>
 
-    <a href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/19/study/github%20%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -705,7 +705,7 @@ I...
         
     </div>
 
-    <a href="/2020/12/19/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/19/%E5%80%BC%E5%BE%97%E7%BA%AA%E5%BF%B5%E7%9A%84%E4%B8%80%E5%A4%A9/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -746,7 +746,7 @@ Typora作为一款离线Markdown无疑是非常棒的， 如果作为笔记工�
         
     </div>
 
-    <a href="/2020/12/19/study/typora%E4%BD%BF%E7%94%A8/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/19/study/typora%E4%BD%BF%E7%94%A8/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -788,7 +788,7 @@ InstallationTo install particles.js you can download the latest vers...
         
     </div>
 
-    <a href="/2020/12/19/study/particles.js/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/19/study/particles.js/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -841,7 +841,7 @@ InstallationTo install particles.js you can download the latest vers...
         
     </div>
 
-    <a href="/2020/12/19/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/">Read more <i class="fas fa-angle-right"></i></a>
+    <a href="/2020/12/19/study/X3%20photo%20gallery%20%E6%8E%88%E6%9D%83%E7%A0%B4%E8%A7%A3/">阅读全文 <i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -855,7 +855,7 @@ InstallationTo install particles.js you can download the latest vers...
     
         <a class="next btn"
            href="/page/2/"
-        >Next</a>
+        >下一页</a>
     
 </div>
 
@@ -884,18 +884,18 @@ InstallationTo install particles.js you can download the latest vers...
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        Visitor Count <span id="busuanzi_value_site_uv"></span>&ensp;
+                        访问人数 <span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        Totalview <span id="busuanzi_value_site_pv"></span>
+                        总访问量 <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://x.iqimeng.com">Hexo</a> | Theme <a class="theme-version" target="_blank"></a>
+            由 <a target="_blank" href="https://x.iqimeng.com">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank"></a>
         </div>
     </div>
 </footer> 
@@ -907,6 +907,10 @@ InstallationTo install particles.js you can download the latest vers...
     <div class="sidebar-tools">
         <div class="tools-container">
     <ul class="tools-list">
+        
+            <li class="search popup-trigger">
+                <i class="fas fa-search"></i>
+            </li>
         
 
         
@@ -975,6 +979,35 @@ InstallationTo install particles.js you can download the latest vers...
 
 
 
+    <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-icon">
+            <i class="fas fa-search"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <style>
   .header-progress {
@@ -992,6 +1025,8 @@ InstallationTo install particles.js you can download the latest vers...
 
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/dark-light-toggle.js"></script>
  
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/local-search.js"></script>
+
 
 
 
