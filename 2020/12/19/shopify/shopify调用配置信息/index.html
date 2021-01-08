@@ -3,123 +3,201 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Mark">
     
     <title>
-        shopify调用配置信息 |
         
-        爱·绮梦-学而时习之
+            shopify调用配置信息 |
+        
+        爱·绮梦
     </title>
-     
-        <link rel="shortcut icon" href="/images/favicon.ico">
-    
+    <link rel="shortcut icon" href="/images/favicon.ico">
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true},"style":{"primary_color":"#0066CC","img_position":"left","left_side_width":"260px","content_max_width":"900px","favicon":"images/favicon.ico","avatar":"images/avatar.jpg","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"description":"学而时习之"}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":false},"version":"3.0.2"};
-    KEEP.language = {"search":"Search...","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","links":"Links","link":"Link","top":"TOP","read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"}};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false},"style":{"primary_color":"#0066CC","avatar":"images/avatar.jpg","favicon":"images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不亦说乎"}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.1.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
   </script>
+    
+                <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+ 
+   
+    let data =[{"name":"Crazy (Acoustic Version)","id":535048794,"artist":"David Benjamin"},{"name":"God is a girl","id":28952154,"artist":"Sasha Sloan"},{"name":"Valder Fields","id":2001320,"artist":"Tamas Wells"}]
+    let list=[];
+    for (var i = 0; i < data.length; i++) {
+    	 var item={}
+    	 item.url='https://music.163.com/song/media/outer/url?id='+data[i].id+'.mp3'
+    	 item.name=data[i].name
+    	 item.artist=data[i].artist
+    	 list.push(item)
+    }
+     
+    const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: list
+	});
+
+</script>
+<style>
+.aplayer-withlist{
+	    background-color: #ffebcd00;
+}
+.aplayer.aplayer-fixed .aplayer-body {
+    position: fixed;
+    bottom: 60px;
+    left: -66px;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    background: #fff;
+    padding-right: 18px;
+    transition: all .3s ease;
+    max-width: 400px;
+    z-index: 2200;
+    border-bottom: 1px solid #e9e9e9;
+}
+.aplayer.aplayer-fixed {
+  z-index: 1099;
+}
+.aplayer.aplayer-fixed .aplayer-list,.aplayer-withlist {
+    width: 336px
+}
+.aplayer.aplayer-fixed .aplayer-list {
+   margin-bottom: 126px;
+   background-color: #fff; 
+ 
+}
+</style>
+            
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
 </head>
 
 
 <body>
+<div class="progress-bar-container">
+    <span class="scroll-progress-bar"></span>
 
-<header class="page-header">
-        <div class="header-progress"></div>
-        
-</header>
-<div class="page-container">
+    
+        <span class="loading-progress-bar"></span>
+        <span class="loading-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
 
-   <main class="page-main">
-        
-        <div class="page-main-content">
 
-            <div class="page-main-content-top">
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                爱·绮梦
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
                 
-<header class="header-wrapper">
-  <div class="header-content">
-        <a class="logo-title" href="/">
-            爱·绮梦
-        </a>
-
-        <ul class="menu-list">
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/"
-                    >
-                        HOME
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/archives"
-                    >
-                        ARCHIVES
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/categories"
-                    >
-                        CATEGORIES
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/tag"
-                    >
-                        TAGS
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a class=""
-                       href="/links"
-                    >
-                        LINKS
-                    </a>
-                </li>
-            
-        </ul>
-
-        <div class="menu-bar">
-            <div class="menu-bar-middle"></div>
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
             
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/">HOME</a>
                 </li>
             
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives">ARCHIVES</a>
                 </li>
             
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/categories">CATEGORIES</a>
                 </li>
             
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/tag">TAGS</a>
                 </li>
             
-                <li class="drawer-menu-item">
+                <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/links">LINKS</a>
                 </li>
@@ -132,14 +210,14 @@
 </header>
 
 
-            </div>
+        </div>
 
-            <div class="page-main-content-middle">
+        <div class="page-main-content-middle">
 
-                <main class="main-content normal-code-theme">
+            <div class="main-content normal-code-theme">
 
-                    
-                        <div class="fade-in-down-animation">
+                
+                    <div class="fade-in-down-animation">
     <div class="article-content-container">
 
         <div class="article-title">
@@ -294,25 +372,37 @@
     <div id="comment-anchor"></div>
     
         
-    <script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.0/gitalk.js"></script>
     <div id="gitalk-container"></div>
-    <script>
-        let __gitalk__pathname = decodeURI(location.pathname);
-        const __gitalk__pathnameLength = __gitalk__pathname.length;
-        const __gitalk__pathnameMaxLength = 50;
-        if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
-            __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+            Gitalk && new Gitalk({
+                clientID: 'f7b8dc841cf44c61bb2a',
+                clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
+                repo: 'hexo-comment',
+                owner: 'markruan',
+                admin: ['markruan'],
+                id: __gitalk__pathname,
+                language: ''
+            }).render('gitalk-container');
         }
-        const gitalk = new Gitalk({
-            clientID: 'f7b8dc841cf44c61bb2a',
-            clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
-            repo: 'hexo-comment',
-            owner: 'markruan',
-            admin: ['markruan'],
-            id: __gitalk__pathname,
-            language: ''
-        })
-        gitalk.render('gitalk-container')
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
     </script>
 
 
@@ -325,24 +415,23 @@
 </div>
 
 
-                    
-                </main>
-
+                
             </div>
 
-            <div class="page-main-content-bottom">
-                <footer class="footer">
-    
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
     <div class="info-container">
         <div class="copyright-info info-item">
             &copy;
             
               <span>2012</span> -
             
-            2021 <i class="fas fa-heart icon-animate" style="color:red"></i> <a href="/">Mark</a>
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
         </div>
         
-            <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
@@ -357,30 +446,18 @@
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://x.iqimeng.com">Hexo</a> | Theme <a class="theme-version" target="_blank"></a>
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.1.3</a>
         </div>
     </div>
-</footer> 
+</footer>
 
-            </div>
         </div>
-    </main>
+    </div>
 
-    <div class="sidebar-tools">
-        <div class="tools-container">
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
     <ul class="tools-list">
-        
-            <li class="search popup-trigger">
-                <i class="fas fa-search"></i>
-            </li>
-        
-
-        
-            <li class="go-comment">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-
         <!-- TOC aside toggle -->
         
             <li class="tools-item page-aside-toggle">
@@ -388,10 +465,17 @@
             </li>
         
 
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
     </ul>
 </div>
 
-    </div>
+        </div>
+    
 
     <div class="right-bottom-side-tools">
         <div class="side-tools-container">
@@ -413,6 +497,9 @@
             <i class="fas fa-moon"></i>
         </li>
 
+        <!-- rss -->
+        
+
         <li class="tools-item tool-scroll-to-top flex-center">
             <i class="fas fa-arrow-up"></i>
         </li>
@@ -422,44 +509,36 @@
         </li>
     </ul>
 
-    <ul class="tools-ul-1">
+    <ul>
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-
     </ul>
 </div>
 
     </div>
 
-    <!-- page aside -->
-    <aside class="page-aside">
-        
+    
+        <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
         <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">调用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">常规配置类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E8%AE%BE%E7%BD%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number"></span> <span class="nav-text">特殊设置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Color%E5%92%8CFont"><span class="nav-number">1.</span> <span class="nav-text">Color和Font</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections"><span class="nav-number"></span> <span class="nav-text">Collections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Products"><span class="nav-number"></span> <span class="nav-text">Products</span></a>
     </div>
 </div>
-        
-    </aside>
+        </aside>
+    
 
-    <!-- image viewer -->
     <div class="image-viewer-container">
-    <div class="img-box">
-        <img src="">
-    </div>
+    <img src="">
 </div>
 
 
-</div>
-
-
-
-    <div class="search-pop-overlay">
+    
+        <div class="search-pop-overlay">
     <div class="popup search-popup">
         <div class="search-header">
-          <span class="search-icon">
-            <i class="fas fa-search"></i>
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
           </span>
             <div class="search-input-container">
                 <input autocomplete="off"
@@ -483,38 +562,66 @@
     </div>
 </div>
 
-
-
-<style>
-  .header-progress {
-      visibility: hidden;
-      position: fixed;
-      width: 0;
-      height: 3px;
-      top: 0;
-      left: 0;
-      background: var(--primary-color);
-      transition: all 0.1s ease;
-      z-index: 1008;
-    }
-</style>
-
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/dark-light-toggle.js"></script>
- 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/local-search.js"></script>
-
-
-
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/left-side-toggle.js"></script>
-
-    
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/code-copy.js"></script>
     
 
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.0.2/source/js/toc.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/toc.js"></script>
     
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+                '.background'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.loadingProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.loadingProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
 
 
 </body>

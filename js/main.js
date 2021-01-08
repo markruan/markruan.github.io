@@ -1,40 +1,35 @@
 window.addEventListener('DOMContentLoaded', () => {
 
   KEEP.themeInfo = {
+    theme: `Keep v${KEEP.theme_config.version}`,
     author: 'XPoet',
-    name: 'Keep',
-    version: KEEP.theme_config.version,
     repository: 'https://github.com/XPoet/hexo-theme-keep'
   }
 
-  // print theme info
-  KEEP.utils.printThemeInfo();
+  // print theme base info
+  KEEP.printThemeInfo = () => {
+    console.log(`\n %c ${KEEP.themeInfo.theme} %c ${KEEP.themeInfo.repository} \n`, `color: #fadfa3; background: #333; padding: 5px 0;`, `background: #fadfa3; padding: 5px 0;`);
+  }
 
-  // init scroll
-  KEEP.utils.registerWindowScroll();
+  KEEP.refresh = () => {
+    KEEP.initUtils();
+    KEEP.initHeaderShrink();
+    KEEP.initModeToggle();
+    KEEP.initBack2Top();
 
-  // toggle show tools list
-  KEEP.utils.toggleShowToolsList();
+    if (KEEP.theme_config.local_search.enable === true) {
+      KEEP.initLocalSearch();
+    }
 
-  // global font adjust
-  KEEP.utils.globalFontAdjust();
+    if (KEEP.theme_config.code_copy.enable === true) {
+      KEEP.initCodeCopy();
+    }
 
-  KEEP.utils.contentAreaWidthAdjust();
+    if (KEEP.theme_config.lazyload.enable === true) {
+      KEEP.initLazyLoad();
+    }
+  }
 
-  // comment
-  KEEP.utils.goComment();
-
-  // init page height handle
-  KEEP.utils.initPageHeightHandle();
-
-  // init first screen height
-  KEEP.utils.initFirstScreenHeight();
-
-  // big image viewer handle
-  KEEP.utils.imageViewer();
-
-  // set how long age in home article block
-  KEEP.utils.setHowLongAgoInHome();
-
- 
+  KEEP.printThemeInfo();
+  KEEP.refresh();
 });
