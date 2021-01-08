@@ -333,13 +333,23 @@
 <p>列子 图片 宽高 为 100x300，（按竖直方式平分为三个，分别为 上中下）</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;100x100&#x27;, crop: &#x27;bottom&#x27; &#125;&#125; // 显示部分 为 下</span><br></pre></td></tr></table></figure>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="原图-九宫格"><a href="#原图-九宫格" class="headerlink" title="原图 - 九宫格"></a><strong>原图</strong> - 九宫格</h5><p>尺寸：900x900</p>
-<p><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x300.jpg" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x300.jpg"
+                      alt="img"
+                ></p>
 <h5 id="1、不带-crop，则根据固定尺寸原则，返回原始尺寸"><a href="#1、不带-crop，则根据固定尺寸原则，返回原始尺寸" class="headerlink" title="1、不带 crop，则根据固定尺寸原则，返回原始尺寸"></a><strong>1、不带 crop，则根据固定尺寸原则，返回原始尺寸</strong></h5><p><strong>输入</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;900x300&#x27; &#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;cdn.shopify.com&#x2F;s&#x2F;files&#x2F;1&#x2F;0449&#x2F;5491&#x2F;0874&#x2F;files&#x2F;sudoku_900x300.jpg</span><br></pre></td></tr></table></figure>
 <p><strong>效果图</strong></p>
-<p><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_900x300.jpg" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_900x300.jpg"
+                      alt="img"
+                ></p>
 <h5 id="2、带-crop，-图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分"><a href="#2、带-crop，-图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分" class="headerlink" title="2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分"></a>2、带 crop， 图片不符合尺寸时，则根据crop指定的位置，截取要显示的部分</h5><p><strong>输入</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;top&#x27; &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;center&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;300x100&#x27;, crop: &#x27;bottom&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;left&#x27; &#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;center&#x27;&#125;&#125; </span><br><span class="line">&#123;&#123; image | img_url: &#x27;100x300&#x27;, crop: &#x27;right&#x27;&#125;&#125; </span><br></pre></td></tr></table></figure>
 <p><strong>CDN</strong></p>
@@ -354,9 +364,24 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_top.jpg" alt="img"></td>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_center.jpg" alt="img"></td>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_bottom.jpg" alt="img"></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_top.jpg"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_center.jpg"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_300x100_crop_bottom.jpg"
+                      alt="img"
+                ></td>
 </tr>
 </tbody></table>
 <table>
@@ -368,9 +393,24 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_left.jpg" alt="img"></td>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_center.jpg" alt="img"></td>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_right.jpg" alt="img"></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_left.jpg"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_center.jpg"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_100x300_crop_right.jpg"
+                      alt="img"
+                ></td>
 </tr>
 </tbody></table>
 <h3 id="图片比例（倍数）参数-scale"><a href="#图片比例（倍数）参数-scale" class="headerlink" title="图片比例（倍数）参数 scale"></a>图片比例（倍数）参数 scale</h3><p><em>谷歌翻译 为 亲密度，但是从效果来看我觉得翻译为比例或者倍数更加恰当</em></p>
@@ -388,8 +428,18 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150.jpg" alt="img"></td>
-<td><img src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150@2x.jpg" alt="img"></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150.jpg"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.shopify.com/s/files/1/0449/5491/0874/files/sudoku_150x150@2x.jpg"
+                      alt="img"
+                ></td>
 </tr>
 <tr>
 <td>图片尺寸：150x150</td>
@@ -418,14 +468,44 @@
 <td>&#123;&#123;image | img_url, format: ‘pjpg’ &#125;&#125;</td>
 </tr>
 <tr>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/9e71f5c9dfdc27044f53d3600b702398.png" alt="img"></td>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/9e71f5c9dfdc27044f53d3600b702398.png" alt="img"></td>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/af27185e6344fa9e237d57f87d48f858.png" alt="img"></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/9e71f5c9dfdc27044f53d3600b702398.png"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/9e71f5c9dfdc27044f53d3600b702398.png"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/af27185e6344fa9e237d57f87d48f858.png"
+                      alt="img"
+                ></td>
 </tr>
 <tr>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/70c761fd11c6c783542b745340ba4b0a.png" alt="img"></td>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/0369ae7f97d6b7011609e8d4ec8ec295.png" alt="img"></td>
-<td><img src="https://img-blog.csdnimg.cn/img_convert/6c9061c123da783eeabd183d1db2ba45.png" alt="img"></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/70c761fd11c6c783542b745340ba4b0a.png"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/0369ae7f97d6b7011609e8d4ec8ec295.png"
+                      alt="img"
+                ></td>
+<td><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/6c9061c123da783eeabd183d1db2ba45.png"
+                      alt="img"
+                ></td>
 </tr>
 </tbody></table>
 

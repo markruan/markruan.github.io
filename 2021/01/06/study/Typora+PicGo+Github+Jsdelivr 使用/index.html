@@ -296,12 +296,27 @@
         
 
         <div class="article-content markdown-body">
-            <p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210343306.png" alt="Typora+PicGo+Github+Jsdelivr实现高效图文写作"></p>
+            <p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210343306.png"
+                      alt="Typora+PicGo+Github+Jsdelivr实现高效图文写作"
+                ></p>
 <p>这段时间有看到小伙伴儿讨论图床的问题，都想知道有没有好用的图床，答案肯定是有的，比如国内的：腾讯云、阿里云、七牛云、又拍云等等，基本都是提供的有免费的<code>CDN</code>供用户使用，大概都是10个G左右的空间（具体的我不清楚，毕竟自己只用过七牛的，别的只是知道而已。。。），对于一般需求量不大的用户来说肯定是没问题了，但是对于技术产出较高的大佬们来说，肯定不够，所以这里结合我自己使用的一些方法总结了这篇文章，跟大家分享我自己的解决方案。</p>
 <h2 id="工具简介"><a href="#工具简介" class="headerlink" title="工具简介"></a>工具简介</h2><h3 id="typora"><a href="#typora" class="headerlink" title="typora"></a>typora</h3><p>我现在自己写文章、文档什么的基本都使用<code>markdown</code>，这是一种比较好的文本标记语言，特别是相对于编程的同学来说，这里我个人使用的<code>Typora</code>，这个我很早就接触这个东西了，更早的时候是使用<code>vscode</code>自带的markdown 或者<code>HBuildX</code>去写的，后来偶然看到了<code>typora</code>就去使用这个了，经过多个版本的迭代，之前用的不爽的地方基本都改的差不多了，现在使用起来已经很流畅了（除了每次更新的时候有点慢。。）,至于<code>markdown</code>怎么用，这个我就不写了，网上教程大把，自己去找吧，界面长这样子</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210418556.png" alt="image-20200527191211267"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210418556.png"
+                      alt="image-20200527191211267"
+                ></p>
 <h3 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h3><p><code>PicGo</code>就是一个图片上传工具，目前支持<code>SM.MS图床</code>、<code>腾讯云COS</code>、<code>GitHub</code>（待会儿我们用到的）、<code>七牛图床</code>、<code>Imgur图床</code>、<code>阿里云OSS</code>、<code>又拍云图床</code>，用法也很简单，在配置页面配置好各个图床的参数，如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210436949.png" alt="image-20200527191846033"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210436949.png"
+                      alt="image-20200527191846033"
+                ></p>
 <p>然后就可以使用这个工具将图片上传到你配置的那个图床上面去，上传方式目前有三种：</p>
 <ul>
 <li>拖拽上传</li>
@@ -309,22 +324,62 @@
 <li>命令行上传</li>
 </ul>
 <h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>emmm，这个我就不说了吧，能看到这篇文章的应该没有不知道的，万一真不知道也没关系。</p>
-<h3 id="Jsdelivr"><a href="#Jsdelivr" class="headerlink" title="Jsdelivr"></a>Jsdelivr</h3><p> <img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210532842.png" alt="image-20200527192400115"></p>
+<h3 id="Jsdelivr"><a href="#Jsdelivr" class="headerlink" title="Jsdelivr"></a>Jsdelivr</h3><p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210532842.png"
+                      alt="image-20200527192400115"
+                ></p>
 <p>如图所示，就是 开源的免费<code>CDN</code>，快速、可靠、自动化。他能够让我们快速的访问我们<code>github</code>、<code>npm</code>、<code>wordpress</code>上开放的资源。</p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-下载安装typora-PicGo"><a href="#1-下载安装typora-PicGo" class="headerlink" title="1.下载安装typora +PicGo"></a>1.下载安装<code>typora +PicGo</code></h3><p><code>Typora</code>下载地址：<a class="link"   target="_blank" rel="noopener" href="https://www.typora.io/" >https://www.typora.io/<i class="fas fa-external-link-alt"></i></a></p>
 <p><code>PicGo</code>下载地址：<a class="link"   target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases" >https://github.com/Molunerfinn/PicGo/releases<i class="fas fa-external-link-alt"></i></a> 找到图片所示位置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210459501.png" alt="image-20200527193219825"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210459501.png"
+                      alt="image-20200527193219825"
+                ></p>
 <h3 id="2-申请github令牌"><a href="#2-申请github令牌" class="headerlink" title="2.申请github令牌"></a>2.申请github令牌</h3><p>如果你已经有<code>github</code>账号，直接登录，没有的话就注册在登录，怎么注册，我就不写了，登陆进去鼠标点击头像，找到<code>Settings</code>，点击</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210802718.png" alt="image-20200527193744232"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210802718.png"
+                      alt="image-20200527193744232"
+                ></p>
 <p>找到<code>Developer settings</code>，点击</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210601911-20210106210738274.png" alt="image-20200527193744232"><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210656309.png" alt="image-20200527194130744"></p>
+<p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210601911-20210106210738274.png"
+                      alt="image-20200527193744232"
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210656309.png"
+                      alt="image-20200527194130744"
+                ></p>
 <p>期间会让你输入密码，直接输入你的<code>github</code>账号密码就行，然后填写名字，名字随便写（尽量让自己知道是什么意思），下面红框里面的必须勾上，其他的不用管</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210822745.png" alt="image-20200527194321556"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210822745.png"
+                      alt="image-20200527194321556"
+                ></p>
 <p>完成后点击页面左下方的绿色按钮，然后成功以后会回到之前的页面，显示令牌</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210841388.png" alt="image-20200527194516074"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210841388.png"
+                      alt="image-20200527194516074"
+                ></p>
 <p>这个令牌只显示一次，要复制令牌，自己找个地方保存起来，后面步骤要用到这个令牌</p>
 <h3 id="3-配置PicGo"><a href="#3-配置PicGo" class="headerlink" title="3.配置PicGo"></a>3.配置PicGo</h3><p>打开<code>PicGo</code>，找到 图床设置&gt;<code>Github</code>图床</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210900492.png" alt="image-20200527195543276"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210900492.png"
+                      alt="image-20200527195543276"
+                ></p>
 <ul>
 <li>仓库名填写，你的<code>github</code>上面你要放图片的那个仓库，必须要要是公有库；</li>
 <li>分支名，填写你要上传图片的仓库的那个分支，一般填写<code>master</code></li>
@@ -333,10 +388,25 @@
 <li>自定义域名：<code>https://cdn.jsdelivr.net/gh/你的github用户名/你设置的仓库名@分支名</code>，这个主要是用来上传以后，他用来拼接路径存在你的剪切板里面，返回图片的路径给你（这里的分支名这个位置，除了填写分支名以外，还可以填写release名称和commit tag，这个专业人士请自行研究，非专业人事就直接用分支名就可以）</li>
 </ul>
 <p>填写完成以后，点击确认，设置为默认图床，然后就可以切换到上传区，上传一张图片试试，上传完成以后会返回路径给你，这个路径格式也是可以设置的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210919276.png" alt="image-20200527200833855"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210919276.png"
+                      alt="image-20200527200833855"
+                ></p>
 <h3 id="4-配置Typora"><a href="#4-配置Typora" class="headerlink" title="4.配置Typora"></a>4.配置Typora</h3><p>打开<code>Typora</code> 找到设置里面的 图像</p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210934519.png" alt="image-20200527194826427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210947893.png" alt="image-20200527194911887"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210934519.png"
+                      alt="image-20200527194826427"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/format,png-20210106210947893.png"
+                      alt="image-20200527194911887"
+                ></p>
 <p><code>PicGo</code>路径选你安装的位置的路径，然后点击验证图片上传选项，如果提示成功就大功告成，如果失败，请重复上述步骤。</p>
 
         </div>

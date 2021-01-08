@@ -291,7 +291,12 @@
             <h2 id="X3-photo-gallery-另类破解"><a href="#X3-photo-gallery-另类破解" class="headerlink" title="X3 photo gallery 另类破解"></a>X3 photo gallery 另类破解</h2><p>这个软件用了很久，之前也用过破解版，但升级后接失效了，今天闲来无事，试着破解，搜索关键字，查看源码，自以为很简单，直接注销代码，看了下，底部链接是消失了，但是后来，点击上面的目录时才发现，会跳出授权经过….</p>
 <p>后来又试了另外的方法，终于成功了。就是把授权的文字直接把字体颜色改成背景色。具体方法如下：</p>
 <p>1.zai 源文件 templates 下76文件夹（因为通过搜索发现授权这行代码的class”x3-footer-link”在这个文件）</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/markruan/cloudimg@master/img/image-20201129184535600.png" alt="image-20201129184535600"></p>
+<p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg@master/img/image-20201129184535600.png"
+                      alt="image-20201129184535600"
+                ></p>
 <p>2.随便找一行代码，我是在131行 加入如下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">&quot;&lt;style&gt;.footer .x3-footer-link,.footer .x3-footer-link a &#123;color:#e2d6d2;pointer-events: none;&#125; &lt;/style&gt;&quot;</span>;</span><br></pre></td></tr></table></figure>
 <p> 完成。</p>

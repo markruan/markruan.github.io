@@ -298,7 +298,12 @@
 </ul>
 <h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><p><strong>本文以 Hexo + <a class="link"   target="_blank" rel="noopener" href="https://github.com/XPoet/hexo-theme-keep" >Keep<i class="fas fa-external-link-alt"></i></a> 搭建的静态网站为例，教你如何使用 Travis CI 自动部署到 GitHub Pages 服务器。</strong></p>
 <h3 id="新建-GitHub-仓库"><a href="#新建-GitHub-仓库" class="headerlink" title="新建 GitHub 仓库"></a>新建 GitHub 仓库</h3><p>创建一个用来存储 Hexo 项目源代码和静态页面的<a class="link"   target="_blank" rel="noopener" href="https://github.com/new" >GitHub 仓库<i class="fas fa-external-link-alt"></i></a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/create-repos.1evjlz6fnchs.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/create-repos.1evjlz6fnchs.png"
+                      alt="img"
+                ></p>
 <p>备注：选公有仓库和私有仓库都可以，但 Travis CI 只对 GitHub 的 public 仓库免费。</p>
 <p>例如：本文案例仓库 <code>keep-demo</code>。</p>
 <ul>
@@ -307,18 +312,53 @@
 </ul>
 <p>当 <code>main 分支</code>的源代码（主题文件，文章 md 文件、图片等）有变动时，CI 会自动编译并部署到 <code>gh-pages 分支</code>。</p>
 <h3 id="新建-GitHub-Token"><a href="#新建-GitHub-Token" class="headerlink" title="新建 GitHub Token"></a>新建 GitHub Token</h3><p>创建一个有 repo 权限的 <a class="link"   target="_blank" rel="noopener" href="https://github.com/settings/tokens/new" >GitHub Token<i class="fas fa-external-link-alt"></i></a> 。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.8ew2trw9if4.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.8ew2trw9if4.png"
+                      alt="img"
+                ></p>
 <p>新生成的 Token 只会显示一次，如有遗失，重新生成即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/xpoet-image-hosting/PicX/image.krns6rvn9l.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/xpoet-image-hosting/PicX/image.krns6rvn9l.png"
+                      alt="img"
+                ></p>
 <h3 id="添加-travis-yml"><a href="#添加-travis-yml" class="headerlink" title="添加 .travis.yml"></a>添加 <code>.travis.yml</code></h3><p>在你的 Hexo 博客项目文件夹下添加 Travis CI 的配置文件 <code>.travis.yml</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.4fgd9xj4kl20.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.4fgd9xj4kl20.png"
+                      alt="img"
+                ></p>
 <p><code>.travis.yml</code> 文件的内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"># 编译环境、语言</span><br><span class="line">dist: xenial</span><br><span class="line">os: linux</span><br><span class="line">language: node_js</span><br><span class="line"></span><br><span class="line"># Node.js 版本</span><br><span class="line">node_js:</span><br><span class="line">  - 12</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - main                      # 只有 main 分支检出更改才触发 CI</span><br><span class="line"></span><br><span class="line">before_install:</span><br><span class="line">  - export TZ&#x3D;&#39;Asia&#x2F;Shanghai&#39;   # 配置时区为东八区 UTC+8</span><br><span class="line">  - npm install hexo-cli        # 安装 hexo</span><br><span class="line"></span><br><span class="line">install:</span><br><span class="line">  - npm install                 # 安装 hexo 项目相关的依赖</span><br><span class="line"></span><br><span class="line"># 执行脚本 </span><br><span class="line">script:                         </span><br><span class="line">  - hexo clean                  # 清除 hexo 缓存</span><br><span class="line">  - hexo generate               # 生成静态文件</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  on:</span><br><span class="line">    branch: main                # 工作分支</span><br><span class="line">  strategy: git</span><br><span class="line">  provider: pages</span><br><span class="line">  skip_cleanup: true            # 跳过清理</span><br><span class="line">  token: $GH_TOKEN              # GitHub Token 变量</span><br><span class="line">  keep_history: true            # 保持推送记录，以增量提交的方式</span><br><span class="line">  local_dir: public             # 需要推送到 gh-pages 分支的静态文件目录</span><br><span class="line">  target_branch: gh-pages       # 推送的目标文件夹 local_dir(public) -&gt; gh-pages 分支</span><br></pre></td></tr></table></figure>
 <h3 id="Travis-CI-关联项目仓库"><a href="#Travis-CI-关联项目仓库" class="headerlink" title="Travis CI 关联项目仓库"></a>Travis CI 关联项目仓库</h3><ul>
-<li>使用 GitHub 账号登录 <a class="link"   target="_blank" rel="noopener" href="https://travis-ci.com/" >Travis CI 官网<i class="fas fa-external-link-alt"></i></a>，关联你的 hexo 博客项目仓库，并绑定前面生成的 GitHub Token。<br><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.29mrt40ry85c.png" alt="img"></li>
-<li>点击右上角头像，选择 “Settings”。<br><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.61r86to55dk0.png" alt="img"></li>
-<li>在所列出来的仓库里找到你的 <code>hexo 项目仓库</code>，点击 “Settings” 。如果仓库过多，可以直接搜索。<br><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.2h7f3eetn9g0.png" alt="img"></li>
-<li>增加环境变量，<code>GH_TOKEN</code> 的值填你在前面生成的 <code>GitHub Token</code>，最后点击 “Add” 添加。<br><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.i5puxt6ef7c.png" alt="img"></li>
+<li>使用 GitHub 账号登录 <a class="link"   target="_blank" rel="noopener" href="https://travis-ci.com/" >Travis CI 官网<i class="fas fa-external-link-alt"></i></a>，关联你的 hexo 博客项目仓库，并绑定前面生成的 GitHub Token。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.29mrt40ry85c.png"
+                      alt="img"
+                ></li>
+<li>点击右上角头像，选择 “Settings”。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.61r86to55dk0.png"
+                      alt="img"
+                ></li>
+<li>在所列出来的仓库里找到你的 <code>hexo 项目仓库</code>，点击 “Settings” 。如果仓库过多，可以直接搜索。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.2h7f3eetn9g0.png"
+                      alt="img"
+                ></li>
+<li>增加环境变量，<code>GH_TOKEN</code> 的值填你在前面生成的 <code>GitHub Token</code>，最后点击 “Add” 添加。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.i5puxt6ef7c.png"
+                      alt="img"
+                ></li>
 </ul>
 <h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><h3 id="修改源代码文件"><a href="#修改源代码文件" class="headerlink" title="修改源代码文件"></a>修改源代码文件</h3><p>在你的 hexo 项目文件夹下，修改你的文章、图片、主题等。</p>
 <h3 id="push-到仓库"><a href="#push-到仓库" class="headerlink" title="push 到仓库"></a>push 到仓库</h3><p>将你的 hexo 项目代码 push 到 GitHub 仓库的 main 分支，Travis CI 检测到 main 分支代码有变动，会自动执行脚本命令，将 hexo 项目编译生成静态页面，部署到 <code>gh-pages</code> 分支。</p>
@@ -326,11 +366,26 @@
 <h3 id="使用自定义域名访问"><a href="#使用自定义域名访问" class="headerlink" title="使用自定义域名访问"></a>使用自定义域名访问</h3><p>你可以使用自己的域名来访问 GitHub Pages 服务，只需在 hexo 项目的 <code>source</code> 目录下添加 <code>CNANE</code> 文件。</p>
 <p><code>CNANE</code> 文件内容参考如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keep.xpoet.cn</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.40wfwkzns480.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.40wfwkzns480.png"
+                      alt="img"
+                ></p>
 <h3 id="开启-https"><a href="#开启-https" class="headerlink" title="开启 https"></a>开启 https</h3><p>下图是 Travis CI 自动部署到 <code>gh-pages</code> 分支 成功的效果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.3slemzli8ai0.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.3slemzli8ai0.png"
+                      alt="img"
+                ></p>
 <p>我们可在仓库 <code>Settings</code> 开启域名 https 协议。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.3d1cd0bwi5i0.png" alt="img"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/XPoet/image-hosting@master/%E4%BD%BF%E7%94%A8Travis-CI%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/image.3d1cd0bwi5i0.png"
+                      alt="img"
+                ></p>
 <p>至此，使用 Travis CI 自动部署 Hexo 静态博客到 GitHub Pages 教程完毕，有任何问题，欢迎在评论区留言。</p>
 <ul>
 <li>本文链接：<a class="link"   target="_blank" rel="noopener" href="https://keep.xpoet.cn/2020/11/%E4%BD%BF%E7%94%A8-Travis-CI-%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2-Hexo-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" >https://keep.xpoet.cn/2020/11/使用-Travis-CI-自动部署-Hexo-静态博客/<i class="fas fa-external-link-alt"></i></a></li>
