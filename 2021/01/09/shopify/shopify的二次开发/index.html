@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Mark">
+    
+    <title>
+        
+            shopify的二次开发 |
+        
+        爱·绮梦
+    </title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false},"style":{"primary_color":"#0066CC","avatar":"images/avatar.jpg","favicon":"images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不亦说乎"}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.1.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+    
+                <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+ 
+   
+    let data =[{"name":"Crazy (Acoustic Version)","id":535048794,"artist":"David Benjamin"},{"name":"God is a girl","id":28952154,"artist":"Sasha Sloan"},{"name":"Valder Fields","id":2001320,"artist":"Tamas Wells"}]
+    let list=[];
+    for (var i = 0; i < data.length; i++) {
+    	 var item={}
+    	 item.url='https://music.163.com/song/media/outer/url?id='+data[i].id+'.mp3'
+    	 item.name=data[i].name
+    	 item.artist=data[i].artist
+    	 list.push(item)
+    }
+     
+    const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: list
+	});
+
+</script>
+<style>
+.aplayer-withlist{
+	    background-color: #ffebcd00;
+}
+.aplayer.aplayer-fixed .aplayer-body {
+    position: fixed;
+    bottom: 60px;
+    left: -66px;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    background: #fff;
+    padding-right: 18px;
+    transition: all .3s ease;
+    max-width: 400px;
+    z-index: 2200;
+    border-bottom: 1px solid #e9e9e9;
+}
+.aplayer.aplayer-fixed {
+  z-index: 1099;
+}
+.aplayer.aplayer-fixed .aplayer-list,.aplayer-withlist {
+    width: 336px
+}
+.aplayer.aplayer-fixed .aplayer-list {
+   margin-bottom: 126px;
+   background-color: #fff; 
+ 
+}
+</style>
+            
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    <span class="scroll-progress-bar"></span>
+
+    
+        <span class="loading-progress-bar"></span>
+        <span class="loading-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                爱·绮梦
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">shopify的二次开发</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Mark</span>
+                        <span class="level">Lv3</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2021-01-09 14:56:02
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/shopify/">shopify</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/study/">study</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>7 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="shopify的二次开发"><a href="#shopify的二次开发" class="headerlink" title="shopify的二次开发"></a>shopify的二次开发</h1><h3 id="开发条件"><a href="#开发条件" class="headerlink" title="开发条件"></a>开发条件</h3><ul>
+<li><p>基本的html，css，JavaScript，Liquid模板语法。</p>
+<p>熟悉基本的shopify的规则shopify developers里面的shopify主题内容</p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://liquid.bootcss.com/filters/compact/" >Liquid模板语法链接<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes" >shopify developers链接<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+</ul>
+<p>了解这些基本就可以开始开发了，下面先说说shopify的目录结构</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Layout    -------------------------------------------  布局模板</span><br><span class="line">Templates   ------------------------------------------ 可用的模板文件</span><br><span class="line">Sections    ------------------------------------------ 组成主题的一个个可复用的模块（开发主要的需要了解的内容）</span><br><span class="line">Snippets   ------------------------------------------- 代码片段</span><br><span class="line">Assets   --------------------------------------------- 静态资源文件夹（放入第三方库，图片等等）</span><br><span class="line">Config   --------------------------------------------- 配置主题文件</span><br><span class="line">Locales   -------------------------------------------- 用于为主题提供翻译的内容 </span><br></pre></td></tr></table></figure>
+<p>下面详谈下各个目录的作用，以及里面的注意事项</p>
+<h4 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h4><p>包含主题布局模板，默认情况下是 theme.liquid</p>
+<p><strong>内容对象</strong><br>content_for_header，content_for_index，content_for_layout</p>
+<ul>
+<li><strong>content_for_header对象</strong> 这个对象必须放在Layout/theme.liquid模板的<head> 内，它将Shopify所需的所有脚本动态加载到文档头中。这些脚本包括Shopify分析，Google Analytics（分析）以及Shopify应用所需的脚本</li>
+<li><strong>&#123;&#123;content_for_layout &#125; &#125;</strong> 这个对象必须放在Layout/theme.liquid模板的<body> 内。它动态加载由其他模板（例如index.liquid或）生成的内容product.liquid</li>
+<li><strong>content_for_index对象</strong> 这个对象此对象必须包含在中templates/index.liquid中。它包含的是在主页上呈现的动态内容部分</li>
+</ul>
+<h4 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h4><p>可用的模板文件</p>
+<p>Shopify主题由控制在线商店不同页面的外观的模板文件组成。所有模板文件均以Liquid编码。<br>这个文件没什么好讲的,给大家附上个链接。可以详细了解</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/theme-templates" >Templates详解<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="Sections"><a href="#Sections" class="headerlink" title="Sections"></a>Sections</h4><p>组成主题的一个个可复用的模块。</p>
+<p>主题有一个名为Sections的目录。部分是Liquid模板，与其他模板一样，它们可以访问相同的<a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/liquid/reference/objects" >全局对象<i class="fas fa-external-link-alt"></i></a>，<a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/liquid/reference/tags" >标签<i class="fas fa-external-link-alt"></i></a>和<a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/liquid/reference/filters" >过滤器<i class="fas fa-external-link-alt"></i></a>。在节外创建的变量在节内不可用。同样，在部分中创建的变量在部分外部不可用。如果部分包含代码段，则该代码段可以访问该部分中的变量。<br><strong>这些部分支持三个新的Liquid标签。这些新标签在部分之外不可用：</strong></p>
+<ul>
+<li>&#123;% schema %&#125;</li>
+<li>&#123;% javascript %&#125;</li>
+<li>&#123;% stylesheet %&#125;</li>
+</ul>
+<p><strong>schema</strong><br>schema不输出其内容，schema也不执行标签内的Liquid代码。<br>每个部分可以有一个schema标记，schema标记必须包含有效的JSON。schema标记可以放在节文件中的任何位置，但不能嵌套在另一个Liquid标记内。</p>
+<p>您可以在部分的schema标签中定义以下属性:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name--------展示的名字</span><br><span class="line">class--------添加额外的 class 在 section 的 div 上</span><br><span class="line">settings--------settins 的 id 在这个 section 里是唯一的，可以在这个 section 里通过 &#123;&#123; section.settings.[id] &#125;&#125; 拿到对应的 settings。全局 settings 对象可以在 sections 拿到。不过不可以在外面拿 sections 的内部的 section.settings。</span><br><span class="line">blocks</span><br><span class="line">tag-----------可以指定该部分的包装器的HTML标签</span><br><span class="line">blocks--------可以在其架构中定义块。块是可以在一个节中添加，删除和重新排序的设置和内容的容器。块必须具有name和type。块type可以是主题开发人员设置的任何值。块settings的格式与相同settings_schema.json。</span><br><span class="line">limit----------默认情况下，运营人员可以多次将同一块添加到部分中。如果需要，您可以为一个块设置一个限制，以便只能将其加起来达到一定次数：</span><br><span class="line">max_blocks-------默认状态下后台运营人员可以添加到节中的块数没有限制，但是您可以在节模式中指定最大块数：</span><br><span class="line">presets----------section 的默认配置。与 settings_data.json 的配置没有关系。</span><br><span class="line">default---------静态包含在主题模板中的节,可以在架构中定义其默认配置：没有 name 或者 category。 </span><br></pre></td></tr></table></figure>
+<p>需要注意的是presets属性和default属性我们再单独讲讲</p>
+<p>presets属性:section 的默认配置。与 settings_data.json 的配置没有关系。</p>
+<ul>
+<li>如果一个section有多个presets，每一个preset会变成一个单独的备选section提供商家进行添加。（需要将 content_for_index 包含在 index.liquid 中）。有 presets 的 sections 不能直接在 theme 的 templates 中引入。presets 必须有一个 name 和 category。在 theme editor 中，section 通过 category 进行组合。看一下列子</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;% schema %&#125; </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="attr">&quot;presets&quot;</span>: [ </span><br><span class="line">            &#123; </span><br><span class="line">               <span class="attr">&quot; category&quot;</span>: <span class="string">&quot;Custom Content&quot;</span>, </span><br><span class="line">                <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Text&quot;</span>, </span><br><span class="line">                <span class="attr">&quot;settings&quot;</span>: &#123; <span class="attr">&quot;heading&quot;</span>: <span class="string">&quot;Hello World&quot;</span> &#125;, </span><br><span class="line">                <span class="attr">&quot;blocks&quot;</span>: [ </span><br><span class="line">                        &#123; </span><br><span class="line">                            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span>, </span><br><span class="line">                            <span class="attr">&quot;settings&quot;</span>: &#123; <span class="attr">&quot;content&quot;</span>: <span class="string">&quot;Once upon a time...&quot;</span> &#125; </span><br><span class="line">                            &#125; </span><br><span class="line">                        ]</span><br><span class="line">                    &#125; </span><br><span class="line">            ] </span><br><span class="line">    &#125; </span><br><span class="line">&#123;% endschema %&#125;b</span><br></pre></td></tr></table></figure>
+<p>default属性:静态包含在主题模板中的节,可以在架构中定义其默认配置：没有 name 或者 category。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;% schema %&#125; </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="attr">&quot;default&quot;</span>: [ </span><br><span class="line">            &#123; </span><br><span class="line">                <span class="attr">&quot;settings&quot;</span>: &#123; <span class="attr">&quot;heading&quot;</span>: <span class="string">&quot;Hello World&quot;</span> &#125;, </span><br><span class="line">                <span class="attr">&quot;blocks&quot;</span>: [ </span><br><span class="line">                        &#123; </span><br><span class="line">                            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;text&quot;</span>, </span><br><span class="line">                            <span class="attr">&quot;settings&quot;</span>: &#123; <span class="attr">&quot;content&quot;</span>: <span class="string">&quot;Once upon a time...&quot;</span> &#125; </span><br><span class="line">                            &#125; </span><br><span class="line">                        ]</span><br><span class="line">                    &#125; </span><br><span class="line">            ] </span><br><span class="line">    &#125; </span><br><span class="line">&#123;% endschema %&#125; </span><br></pre></td></tr></table></figure>
+<p><strong>全局对象</strong>：可以从主题中的任何文件使用和访问以下对象，并将它们定义为全局对象或全局变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> product <span class="keyword">in</span> collections.frontpage.products %&#125; </span><br><span class="line">    &#123;&#123; product.title &#125;&#125; </span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">如collections就是全局对象，任何地方都能访问的，这个也是shopify内置的全局对象,上面有官方的所有全局对象的链接。 </span><br></pre></td></tr></table></figure>
+<h4 id="locales"><a href="#locales" class="headerlink" title="locales"></a>locales</h4><p>语言环境(这个东西说实话博主在本次开发中并没有用到,不过还是附上官方的说明吧)</p>
+<p>各节可以使用locales目录中定义的全局翻译。将translate和localize段内过滤器工作，就像他们在其他模板做。<br>各节还可以在其架构中定义自己的翻译。您只需要将此部分用于要在多个主题或商店上重复使用或安装的部分即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% schema %&#125; </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="attr">&quot;locales&quot;</span>: &#123; </span><br><span class="line">            <span class="attr">&quot;en&quot;</span>: &#123; </span><br><span class="line">                <span class="attr">&quot;title&quot;</span>: <span class="string">&quot;Welcome&quot;</span> </span><br><span class="line">                &#125;, </span><br><span class="line">            <span class="attr">&quot;fr&quot;</span>: &#123; </span><br><span class="line">                <span class="attr">&quot;title&quot;</span>: <span class="string">&quot;Bienvenue&quot;</span> </span><br><span class="line">            &#125; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#123;% endschema %&#125; </span><br></pre></td></tr></table></figure>
+<ul>
+<li>翻译将在语言编辑器的“部分”选项卡中。</li>
+<li>当您在语言编辑器中更新翻译时，您的翻译将保存到适用的语言环境文件，并且架构保持不变。节模式中的转换充当默认值。</li>
+<li>在部分中，translateandlocalize过滤器将尝试在当前部分的上下文中，然后在该部分的模式中，然后在全局上下文中查找翻译。<br>例如，&#123;&#123; ‘title’ | t &#125;&#125;insidesections/header.liquid将sections.header.title在语言环境文件中查找，然后title在该部分的架构中，然后title在语言环境文件中查找。</li>
+</ul>
+<h4 id="snippets"><a href="#snippets" class="headerlink" title="snippets"></a>snippets</h4><p>片段</p>
+<ul>
+<li>使用 include 将 snippet 加载到主题中。</li>
+<li>include 的 snippets 与父级元素共享变量</li>
+</ul>
+<h4 id="assets"><a href="#assets" class="headerlink" title="assets"></a>assets</h4><p>静态资源文件</p>
+<p>如果是要二次开发的可以在这文件下引入第三方的库和组件，图片等。（如jq，swiper等到）如果只是shopify的管理人员对某些样式不满意不需要新增其他的模块或者改动不大的只需要对样式修改的小伙伴要挺好了</p>
+<p><strong>修改简单的样式</strong></p>
+<ul>
+<li>Assets中的theme.scss文件就是整个官方的样式文件直接在这个文件上修改就行了。（这个真的要吐槽了，所有的页面样式都放在一个文件下是真的恶心。）</li>
+<li>theme.scss因为用的是scss语法，是嵌套的，一定要找到相对应的类目或者id进行修改。或者找到对应的标签给他加个类名，覆盖他的样式也可以的</li>
+</ul>
+<h4 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h4><p>主题配置文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">settings_data.json------------和sction中的schema一样 </span><br></pre></td></tr></table></figure>
+<p>settings_schema———–列出主题的所有设置。id 是唯一的。创建选项给用户去选择。使用在样式里面，通过全局的 settings 可以拿到对应的值</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://shopify.dev/docs/themes/settings" >settings_data官方详解<i class="fas fa-external-link-alt"></i></a></p>
+<p>转自：<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/lubaba20/article/details/112389673" >https://blog.csdn.net/lubaba20/article/details/112389673<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：shopify的二次开发</li>
+        <li>Post author：Mark</li>
+        <li>Create time：2021-01-09 14:56:02</li>
+        <li>
+            Post link：https://x.iqimeng.com/2021/01/09/shopify/shopify的二次开发/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/01/06/study/Typora+PicGo+Github+Jsdelivr%20%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Typora+PicGo+Github+Jsdelivr 使用</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+            Gitalk && new Gitalk({
+                clientID: 'f7b8dc841cf44c61bb2a',
+                clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
+                repo: 'hexo-comment',
+                owner: 'markruan',
+                admin: ['markruan'],
+                id: __gitalk__pathname,
+                language: ''
+            }).render('gitalk-container');
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
+        </div>
+        
+            <script async data-pjax src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count <span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.1.3</a>
+        </div>
+    </div>
+</footer>
+<style>
+    .fa-heart{
+      color: #ff0000;
+    }
+</style>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shopify%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91"><span class="nav-number">1.</span> <span class="nav-text">shopify的二次开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.0.1.</span> <span class="nav-text">开发条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.0.2.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Layout"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">Layout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Templates"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">Templates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sections"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Sections</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locales"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">locales</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#snippets"><span class="nav-number">1.0.2.5.</span> <span class="nav-text">snippets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assets"><span class="nav-number">1.0.2.6.</span> <span class="nav-text">assets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Config"><span class="nav-number">1.0.2.7.</span> <span class="nav-text">Config</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+                '.background'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.loadingProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.loadingProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
