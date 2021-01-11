@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Mark">
+    
+    <title>
+        
+            使用 shopfiy 模板语言，创建产品模板以搭配购物车实现一键购买 |
+        
+        爱·绮梦
+    </title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"yoursite.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false},"style":{"primary_color":"#0066CC","avatar":"images/avatar.jpg","favicon":"images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不亦说乎"}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.1.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+    
+                <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+ 
+   
+    let data =[{"name":"Crazy (Acoustic Version)","id":535048794,"artist":"David Benjamin"},{"name":"God is a girl","id":28952154,"artist":"Sasha Sloan"},{"name":"Valder Fields","id":2001320,"artist":"Tamas Wells"}]
+    let list=[];
+    for (var i = 0; i < data.length; i++) {
+    	 var item={}
+    	 item.url='https://music.163.com/song/media/outer/url?id='+data[i].id+'.mp3'
+    	 item.name=data[i].name
+    	 item.artist=data[i].artist
+    	 list.push(item)
+    }
+     
+    const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: list
+	});
+
+</script>
+<style>
+.aplayer-withlist{
+	    background-color: #ffebcd00;
+}
+.aplayer.aplayer-fixed .aplayer-body {
+    position: fixed;
+    bottom: 60px;
+    left: -66px;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    background: #fff;
+    padding-right: 18px;
+    transition: all .3s ease;
+    max-width: 400px;
+    z-index: 2200;
+    border-bottom: 1px solid #e9e9e9;
+}
+.aplayer.aplayer-fixed {
+  z-index: 1099;
+}
+.aplayer.aplayer-fixed .aplayer-list,.aplayer-withlist {
+    width: 336px
+}
+.aplayer.aplayer-fixed .aplayer-list {
+   margin-bottom: 126px;
+   background-color: #fff; 
+ 
+}
+</style>
+            
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    <span class="scroll-progress-bar"></span>
+
+    
+        <span class="loading-progress-bar"></span>
+        <span class="loading-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                爱·绮梦
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">使用 shopfiy 模板语言，创建产品模板以搭配购物车实现一键购买</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Mark</span>
+                        <span class="level">Lv3</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2021-01-11 10:39:25
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/shopify/">shopify</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/study/">study</a>
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/shopify/">shopify</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>1.9k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>9 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>shopfiy 的 product 在添加产品时，如果要将产品详情页面与购物车关联，就是在详情页里面直接下单，而不是从详情页通过点击购买按钮，跳到 shopfy stroe ，再从这个位置再跳转到下单页。为了改变这种不停的跳转，且如果网络不好的情况下，很容易流失客户。</p>
+<p>操作方法可以简单描述成这样：先在 Product 中添加一个产品模板，在当前产品模板中，关联 Product template 中的 自定义模板，这个自定义模板来自 Online Store 的 Templates：</p>
+<h3 id="建立自义定义模板：product-customize-liquid"><a href="#建立自义定义模板：product-customize-liquid" class="headerlink" title="建立自义定义模板：product.customize.liquid"></a>建立自义定义模板：product.customize.liquid</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个自定义模板包含通用的产品模板页中的内容，主要是通用的css / js / 布局以及购物车相关的代码块</span></span><br><span class="line"></span><br><span class="line">&lt;link rel=<span class="string">&quot;prefetch prerender stylesheet&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;&#123;&#123; &#x27;swiper.css&#x27; | asset_url &#125;&#125;&quot;</span>/&gt;</span><br><span class="line">&lt;link rel=<span class="string">&quot;prefetch prerender stylesheet&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;&#123;&#123; &#x27;bolt.css&#x27; | asset_url &quot;</span>&#125;&#125;<span class="string">&quot; /&gt;</span></span><br><span class="line"><span class="string">&lt;link rel=&quot;</span>prefetch prerender stylesheet<span class="string">&quot; type=&quot;</span>text/css<span class="string">&quot; href=&quot;</span>&#123;&#123; <span class="string">&#x27;ulbolt-font.css&#x27;</span> | asset_url &#125;&#125;<span class="string">&quot;/&gt;</span></span><br><span class="line"><span class="string">&lt;!--ubolt-pro-animation--&gt;</span></span><br><span class="line"><span class="string">&lt;link rel=&quot;</span>prefetch prerender stylesheet<span class="string">&quot; type=&quot;</span>text/css<span class="string">&quot; href=&quot;</span>&#123;&#123; <span class="string">&#x27;ubolt-pro-animation.css&#x27;</span> | asset_url &#125;&#125;<span class="string">&quot;/&gt;</span></span><br><span class="line"><span class="string">&lt;link rel=&quot;</span>prefetch prerender stylesheet<span class="string">&quot; type=&quot;</span>text/css<span class="string">&quot; href=&quot;</span>&#123;&#123; <span class="string">&#x27;bolt.css&#x27;</span> | asset_url <span class="string">&quot;&#125;&#125;&quot;</span> /&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&quot;.opendivbtn&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">&quot;.opendiv.video iframe&quot;</span>).attr(<span class="string">&quot;src&quot;</span>, $(<span class="built_in">this</span>).attr(<span class="string">&quot;href&quot;</span>));</span><br><span class="line">      $(<span class="string">&quot;.opendiv.video,.opendivmask&quot;</span>).addClass(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">&quot;.opendivmask&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">&quot;.opendiv.video iframe&quot;</span>).attr(<span class="string">&quot;src&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">      $(<span class="string">&quot;.opendiv.video,.opendivmask&quot;</span>).removeClass(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">&quot;.ul3_feature_new_1&quot;</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="built_in">this</span>)</span><br><span class="line">      .children(<span class="string">&quot;.compare.compareshow&quot;</span>)</span><br><span class="line">      .toggleClass(<span class="string">&quot;hover&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">&quot;.compareshow&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">&quot;.opendiv.comparedivwrap,.opendivmask&quot;</span>).addClass(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">      $(<span class="string">&quot;html,body&quot;</span>).css(<span class="string">&quot;overflow&quot;</span>, <span class="string">&quot;hidden&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">&quot;.opendivmask&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">&quot;.opendiv,.opendivmask&quot;</span>).removeClass(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">      $(<span class="string">&quot;html,body&quot;</span>).css(<span class="string">&quot;overflow&quot;</span>, <span class="string">&quot;auto&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(<span class="string">&quot;.opendiv .closediv&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">&quot;.opendivmask&quot;</span>).trigger(<span class="string">&quot;click&quot;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过 assign 定义的这个变量是获取当前产品已经选中的默认属性值，比如购物车中默认选中的第一个属性：颜色，大小，材质等 --&gt;</span><br><span class="line">&#123;% assign selectedVariant = product.selected_or_first_available_variant | <span class="keyword">default</span>: product %&#125;</span><br><span class="line"><span class="comment">//通用的 video 弹层</span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;opendiv video&quot;</span>&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fluid-width-video-wrapper&quot;</span>&gt;</span><br><span class="line">    &lt;iframe src=<span class="string">&quot;&quot;</span> frameborder=<span class="string">&quot;0&quot;</span> allowfullscreen=<span class="string">&quot;&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;opendivmask&quot;</span>&gt;&lt;<span class="regexp">/div&gt;/</span><span class="regexp">/这是通用描述插入方法</span></span><br><span class="line"><span class="regexp">&#123;% if product.description.size &gt; 0 %&#125;</span></span><br><span class="line"><span class="regexp">&lt;div class=&quot;product-description rte&quot; itemprop=&quot;description&quot;&gt;</span></span><br><span class="line"><span class="regexp">  &#123;&#123; product.description &#125;&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&#123;% endif %&#125;<span class="comment">//通用的 产品价格插入，这样写的目的是如果 shopfiy 的后台将该产品改掉后，详情页也会一起改掉//product.compare_at_price  原价//product.price  售价//需要了解 shopfiy 模板语言的使用方法 &#123;&#123; 变量名称 ｜ 变量单位 &#125;&#125;</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jQuery(<span class="string">&#x27;.insertPrice .sellingPrice&#x27;</span>).text(<span class="string">&quot;&#123;&#123; product.price | money &#125;&#125;&quot;</span>);</span><br><span class="line">    &#123;% <span class="keyword">if</span> product.compare_at_price &gt; product.price %&#125;</span><br><span class="line">          jQuery(<span class="string">&#x27;.insertPrice .remove-line&#x27;</span>).removeClass(<span class="string">&quot;remove-line&quot;</span>);</span><br><span class="line">            jQuery(<span class="string">&#x27;.insertPrice .originalPrice&#x27;</span>).text(<span class="string">&quot;&#123;&#123; product.compare_at_price | money &#125;&#125;&quot;</span>);</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/产品购物车内容是以 json 格式存在的，不同产品，json 内容不同，而购物车的json是根据 id=&quot;product-json&quot; 进行关联的，而 购物车的 json 名称定义为 buyingOptions，为数组</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  window.productJSON = &#123;&#123; product | json &#125;&#125;;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;application/json&quot;</span> id=<span class="string">&quot;product-json&quot;</span>&gt;</span><br><span class="line">    </span><br><span class="line">&lt;<span class="regexp">/script&gt;/</span><span class="regexp">/下面这个方法，是调取不同产品详情页定义的关于购物车的 json</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  var productCart = &#123;</span></span><br><span class="line"><span class="regexp">    title: &#123;&#123; product.title | json &#125;&#125;,</span></span><br><span class="line"><span class="regexp">    buyingOptions: []</span></span><br><span class="line"><span class="regexp">  &#125;;  </span></span><br><span class="line"><span class="regexp">  if (productOption) &#123;    </span></span><br><span class="line"><span class="regexp">    jQuery.each(productOption, function(i, row)&#123;</span></span><br><span class="line"><span class="regexp">          if(row.colorOptions)&#123;</span></span><br><span class="line"><span class="regexp">          var colorOptions = [];</span></span><br><span class="line"><span class="regexp">          jQuery.each(row.colorOptions, function(j, col)&#123;</span></span><br><span class="line"><span class="regexp">            var _option = &#123;</span></span><br><span class="line"><span class="regexp">              colorOptionName: col.colorOptionName,</span></span><br><span class="line"><span class="regexp">              color: col.color,</span></span><br><span class="line"><span class="regexp">              imageUrl: col.imageUrl,</span></span><br><span class="line"><span class="regexp">              variant: window.productJSON.variants[col.id]</span></span><br><span class="line"><span class="regexp">            &#125;;</span></span><br><span class="line"><span class="regexp">             colorOptions.push(_option);</span></span><br><span class="line"><span class="regexp">          &#125;);</span></span><br><span class="line"><span class="regexp">          &#125;</span></span><br><span class="line"><span class="regexp">                      </span></span><br><span class="line"><span class="regexp">        var buyingOptions = &#123;</span></span><br><span class="line"><span class="regexp">            buyingOptionName: row.buyingOptionName,</span></span><br><span class="line"><span class="regexp">           colorOptions: colorOptions         </span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp">                 </span></span><br><span class="line"><span class="regexp">        productCart.buyingOptions.push(buyingOptions)</span></span><br><span class="line"><span class="regexp">    &#125;);        </span></span><br><span class="line"><span class="regexp">  &#125;  /</span><span class="regexp">/购物车内容关联的 id 为 product-json，这个很重要</span></span><br><span class="line"><span class="regexp">  var productElement = document.getElementById(&quot;product-json&quot;);</span></span><br><span class="line"><span class="regexp">  productElement.innerHTML = JSON.stringify(&#123;product:productCart&#125;);</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="关联自义定义模板：product-customize-liquid"><a href="#关联自义定义模板：product-customize-liquid" class="headerlink" title="关联自义定义模板：product.customize.liquid"></a>关联自义定义模板：product.customize.liquid</h3><p>在 product 中新建一个产品，在它的 Description 的 代码块中添加 <strong>productOption</strong> 相关内容以及产品页面布局</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/868284-20190703094321229-161102190.png"
+                      alt="img"
+                ></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个代码块中的 productOption 的内容都是写死的，是根据销售自己定义的不同名称（buyingOptionName），但是 colorOptions 的内容是根据 Variants 中设置的颜色来定义的：//通过查看 Variants 中设置好的颜色 4个， 可以自定义 名称为 BBkey 可以关联前两种颜色，而名称为 BBkey + wifi 可以关联后两种颜色</span></span><br><span class="line"><span class="comment">//每种颜色可以定义它的 id / colorOptionName / color / imageUrl&lt;script&gt;// &lt;![CDATA[</span></span><br><span class="line"><span class="keyword">var</span> productOption = [</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="string">&quot;buyingOptionName&quot;</span>: <span class="string">&quot;BBkey&quot;</span>,  </span><br><span class="line">          <span class="string">&quot;colorOptions&quot;</span>:</span><br><span class="line">          [</span><br><span class="line">              &#123;</span><br><span class="line">                  <span class="string">&quot;id&quot;</span>:<span class="number">0</span>,</span><br><span class="line">                  <span class="string">&quot;colorOptionName&quot;</span>: <span class="string">&quot;White&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#b5b6b5&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;imageUrl&quot;</span>: <span class="string">&quot;https://cdn.shopify.com/s/files/1/0795/7689/products/2_grande.jpg?v=1552017922&quot;</span></span><br><span class="line">              &#125;,</span><br><span class="line">              &#123;</span><br><span class="line">                  <span class="string">&quot;id&quot;</span>:<span class="number">1</span>,</span><br><span class="line">                  <span class="string">&quot;colorOptionName&quot;</span>: <span class="string">&quot;Black&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#000000&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;imageUrl&quot;</span>: <span class="string">&quot;https://cdn.shopify.com/s/files/1/0795/7689/products/2_grande.jpg?v=1552017922&quot;</span></span><br><span class="line">              &#125;</span><br><span class="line">          ]</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">          <span class="string">&quot;buyingOptionName&quot;</span>: <span class="string">&quot;BBkey + wifi&quot;</span>,</span><br><span class="line">          <span class="string">&quot;colorOptions&quot;</span>:</span><br><span class="line">          [</span><br><span class="line">              &#123;</span><br><span class="line">                  <span class="string">&quot;id&quot;</span>:<span class="number">2</span>,</span><br><span class="line">                  <span class="string">&quot;colorOptionName&quot;</span>: <span class="string">&quot;White&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#b5b6b5&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;imageUrl&quot;</span>: <span class="string">&quot;https://cdn.shopify.com/s/files/1/0795/7689/products/2_grande.jpg?v=1552017922&quot;</span></span><br><span class="line">              &#125;,</span><br><span class="line">              &#123;</span><br><span class="line">                  <span class="string">&quot;id&quot;</span>:<span class="number">3</span>,</span><br><span class="line">                  <span class="string">&quot;colorOptionName&quot;</span>: <span class="string">&quot;Black&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#000000&quot;</span>,</span><br><span class="line">                  <span class="string">&quot;imageUrl&quot;</span>: <span class="string">&quot;https://cdn.shopify.com/s/files/1/0795/7689/products/2_grande.jpg?v=1552017922&quot;</span></span><br><span class="line">              &#125;</span><br><span class="line">          ]</span><br><span class="line">      &#125;</span><br><span class="line">  ]</span><br><span class="line"><span class="comment">// ]]&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Variants设置产品属性及不同价格"><a href="#Variants设置产品属性及不同价格" class="headerlink" title="Variants设置产品属性及不同价格"></a>Variants设置产品属性及不同价格</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/868284-20190703095155970-1513797047.png"
+                      alt="img"
+                ></p>
+<p>通过以上的关联与操作，就可以在当前产品的详情页中点击购买按钮，会有一个下面这样的弹层出现，可以直接添加购物车进行购买。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/868284-20190703100814594-1080264130.png"
+                      alt="img"
+                ></p>
+<h3 id="附shopfiy-相关教程供参考："><a href="#附shopfiy-相关教程供参考：" class="headerlink" title="附shopfiy 相关教程供参考："></a><strong>附shopfiy 相关教程供参考：</strong></h3><p>Liquid 文档： <a class="link"   target="_blank" rel="noopener" href="https://liquid.bootcss.com/" >https://liquid.bootcss.com/<i class="fas fa-external-link-alt"></i></a></p>
+<p>shopfiy 中文文档： <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/zh-CN" >https://help.shopify.com/zh-CN<i class="fas fa-external-link-alt"></i></a></p>
+<p>shopfiy api :  <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#change-cart" >https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#change-cart<i class="fas fa-external-link-alt"></i></a></p>
+<p>价格脚本api： <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/script-editor/update-liquid-templates-for-scripts" >https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/script-editor/update-liquid-templates-for-scripts<i class="fas fa-external-link-alt"></i></a></p>
+<p>自定义 css :  <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/product-reviews/advanced-customization" >https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/product-reviews/advanced-customization<i class="fas fa-external-link-alt"></i></a></p>
+<p>自定义 模板： <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/customization" >https://help.shopify.com/en/themes/customization<i class="fas fa-external-link-alt"></i></a></p>
+<p>Shopify 脚本 API ： <a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/script-editor/shopify-scripts" >https://help.shopify.com/zh-CN/manual/apps/apps-by-shopify/script-editor/shopify-scripts<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% assign product &#x3D; all_products[&#39;bbk&#39;] %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% assign selectedVariant &#x3D; product.selected_or_first_available_variant | default: product %&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;selectedVariant  默认选中的第一个产品属性，比如默认选择为 黑色</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;从 all_products 中获取 combo 的名称并赋值给变量 product，每个产品都必须获取对应的产品名称，用这个产品名称来获取以下几种数据：</span><br><span class="line">1.  不同产品对应的售价与原价</span><br><span class="line">2.  不同产品对应的 selectedVariant ，选择到购物车的产品属性列表</span><br><span class="line"></span><br><span class="line">相关属性为：</span><br><span class="line">&quot;title&quot;: &#123;&#123; product.title | json &#125;&#125;，</span><br><span class="line">&quot;price&quot;: &#123;&#123; product.price | money &#125;&#125;,</span><br><span class="line">&quot;compare_at_price&quot;:  &#123;&#123;product.compare_at_price | money&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>标记符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% ... %&#125;</span><br><span class="line">&#123;% for i in (1..5) %&#125;</span><br><span class="line">    &#123;% if i &#x3D;&#x3D; 4 %&#125;</span><br><span class="line">      &#123;% break %&#125;</span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">      &#123;&#123; i &#125;&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>用于插入某片段，使用with赋值，使用 include</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如有一片段 color.liquid</span><br><span class="line">color: &#39;&#123;&#123; color &#125;&#125;&#39; shape: &#39;&#123;&#123; shape &#125;&#125;&#39;</span><br><span class="line"></span><br><span class="line">将 color.liquid 插入到 theme.liquid 中</span><br><span class="line">&#123;% include &#39;color&#39; %&#125;</span><br><span class="line">&#123;% include &#39;color&#39; with &#39;red&#39; %&#125;</span><br><span class="line">&#123;% include &#39;color&#39; with &#39;blue&#39; %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Cart 对象属性：</span><br><span class="line">* cart.total_discount</span><br><span class="line">* cart.original_total_price</span><br><span class="line"></span><br><span class="line">订单商品属性：</span><br><span class="line">* line_item.discounts</span><br><span class="line">* line_item.message</span><br><span class="line">* line_item.original_price</span><br><span class="line">* line_item.original_line_price</span><br><span class="line">* line_item.total_discount</span><br><span class="line"></span><br><span class="line">* line_item.total_discount 返回已应用于订单商品的折扣金额</span><br><span class="line">* line_item.original_line_price 返回应用折扣前的订单项目价格</span><br><span class="line">* line_item.message 返回用于描述应用于订单项目的折扣的消息。</span><br></pre></td></tr></table></figure>
+
+
+<p>shopfiy Ajax Api</p>
+<p>所有请求网址都是以 js 结尾</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#get-product" >GET /products/.js<i class="fas fa-external-link-alt"></i></a> 获取产品 json</li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#add-to-cart" >POST /cart/add.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#get-cart" >GET /cart.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#update-cart" >POST /cart/update.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#change-cart" >POST /cart/change.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#clear-cart" >POST /cart/clear.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#get-shipping-rates" >GET /cart/shipping_rates.json<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://help.shopify.com/en/themes/development/getting-started/using-ajax-api#recommended-products" >GET /recommendations/products.json?product_id=<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：使用 shopfiy 模板语言，创建产品模板以搭配购物车实现一键购买</li>
+        <li>本文作者：Mark</li>
+        <li>创建时间：2021-01-11 10:39:25</li>
+        <li>
+            本文链接：https://x.iqimeng.com/2021/01/11/shopify/使用 shopfiy 模板语言，创建产品模板以搭配购物车实现一键购买/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/01/11/shopify/shopify%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%AE%9A%E5%88%B6%E4%BA%A7%E5%93%81%EF%BC%8C%E5%A6%82%E4%BD%95%E8%AE%A9%E7%94%A8%E6%88%B7%E5%86%99%E5%85%A5%E5%AE%9A%E5%88%B6%E5%86%85%E5%AE%B9/"
+                        >
+                            <span class="left arrow-icon flex-center" >
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">shopify如何创建定制产品，如何让用户写入定制内容</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/01/09/study/keep%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">keep主题修改字体</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+            Gitalk && new Gitalk({
+                clientID: 'f7b8dc841cf44c61bb2a',
+                clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
+                repo: 'hexo-comment',
+                owner: 'markruan',
+                admin: ['markruan'],
+                id: __gitalk__pathname,
+                language: ''
+            }).render('gitalk-container');
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2021 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
+        </div>
+        
+            <script async data-pjax src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数 <span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量 <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.1.3</a>
+        </div>
+    </div>
+</footer>
+<style>
+    .fa-heart{
+      color: #ff0000;
+    }
+</style>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%87%AA%E4%B9%89%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%EF%BC%9Aproduct-customize-liquid"><span class="nav-number">1.</span> <span class="nav-text">建立自义定义模板：product.customize.liquid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E8%87%AA%E4%B9%89%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%EF%BC%9Aproduct-customize-liquid"><span class="nav-number">2.</span> <span class="nav-text">关联自义定义模板：product.customize.liquid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variants%E8%AE%BE%E7%BD%AE%E4%BA%A7%E5%93%81%E5%B1%9E%E6%80%A7%E5%8F%8A%E4%B8%8D%E5%90%8C%E4%BB%B7%E6%A0%BC"><span class="nav-number">3.</span> <span class="nav-text">Variants设置产品属性及不同价格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%84shopfiy-%E7%9B%B8%E5%85%B3%E6%95%99%E7%A8%8B%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">附shopfiy 相关教程供参考：</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+                '.background'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.loadingProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.loadingProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
