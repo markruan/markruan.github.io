@@ -387,7 +387,7 @@ button {
 @media (max-width: 780px) {
   .markdown-body h1 {
     font-size: 1.7rem;
-    line-height: 1.1rem;
+    line-height: 1.8rem;
   }
 }
 .markdown-body h2 {
@@ -398,7 +398,7 @@ button {
 @media (max-width: 780px) {
   .markdown-body h2 {
     font-size: 1.6rem;
-    line-height: 1.1rem;
+    line-height: 1.8rem;
   }
 }
 .markdown-body h3 {
@@ -409,7 +409,7 @@ button {
 @media (max-width: 780px) {
   .markdown-body h3 {
     font-size: 1.5rem;
-    line-height: 1.06rem;
+    line-height: 1.6rem;
   }
 }
 .markdown-body h4 {
