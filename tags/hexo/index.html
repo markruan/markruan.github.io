@@ -9,7 +9,7 @@
     
     <title>
         
-            Tag: HEXO |
+            Tag: hexo |
         
         爱·绮梦-学而时习之
     </title>
@@ -219,7 +219,7 @@
                 
                     <div class="fade-in-down-animation">
     <div class="tag-container">
-        <div class="tag-name"><i class="fas fa-tag"></i> HEXO (1)
+        <div class="tag-name"><i class="fas fa-tag"></i> hexo (2)
         </div>
         <div class="tag--post-list">
             
@@ -234,9 +234,26 @@
                 
                     <li class="article-item">
                         <a class="article-title"
-                           href="/2021/01/03/study/Ejs%E6%A8%A1%E6%9D%BF%E5%9C%A8%3Cscript%3E%E6%A0%87%E7%AD%BE%E4%B8%AD%E8%8E%B7%E5%8F%96json%E6%95%B0%E6%8D%AE/"
-                        >Ejs 模板在&lt;script&gt;标签中获取JSON数据</a>
-                        <span class="article-date">01-03</span>
+                           href="/2021/01/09/study/keep%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93/"
+                        >keep主题修改字体</a>
+                        <span class="article-date">01-09</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
+                <span class="archive-year">2020</span>
+                <span class="archive-year-post-count">(1)</span>
+            </div>
+            <ul class="article-list">
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2020/12/29/study/%E4%BD%BF%E7%94%A8%20Travis%20CI%20%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%20Hexo%20%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
+                        >使用-Travis-CI-自动部署-Hexo-静态博客</a>
+                        <span class="article-date">12-29</span>
                     </li>
                 
             </ul>
@@ -415,36 +432,6 @@
                 '.page-container',
                 '.pjax',
                 '.background'
-            ],
-            history: true,
-            debug: false,
-            cacheBust: false,
-            timeout: 0,
-            analytics: false,
-            currentUrlFullReload: false,
-            scrollRestoration: false,
-            // scrollTo: true,
-        });
-
-
-        document.addEventListener('pjax:send', () => {
-            KEEP.utils.loadingProgressBarStart();
-        });
-
-        document.addEventListener('pjax:complete', () => {
-            KEEP.utils.loadingProgressBarEnd();
-            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-            KEEP.refresh();
-        });
-    });
-</script>
-
-
-
-
-</body>
-</html>
-  '.background'
             ],
             history: true,
             debug: false,
