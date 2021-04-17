@@ -2142,4 +2142,162 @@
         <tag>study</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Shopify-SEO优化指南</title>
+    <url>/2021/04/17/shopify/Shopify%20SEO%20%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-784f87b00a400e93f43443dbb9c749b8_1440w.jpg"
+                      alt="超详细的Shopify SEO优化指南2020"
+                ></p>
+<p>刚开始用Shopify开始做独立站的时候，那时候的心态可以用四个字来形容，<strong>火急火燎</strong>，或许不是因为用shopify做独立站，而是我的性格就是这样的吧……</p>
+<p>那时候连网站都没有搭建的多完整，马上就想开始投放广告，今天3月初的时候又用shopify搭建了一家利基Nitche店铺，如果你还不知道什么是nitche站的话，可以去看<a class="link"   href="https://link.zhihu.com/?target=https://www.youtube.com/watch?v=4ju0A_Vyw9A&t=786s" >这期视频<i class="fas fa-external-link-alt"></i></a>，之前的店铺是General店铺，但是今年想做一个利基店铺，就在优化利基店铺的这些时间里，其实我也在不断的整理自己做独立站这段时间中犯过的错误，走过的坑，后面会把这些经历整理成文章和视频分享给大家，今天内容的主题是关于如何做好Shopify站内优化。</p>
+<p>对于很多刚开始接触Shopify的小伙伴，包括我自己在内，从知道shopify就是用Facebook广告的方式快速的赚钱，但是这种方式真的适合每一个卖家吗？特别是对于很多的小卖家？这也是我这段时间之内一直在思考的问题，不知道你怎么看呢？</p>
+<p>就在前段时间，一直有小伙伴私信我，“Shopify一个可以赚多少钱”这个真心回答不了你，至少我刚开始做的时候，是亏了不少钱，每一个人运营的方式不一样，有不断投放广告测试产品，也有佛系运营，千人千面，只能说用shopify能赚多少钱，全看个人能力，独立站不比<a class="link"   href="https://link.zhihu.com/?target=https://www.amazon.com/" >亚马逊<i class="fas fa-external-link-alt"></i></a>，<a class="link"   href="https://link.zhihu.com/?target=https://www.etsy.com/" >etsy<i class="fas fa-external-link-alt"></i></a>这种大型的平台，自带流量，独立站的流量从哪里来呢？无非就是2种方式，付费或者免费，付费的流量方式最常见的就是Facebook广告，Google谷歌广告，pinterest广告……免费的流量就是各种社交平台的推广，SEO自然搜索的流量……获取流量的方式有非常的多，但是你要选择哪一种？</p>
+<p>使用广告的方式进行推广，可以说是一种锦上添花的方式，但是做好基础的SEO优化工作，在付费购买流量的同时，去获取更多的免费流量，双管齐下的方式，才能让我们的店铺走的更远，走的更好。</p>
+<h2 id="shopify网站结构优化"><a href="#shopify网站结构优化" class="headerlink" title="shopify网站结构优化"></a><strong>shopify网站结构优化</strong></h2><p>优化好shopify站内的结构，帮助搜索引擎更好的爬取我们的页面的同时，也可以让我们的顾客对我们店铺中出售的产品类型有一个更加清晰的了解，看过很多的Shopify店铺，有些店铺就2个分类，主页和热门产品，然后把所有的产品放在这2个页面中，不仅不利于搜索引擎的爬取，看起来也是略显的不专业。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/image-20210417162350924.png"
+                      alt="image-20210417162350924"
+                ></p>
+<p>产品页面，About Us页面，各个细分的产品类目，顾客一打开你的店铺，也可以清楚查看自己想看的产品。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-dee2d1da249f0acd7aa75788f76895b2_720w-20210417162410052.jpg"
+                      alt="img"
+                ></p>
+<h2 id="网站速度"><a href="#网站速度" class="headerlink" title="网站速度"></a><strong>网站速度</strong></h2><p>网站速度的重要性毋庸置疑，之前看到被人调侃，要是亚马逊的网站打开速度慢几秒，那亚马逊要损失多少呢？可见网站的加载速度真的很重要，但是今天我们谈的是Shopify的内部优化，坦白讲，Shopify网速的优化能做的真的不多，毕竟Shopify的服务器毕竟不在我们的手里，所以无法从服务器方面进行深入的优化。</p>
+<p>推荐3款测试网站速度的网站：</p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://www.webpagetest.org/" >webpagetest.org<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://developers.google.com/speed/pagespeed/insights/" >google pagespeed insights<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://tools.pingdom.com/" >pingdom.com<i class="fas fa-external-link-alt"></i></a></p>
+<p>Shopify网站的速度优化我们只能从以下几个方面尽量的减少网站的加载时间：</p>
+<ul>
+<li>压缩图片</li>
+<li>减少App的使用，尽量删除不常用的App</li>
+<li>主题的选择</li>
+</ul>
+<p>在把产品上传到<a class="link"   href="https://link.zhihu.com/?target=https://www.shopify.com/" >Shopify<i class="fas fa-external-link-alt"></i></a>之前，尽量使用图片压缩工具进行压缩，推荐我自己最常用的一款在线的图片压缩工具 <a class="link"   href="https://link.zhihu.com/?target=https://tinypng.com/" >tinypng.com <i class="fas fa-external-link-alt"></i></a>使用起来也是非常的简单，只要把你想要压缩的图片直接拉进去就开始自动压缩了，当然由于是使用的免费版本，所以每一次压缩图片的数量是有限制的，但是对于大部分的用户来说也是足够使用了，从一开始上传图片的时候就先进行图片的压缩，当然，在shopify的App里面也有很多压缩图片的插件，免费和付费的版本都是有的，也可以进一步的对图片进行压缩。</p>
+<p> <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-ebd6673e33f1ba8c5f7c68c5972c48bc_720w.jpg"
+                     
+                ></p>
+<p>尽量删除不常用的App，过多的安装Apps，势必会导致网站速度的缓慢，有一些小伙伴使用的免费的主题，但是免费的主题里面所集合的功能比较少，不管是Upsell的推荐，一些弹窗的设置，但是过多的安装这样的插件，会使得网站的速度变慢，化繁为简，删除不常用的App，或者去购买付费的主题，很多付费主题的内部已经内置了很多营销的插件，但是在挑选主题之前也要查该主题在手机端是否有做优化，毕竟，shopify的总订单中，手机端的订单占据了半壁江山。</p>
+<h2 id="提交网站地图"><a href="#提交网站地图" class="headerlink" title="提交网站地图"></a>提交网站地图</h2><p>很多新手小伙伴会问，什么是提交网站地图？通过提交我们网站的地图，可以告知搜素引擎网站的存在，同时通知搜素引擎爬取我们的页面，当然，如果你是使用Shopify建站的好，记得向google&amp;Bing提交我们网站地图之前，需要<a class="link"   href="https://link.zhihu.com/?target=https://help.shopify.com/zh-CN/manual/using-themes/password-page" >解除Shopify店铺的密码保护<i class="fas fa-external-link-alt"></i></a>因为如果你不解除店铺的密码保护，即使你提交了网站得到地图，搜素引擎也只能爬取到你的密码页面，其他的页面都是处于隐藏状态。</p>
+<p>如何取消Shopify的密码保护？我们来到Shopify的后台，preference偏好设置-Password protection取消勾选密码保护按钮。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="../../../../Library/Application%20Support/typora-user-images/image-20210417162740990.png"
+                      alt="image-20210417162740990"
+                ></p>
+<p><a class="link"   href="https://zhuanlan.zhihu.com/p/35123176" >全球十大搜索引擎，你听过几个？<i class="fas fa-external-link-alt"></i></a></p>
+<p>全球最大的搜索引擎当属谷歌Google，你问我为什么？不解释，通常我们提交的Google&amp;Bing这2大搜索引擎。</p>
+<p>注册网址如下：</p>
+<p>Google Search Console：</p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://www.google.com/webmasters/tools/" >https://www.google.com/webmasters/tools/<i class="fas fa-external-link-alt"></i></a></p>
+<p>Bing Webmaster Tools：</p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://www.bing.com/toolbox/webmaster" >https://www.bing.com/toolbox/webmaster<i class="fas fa-external-link-alt"></i></a></p>
+<p>向Google谷歌提交你网站地图之前，当然你需要注册Google账号，Google的search console也是谷歌旗下的产品之一，如何向Google谷歌你的Shopify网址地址呢？</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic3.zhimg.com/80/v2-f5481d40f43a43e97d716f8329848a66_720w.jpg"
+                      alt="img"
+                ></p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://blog.naibabiji.com/tutorial/google-search-console.html" >如何添加你网站到谷歌站长工具？<i class="fas fa-external-link-alt"></i></a></p>
+<p>可以参考链接内的文章，其实网域和和网址前缀的区别可以理解为总分的关系，网域涵盖了你域名旗下的所有，包含二级域名，而网址前缀则是你填入的网站的地址，网域的解析通常需要24小时左右，而网址前缀就会快很多。</p>
+<h2 id="关键词调研"><a href="#关键词调研" class="headerlink" title="关键词调研"></a><strong>关键词调研</strong></h2><p>关于关键词这真的是一个很广的话题，寻找关键词、关键词的调研每一步都需要花费大量的时间去调研。</p>
+<p>在这里推荐一些我自己经常用到的调查关键词的工具：</p>
+<p><strong><a class="link"   href="https://link.zhihu.com/?target=https://ads.google.com/home/tools/keyword-planner/" >Google keyword Planner<i class="fas fa-external-link-alt"></i></a></strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-b100b739e0d209c1f176d5e22e7d8760_720w.jpg"
+                      alt="img"
+                ></p>
+<p>输入你想查看的关键词，主要设置语言和地区，可以查看每个关键词的搜索量和竞争程度。</p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://ahrefs.com/zh/" >Ahrefs<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   href="https://link.zhihu.com/?target=https://ahrefs.com/zh/" >Ahrefs <i class="fas fa-external-link-alt"></i></a>可以说是行业中的佼佼者，从关键词到外链到内容的挖掘，<a class="link"   href="https://link.zhihu.com/?target=https://ahrefs.com/zh/" >Ahrefs <i class="fas fa-external-link-alt"></i></a>几乎满足了所有的需求，也是我使用的最多的关键词挖掘工具。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic2.zhimg.com/80/v2-7cee6c8d8add7c85ee88ae2b42c0db91_720w.jpg"
+                      alt="img"
+                ></p>
+<p><strong><a class="link"   href="https://link.zhihu.com/?target=https://moz.com/moz-pro-free-trial?utm_medium=cpc&utm_source=google&utm_campaign=Brand%20-%20Exact%20%7C%20NA&utm_adgroup=Brand%20-%20Exact%20-%20Moz&utm_term=moz&gclid=Cj0KCQjw09HzBRDrARIsAG60GP9wq8TIYn6RXaeYcPgCmpvTjzCucuUXADlO5Q6v_FokzcHiMTGMHp4aAgZSEALw_wcB" >Moz<i class="fas fa-external-link-alt"></i></a></strong></p>
+<p>很多的时候我们找到一些关键词，但是不知道能不能做的时候，就可以用到Moz这个工具，使用Moz这个工具需要配合Moz的浏览器插件共同使用，首先下载<a class="link"   href="https://link.zhihu.com/?target=https://chrome.google.com/webstore/search/moz?hl=zh-CN" >Moz的浏览器插件。<i class="fas fa-external-link-alt"></i></a>注册一个免费的Moz账户，每次使用Moz的工具的时候都需要先登陆账号。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-77936cf0efdea54144fe858eefcda4a0_720w.jpg"
+                      alt="img"
+                ></p>
+<p>什么是DA与PA？<br>DA即Domain Authority，它是衡量一个网站权威度的重要体现。<br>PA即 Page Authority，它是衡量一个页面权威度的重要体现。说白了DA和PA的值越高，网站的搜索排名越靠前，值越高，也间接说明想要打败竞争对手的难度越大（排除像亚马逊，etsy这种大型的购物网站），查看同类型的网站，如果你是用Shopify建站的话，可以看看在页面的前几名有没有用Shopify建的站，它网站的DA和PA值是多少，这样也让你有一个大概的了解。</p>
+<p>如何查看这个网站是不是用Shopify建的站？在这里推荐一个谷歌的<a class="link"   href="https://link.zhihu.com/?target=https://chrome.google.com/webstore/search/Wappalyzer?hl=zh-CN" >免费插件<i class="fas fa-external-link-alt"></i></a>，是不是用Shopify建的站，你就可以看得一清二楚了。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic4.zhimg.com/80/v2-81bd616766fae8cc4e6c5868b8d0bbdf_720w.jpg"
+                      alt="img"
+                ></p>
+<h2 id="URL链接优化"><a href="#URL链接优化" class="headerlink" title="URL链接优化"></a><strong>URL链接优化</strong></h2><p>当我们把产品从速卖通或者别的平台导入的时候，产品的url链接是这样的，直接把产品的标题名字复制过来，不美观不说，还显得乱七八糟，url的部分完全可以放入基本的关键词+简单的描述产品。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-54ac713d929610a2a61c22a09b380c6c_720w.jpg"
+                      alt="img"
+                ></p>
+<h2 id="图片Alt优化"><a href="#图片Alt优化" class="headerlink" title="图片Alt优化"></a><strong>图片Alt优化</strong></h2><p>当你打开你Shopify店铺的图片，单击放大，在图片的右侧就有“add alt text”的文字，在图片中添加你的产品关键词，如果你的产品非常的多，图片非常的多，那怎么办？</p>
+<p>产品图片非常多的情况，建议可以挑选几张进行优化，如果都是手动的添加，工作量太大。当然，在Shopify的Apps里面也有可以自动添加图片Alt的App。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic4.zhimg.com/80/v2-d372e89609e2b2186f857f112549a0e7_720w.jpg"
+                      alt="img"
+                ></p>
+<h2 id="主页标题和描述的优化"><a href="#主页标题和描述的优化" class="headerlink" title="主页标题和描述的优化"></a>主页标题和描述的优化</h2><p>主页的标题和描述部分可以说是非常重要的，可以把我们找到的关键词分别放置在标题和描述的部分，Shopify店铺如何优化你的主页标题和描述呢？在Preferences的部分，preferences-home title-home meta description，meta的中文名称就是元标签，<strong>我们在哪里可以看到这部分原标签的内容？</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic3.zhimg.com/80/v2-8c9759e6c8da8bf2d9c0d97c0de6195e_720w.jpg"
+                      alt="img"
+                ></p>
+<p>当我们在谷歌上面搜索一个关键词的时候，标题下面的这部分文字的内容就是我们俗称的原标签描述，shopify-preferences的部分，是对我们整个网站的标题和描述的填写。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic2.zhimg.com/80/v2-8af212a2f13a87e94862d42f4f5715cd_720w.jpg"
+                      alt="img"
+                ></p>
+<p>产品标题和描述的优化</p>
+<p><strong>那每一个产品的标题和元标签子啊哪里设置呢？</strong></p>
+<p>Shopify产品页面拉到页面的最下方，点击Edit website SEO网站SEO优化，分别是Page title —— Description —— URL and handle，产品标题的优化,meta元描述的优化,URL链接的优化。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic3.zhimg.com/80/v2-86a4acb9059bf13184f737da052a2946_720w.jpg"
+                      alt="img"
+                ></p>
+<p>手机自适应设计<br>这一点或许也是很多人忽略的，我们在优化页面的时候，大部分地时间都在电脑端优化，但是根据Shopify 2019年销售报告显示，其中<strong>69％</strong>的销售是通过手机或平板电脑进行的，而只有<strong>31％的销售</strong>是通过台式机进行的。所以当我们在购买主题的时候，一定要关注手机端的自适用情况。<br>SEO优化App<br>想开始优化SEO,但是不知道怎么优化，这个时候就可以使用优化SEO的App，这些优化SEO的App多少会给你一些的指导和方向，但是对于SEO Apps的选择，建议选择几款尝试使用看看，但是不建议一次性安装太多的Apps，少而精。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic1.zhimg.com/80/v2-33fb23c7433342eac093b07fbe0c7434_720w.jpg"
+                      alt="img"
+                ></p>
+]]></content>
+      <categories>
+        <category>shopify</category>
+      </categories>
+      <tags>
+        <tag>shopify</tag>
+      </tags>
+  </entry>
 </search>
