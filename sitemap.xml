@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://m.iqimeng.com/2022/08/02/%E8%A7%81%E8%AF%81%E5%8E%86%E5%8F%B2%E7%9A%84%E4%B8%80%E5%A4%A9/</loc>
+    
+    <lastmod>2022-08-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://m.iqimeng.com/2021/12/15/study/42%20%E7%A7%8D%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88/</loc>
     
     <lastmod>2022-03-23</lastmod>
@@ -263,7 +270,7 @@
 
   <url>
     <loc>https://m.iqimeng.com/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -271,98 +278,105 @@
   
   <url>
     <loc>https://m.iqimeng.com/tags/%E5%BF%83%E6%83%85/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/%E9%87%87%E5%9D%91/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/shopify/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/study/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/js/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/HEXO/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/css/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/%E7%89%B9%E6%95%88/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/html/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/github/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/jsdelivr/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/tags/hexo/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://m.iqimeng.com/tags/%E9%9A%8F%E8%AE%B0/</loc>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -371,28 +385,28 @@
   
   <url>
     <loc>https://m.iqimeng.com/categories/Vue/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/categories/shopify/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/categories/study/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://m.iqimeng.com/categories/woocommerce/</loc>
-    <lastmod>2022-03-23</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
