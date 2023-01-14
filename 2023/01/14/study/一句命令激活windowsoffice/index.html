@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="爱·绮梦,学习,快乐">
+    <meta name="description" content="爱·绮梦">
+    <meta name="author" content="Mark">
+    
+    <title>
+        
+            一句命令激活windows/office! |
+        
+        爱·绮梦-学而时习之
+    </title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"m.iqimeng.com","root":"/","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false},"style":{"primary_color":"#0066CC","avatar":"images/avatar.jpg","favicon":"images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不亦说乎"}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.1.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days age","week":"%s weeks age","month":"%s months age","year":"%s years age"};
+  </script>
+    
+                <link href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" rel="stylesheet">
+<div id="aplayer"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+ 
+   
+    let data =[{"name":"Crazy (Acoustic Version)","id":535048794,"artist":"David Benjamin"},{"name":"God is a girl","id":28952154,"artist":"Sasha Sloan"},{"name":"Valder Fields","id":2001320,"artist":"Tamas Wells"}]
+    let list=[];
+    for (var i = 0; i < data.length; i++) {
+    	 var item={}
+    	 item.url='https://music.163.com/song/media/outer/url?id='+data[i].id+'.mp3'
+    	 item.name=data[i].name
+    	 item.artist=data[i].artist
+    	 list.push(item)
+    }
+     
+    const ap = new APlayer({
+	    container: document.getElementById('aplayer'),
+	    fixed: true,
+	    audio: list
+	});
+
+</script>
+<style>
+.aplayer-withlist{
+	    background-color: #ffebcd00;
+}
+.aplayer.aplayer-fixed .aplayer-body {
+    position: fixed;
+    bottom: 60px;
+    left: -66px;
+    right: 0;
+    margin: 0;
+    z-index: 99;
+    background: #fff;
+    padding-right: 18px;
+    transition: all .3s ease;
+    max-width: 400px;
+    z-index: 2200;
+    border-bottom: 1px solid #e9e9e9;
+}
+.aplayer.aplayer-fixed {
+  z-index: 1099;
+}
+.aplayer.aplayer-fixed .aplayer-list,.aplayer-withlist {
+    width: 336px
+}
+.aplayer.aplayer-fixed .aplayer-list {
+   margin-bottom: 126px;
+   background-color: #fff; 
+ 
+}
+</style>
+            
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="爱·绮梦" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    <span class="scroll-progress-bar"></span>
+
+    
+        <span class="loading-progress-bar"></span>
+        <span class="loading-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+ 
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                爱·绮梦
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content normal-code-theme">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">一句命令激活windows/office!</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>Mark</span>
+                        <span class="level">Lv4</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-calendar"></i> 2023-01-14 09:14:03
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/categories/study/">study</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%BF%80%E6%B4%BB/">激活</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i> <span>730 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i> <span>2 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>服务器地址：<a class="link"   href="https://link.zhihu.com/?target=http://kms.03k.org" >http://kms.03k.org<i class="fas fa-external-link-alt"></i></a>(<a class="link"   href="https://link.zhihu.com/?target=https://03k.org/go/kmscheck.php" >点击检查是否可用<i class="fas fa-external-link-alt"></i></a>)；</p>
+<p>服务作用：在线激活windows和office</p>
+<p>适用对象：VOL版本的windows和office</p>
+<p>适用版本：截止到win10和office2016的所有版本</p>
+<p><strong>使用方法：</strong></p>
+<p>一般来说，只要确保的下载的是VL批量版本并且没有手动安装过任何key，你只需要使用管理员权限运行cmd执行一句命令就足够：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.03k.org</span><br></pre></td></tr></table></figure>
+<p>这句命令的意思是，把kms服务器地址设置（set kms）<a class="link"   href="https://link.zhihu.com/?target=http://xn--kms-c88d.03k.org/" >为kms.03k.org<i class="fas fa-external-link-alt"></i></a>，设置成功如下：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-d8a336947d6ef894a8aa1dee0fdb3d29_720w.jpeg"
+                      alt="img"
+                ></p>
+<p>然后一句命令手动激活：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-1e1623924cda1dbcbae37003287965c6_720w.jpeg"
+                      alt="img"
+                ></p>
+<p>这句命令的意思是，马上对当前设置的key和服务器地址等进行尝试激活操作。kms激活的前提是你的系统是批量授权版本，即VL版，一般企业版都是VL版，专业版有零售和VL版，家庭版旗舰版OEM版等等那就肯定不能默认直接用kms激活。</p>
+<p><strong>一句命令激活office</strong></p>
+<p>首先你的office必须是vol版本，否则无法激活。</p>
+<p>找到你的office安装目录，比如C:\Program Files (x86)\Microsoft Office\Office16</p>
+<p>64位的就是C:\Program Files\Microsoft Office\Office16</p>
+<p>office16是office2016，office15就是2013，office14就是2010.</p>
+<p>然后目录对的话，该目录下面应该有个OSPP.VBS。</p>
+<p>接下来我们就cd到这个目录下面，例如（请更改为自己的实际安装目录）：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;</span><br></pre></td></tr></table></figure>
+<p>如果你不知道你的office装在哪个目录，可以打开一个程序比如word，然后用打开任务管理员右键选择“打开文件所在的位置”。</p>
+<p>然后执行注册kms服务器地址：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:kms.03k.org</span><br></pre></td></tr></table></figure>
+<p>/sethst参数就是指定kms服务器地址。</p>
+<p>一般ospp.vbs可以拖进去cmd窗口，所以也可以这么弄：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript &quot;C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS&quot; /sethst:kms.03k.org</span><br></pre></td></tr></table></figure>
+<p>一般来说，“一句命令已经完成了”，但一般office不会马上连接kms服务器进行激活，所以我们额外补充一条手动激活命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /act</span><br></pre></td></tr></table></figure>
+<p>如果提示看到successful的字样，那么就是激活成功了，重新打开office就好。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-faad272e9d7552d6709c96d4e9a57d94_720w.webp"
+                      alt="img"
+                ></p>
+<p>如果遇到报错，请检查：</p>
+<p>检测KMS服务器是否挂了点我</p>
+<p>KMS OK正常KMS BOOM挂了</p>
+<p>还有kms的ip你ping下是不是跟页面的一样</p>
+<p>上面还有检测的时间</p>
+<p>1、你的系统/office是否是批量VL版本</p>
+<p>2、是否以管理员权限运行cmd</p>
+<p>3、你的系统/office是否修改过key/未安装gvlk key</p>
+<p>4、检查你的网络连接</p>
+<p>5、本地的解析不对,或网络问题（点击检查服务器是否能连上）</p>
+<p>6、根据出错代码自己搜索出错原因</p>
+<p>0x80070005错误一般是你没用管理员权限运行CMD</p>
+<p>参考文章：<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81561582" >KMS服务,一句命令激活windows/office! - 知乎 (zhihu.com)<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：一句命令激活windows/office!</li>
+        <li>本文作者：Mark</li>
+        <li>创建时间：2023-01-14 09:14:03</li>
+        <li>
+            本文链接：https://m.iqimeng.com/2023/01/14/study/一句命令激活windowsoffice/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/11/22/English/people-pleasing%20is%20a%20curse/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">People-pleasing is cures</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center" >
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    
+        
+    <div id="gitalk-container"></div>
+    <script data-pjax
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-pjax>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+            Gitalk && new Gitalk({
+                clientID: 'f7b8dc841cf44c61bb2a',
+                clientSecret: 'c2be5d9c351419dc7718bc27898e806707c23874',
+                repo: 'hexo-comment',
+                owner: 'markruan',
+                admin: ['markruan'],
+                id: __gitalk__pathname,
+                language: ''
+            }).render('gitalk-container');
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2012</span> -
+            
+            2023 <i class="fas fa-heart icon-animate"></i> <a href="/">Mark</a>
+        </div>
+        
+            <script async data-pjax src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数 <span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量 <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动 | 主题 <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.1.3</a>
+        </div>
+    </div>
+</footer>
+<style>
+    .fa-heart{
+      color: #ff0000;
+    }
+</style>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-top flex-center">
+            <i class="fas fa-arrow-up"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.1.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+                '.background'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.loadingProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.loadingProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
