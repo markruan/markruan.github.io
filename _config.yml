@@ -101,4 +101,7 @@ theme: keep
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: git@github.com:markruan/markruan.github.io.git  # 如 git@github.com:username/username.github.io.git
+  branch: main     # 或 gh-pages（GitHub Pages 默认分支）
+  message: "Deploy: {{ now('YYYY-MM-DD HH:mm:ss') }}"  # 部署提交信息

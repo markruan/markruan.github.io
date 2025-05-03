@@ -1,0 +1,11 @@
+# 依赖目录
+node_modules/
+
+# Hexo 生成的文件
+public/
+.deploy_git/
+*.log
+
+# 编辑器/IDE 文件
+.vscode/
+.idea/
