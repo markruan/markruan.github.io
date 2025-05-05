@@ -9,7 +9,7 @@
     
     <title>
         
-            解决跨域 |
+            Hello World |
         
         爱·绮梦
     </title>
@@ -272,7 +272,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        解决跨域
+                        Hello World
                     </div>
                 
 
@@ -300,31 +300,19 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-04-27 21:57:17</span>
+                <span class="datetime">2025-05-05 11:12:30</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun Apr 27 2025 22:16:04 GMT+0800">2025-04-27 22:16:04</span>
+                    <span class="datetime" data-updated="Mon May 05 2025 11:12:30 GMT+0800">2025-05-05 11:12:30</span>
                 </span>
             
         
 
         
 
-        
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Vue/">Vue</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%B8%A9%E5%9D%91/">踩坑</a></li>
-                        
-                    
-                </ul>
-            </span>
         
 
         
@@ -349,10 +337,19 @@
                     
 
                     
-                         <h3 id="生产环境和开发环境一次解决跨域问题"><a href="#生产环境和开发环境一次解决跨域问题" class="headerlink" title="生产环境和开发环境一次解决跨域问题"></a>生产环境和开发环境一次解决跨域问题</h3><p>在config 文件夹里面新建一个 api.config.js 配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, &#x27;production&#x27;)</span><br><span class="line"></span><br><span class="line">const baseUrl=isPro ? &#x27;https://api.iqimeng.com&#x27; : &#x27;api/&#x27;</span><br><span class="line">export default baseUrl;</span><br></pre></td></tr></table></figure>
+                         <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀"><a href="#然后在main-js-里面引入-这样可以保证动态的匹配生产和开发的定义前缀" class="headerlink" title="然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀"></a>然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from &#x27;../config/api.config&#x27;</span><br><span class="line"></span><br><span class="line">import Axios from &#x27;axios&#x27;</span><br><span class="line">import VueAxios from &#x27;vue-axios&#x27;</span><br><span class="line"></span><br><span class="line">Vue.use(VueAxios, Axios)</span><br><span class="line">Axios.defaults.baseURL = apiConfig</span><br></pre></td></tr></table></figure>
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
 
                     
                 </div>
@@ -363,11 +360,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                解决跨域
+                Hello World
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/04/27/解决跨域/
+                2025/05/05/hello-world/
             </div>
         </div>
 
@@ -383,7 +380,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-04-27 21:57</div>
+                <div class="content">2025-05-05 11:12</div>
             </div>
 
 
@@ -415,18 +412,6 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Vue/">Vue</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%B8%A9%E5%9D%91/">踩坑</a>
-                                    </li>
-                                
-                            </ul>
                         
                     </div>
                     <div>
@@ -465,14 +450,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/04/30/Untitled/"
-                                   title=""
+                                   href="/2025/05/05/%E4%B8%80%E5%8F%A5%E5%91%BD%E4%BB%A4%E6%BF%80%E6%B4%BBwindowsoffice!/"
+                                   title="一句命令激活windows/office!"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-title-item text-ellipsis">一句命令激活windows/office!</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -482,7 +467,7 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/04/27/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/"
+                                   href="/2025/05/05/vue%E4%B8%AD%E4%BD%BF%E7%94%A8H5%E7%9A%84audio/"
                                    title="Vue中使用H5的audio"
                                 >
                                     <span class="title flex-center">
@@ -514,7 +499,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%92%8C%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%80%E6%AC%A1%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%9C%A8main-js-%E9%87%8C%E9%9D%A2%E5%BC%95%E5%85%A5-%E8%BF%99%E6%A0%B7%E5%8F%AF%E4%BB%A5%E4%BF%9D%E8%AF%81%E5%8A%A8%E6%80%81%E7%9A%84%E5%8C%B9%E9%85%8D%E7%94%9F%E4%BA%A7%E5%92%8C%E5%BC%80%E5%8F%91%E7%9A%84%E5%AE%9A%E4%B9%89%E5%89%8D%E7%BC%80"><span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -692,7 +677,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E5%92%8C%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%80%E6%AC%A1%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-text">生产环境和开发环境一次解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%9C%A8main-js-%E9%87%8C%E9%9D%A2%E5%BC%95%E5%85%A5-%E8%BF%99%E6%A0%B7%E5%8F%AF%E4%BB%A5%E4%BF%9D%E8%AF%81%E5%8A%A8%E6%80%81%E7%9A%84%E5%8C%B9%E9%85%8D%E7%94%9F%E4%BA%A7%E5%92%8C%E5%BC%80%E5%8F%91%E7%9A%84%E5%AE%9A%E4%B9%89%E5%89%8D%E7%BC%80"><span class="nav-text">然后在main.js 里面引入,这样可以保证动态的匹配生产和开发的定义前缀</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
     </div>
 </div>
 

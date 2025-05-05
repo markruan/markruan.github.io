@@ -9,8 +9,6 @@
     
     <title>
         
-            一句命令激活windows/office! |
-        
         爱·绮梦
     </title>
     
@@ -272,7 +270,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        一句命令激活windows/office!
+                        
                     </div>
                 
 
@@ -300,13 +298,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-04-26 11:46:17</span>
+                <span class="datetime">2025-05-05 11:12:30</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Apr 26 2025 11:51:40 GMT+0800">2025-04-26 11:51:40</span>
+                    <span class="datetime" data-updated="Mon May 05 2025 11:12:30 GMT+0800">2025-05-05 11:12:30</span>
                 </span>
             
         
@@ -337,55 +335,76 @@
                     
 
                     
-                         <p>服务器地址：<a class="link"   href="https://link.zhihu.com/?target=http://kms.03k.org" >http://kms.03k.org<i class="fas fa-external-link-alt"></i></a>(<a class="link"   href="https://link.zhihu.com/?target=https://03k.org/go/kmscheck.php" >点击检查是否可用<i class="fas fa-external-link-alt"></i></a>)；</p>
-<p>服务作用：在线激活windows和office</p>
-<p>适用对象：VOL版本的windows和office</p>
-<p>适用版本：截止到win10和office2016的所有版本</p>
-<p><strong>使用方法：</strong></p>
-<p>一般来说，只要确保的下载的是VL批量版本并且没有手动安装过任何key，你只需要使用管理员权限运行cmd执行一句命令就足够：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.03k.<span class="property">org</span></span><br></pre></td></tr></table></figure>
-
-<p>这句命令的意思是，把kms服务器地址设置（set kms）<a class="link"   href="https://link.zhihu.com/?target=http://xn--kms-c88d.03k.org/" >为kms.03k.org<i class="fas fa-external-link-alt"></i></a>，设置成功如下：</p>
-<p><img   src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-d8a336947d6ef894a8aa1dee0fdb3d29_720w.jpeg"  alt="img"></p>
-<p>然后一句命令手动激活：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
-
-<p><img   src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-1e1623924cda1dbcbae37003287965c6_720w.jpeg"  alt="img"></p>
-<p>这句命令的意思是，马上对当前设置的key和服务器地址等进行尝试激活操作。kms激活的前提是你的系统是批量授权版本，即VL版，一般企业版都是VL版，专业版有零售和VL版，家庭版旗舰版OEM版等等那就肯定不能默认直接用kms激活。</p>
-<p><strong>一句命令激活office</strong></p>
-<p>首先你的office必须是vol版本，否则无法激活。</p>
-<p>找到你的office安装目录，比如C:\Program Files (x86)\Microsoft Office\Office16</p>
-<p>64位的就是C:\Program Files\Microsoft Office\Office16</p>
-<p>office16是office2016，office15就是2013，office14就是2010.</p>
-<p>然后目录对的话，该目录下面应该有个OSPP.VBS。</p>
-<p>接下来我们就cd到这个目录下面，例如（请更改为自己的实际安装目录）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;</span><br></pre></td></tr></table></figure>
-
-<p>如果你不知道你的office装在哪个目录，可以打开一个程序比如word，然后用打开任务管理员右键选择“打开文件所在的位置”。</p>
-<p>然后执行注册kms服务器地址：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /sethst:kms.03k.org</span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;sethst参数就是指定kms服务器地址。</p>
-<p>一般ospp.vbs可以拖进去cmd窗口，所以也可以这么弄：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript &quot;C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS&quot; /sethst:kms.03k.org</span><br></pre></td></tr></table></figure>
-
-<p>一般来说，“一句命令已经完成了”，但一般office不会马上连接kms服务器进行激活，所以我们额外补充一条手动激活命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cscript ospp.vbs /act</span><br></pre></td></tr></table></figure>
-
-<p>如果提示看到successful的字样，那么就是激活成功了，重新打开office就好。</p>
-<p><img   src="https://cdn.jsdelivr.net/gh/markruan/cloudimg/picx/v2-faad272e9d7552d6709c96d4e9a57d94_720w.webp"  alt="img"></p>
-<p>如果遇到报错，请检查：</p>
-<p>检测KMS服务器是否挂了点我</p>
-<p>KMS OK正常KMS BOOM挂了</p>
-<p>还有kms的ip你ping下是不是跟页面的一样</p>
-<p>上面还有检测的时间</p>
-<p>1、你的系统&#x2F;office是否是批量VL版本</p>
-<p>2、是否以管理员权限运行cmd</p>
-<p>3、你的系统&#x2F;office是否修改过key&#x2F;未安装gvlk key</p>
-<p>4、检查你的网络连接</p>
-<p>5、本地的解析不对,或网络问题（点击检查服务器是否能连上）</p>
-<p>6、根据出错代码自己搜索出错原因</p>
-<p>0x80070005错误一般是你没用管理员权限运行CMD</p>
+                         <p>海哥，以下为成都出差总结请您查收</p>
+<p>主要工作内容</p>
+<p>29 日</p>
+<ol>
+<li><p>同采销总波哥，贺丽娜，雪玲  拉通集团新店投资策略，沟通温江片区新店商品和营销支持，答复会全力配合 5 月两家门店复推；</p>
+<ol start="2">
+<li><p>到CD-57店新址周边进行商圈调研</p>
+<ol start="3">
+<li><p>到温江片区CD-55、CD-52 周边进行商圈调研</p>
+<p>30 日</p>
+<ol>
+<li>参加成都次新店订单提升方案讨论会议，分享《2025 年新店投资模型》，收集城市需求<ol start="2">
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>2.与城市采销</p>
+<p>一、</p>
+<p>时间：4.30 ，9：30-11:30</p>
+<p>参会人：波哥、娜姐、鹏哥、刘试列、雪玲、阮楠、 宾鑫 、刘义华 、新店店长</p>
+<p>会议主题：《2025 年新店投资模型》分享、次新店订单提升计划讨论</p>
+<p>会议主要内容：</p>
+<p>采销：</p>
+<ul>
+<li>五一过后7号之前推广同学给@翁波 商品清单，给到商品&gt;5支（5+3+2）</li>
+<li>@吴雪玲 今天给@刘义华 商品清单，节后盘细节</li>
+</ul>
+<p>推广：</p>
+<ul>
+<li>4.30内给到推广计划，同步给采销，进行备货（商品清单和价格）</li>
+<li>次新店推广计划到持续至6.5（重点推52、55），同时拉用户进入社群，入群优惠力度需增加吸引用户， @阮楠 向总部要资源</li>
+</ul>
+<p>用户：</p>
+<ul>
+<li>与@吴雪玲 确认用户策略清单</li>
+</ul>
+<p>市场营销：</p>
+<ul>
+<li>温江区造势，采用不花人力资源的方法进行造势，因门店无盈余人力</li>
+<li>线下厂商周，老顾客送赠品，商品找@翁波 +结合推广</li>
+<li>二次员工宣传拉新激励@阮楠 向总部争取资源</li>
+<li>网红自媒体宣传，城市需提建议，给到符合本地人需求的网红推荐</li>
+<li>计划4号线地铁广告投放</li>
+<li>温江“二次开业”噱头确认</li>
+<li>线下广告投放重点小区清单 57店店长给到@阮楠</li>
+</ul>
+<p>二、</p>
+<p>时间：4.30 ，11:30-12:10</p>
+<p>参会人：阮楠 宾鑫  财务（名字需补充）</p>
+<p><strong>会议主题：关于小区渗透率数据集团&amp;成都区域拉齐会议</strong></p>
+<p>会议主要内容：</p>
+<ul>
+<li>确认了成都新店数据复盘与集团口径一致</li>
+<li>成都区域提报【门店经营看板】小区渗透方面的数据需求，后续对接@宾鑫</li>
+</ul>
+<p>三、时间：4.30 ，14：00-15：00</p>
+<p>参会人：阮楠 宾鑫 刘义华 李春晖 李晓艺 刘佳俊 黄敏 游思源</p>
+<p><strong>会议主题：成都弱仓、新店有货保障策略共识</strong></p>
+<p>会议主要内容：</p>
+<ul>
+<li>共识成都新店弱仓采用保障TOP品有货的策略</li>
+<li>肉类有货问题严重，优先从肉类品类入手@宾鑫 与成都库管同学共识筛选出弱仓TOP品清单，与集团@李晓艺 、计划部同学共识清单</li>
+<li>清单确认后，成都库管同学根据清单保障日常有货，计划同学定期进行干预结果复盘</li>
+</ul>
 
                     
                 </div>
@@ -396,11 +415,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                一句命令激活windows/office!
+                
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/04/26/一句命令激活windowsoffice!/
+                2025/05/05/Untitled/
             </div>
         </div>
 
@@ -416,7 +435,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-04-26 11:46</div>
+                <div class="content">2025-05-05 11:12</div>
             </div>
 
 
@@ -486,7 +505,7 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/04/26/People-pleasing%20is%20cures/"
+                                   href="/2025/05/05/People-pleasing%20is%20cures/"
                                    title="People-pleasing is cures"
                                 >
                                     <span class="left arrow-icon flex-center">
@@ -499,22 +518,6 @@
                                 </a>
                             </div>
                         
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2025/04/24/hello-world/"
-                                   title="Hello World"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Hello World</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
                         
                     </div>
                 
